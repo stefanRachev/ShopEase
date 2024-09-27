@@ -1,17 +1,20 @@
-//import { Container } from "react-bootstrap";
+import { UserProvider } from "./context/UserContext";
+import { CartProvider } from "./context/CartContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-//import Content from "./components/Content";
+import Content from "./components/Content";
 
 function App() {
   return (
-    <>
-      <Header />
-      {/* <Container fluid="md" className="main-content">
+    <UserProvider>
+      <CartProvider>
+        <Header />
+
         <Content />
-      </Container> */}
-      <Footer />
-    </>
+
+        <Footer />
+      </CartProvider>
+    </UserProvider>
   );
 }
 
