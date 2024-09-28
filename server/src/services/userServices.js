@@ -20,7 +20,7 @@ exports.registerUser = async (email, password, username) => {
     throw new Error("User already exists with this email");
   }
 
-  const newUser = await User.create({ email, password, username });
+  const newUser = await User.create({ email, password });
 
   const accessToken = exports.signToken(newUser._id);
   const refreshToken = exports.signRefreshToken(newUser._id);
