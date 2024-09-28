@@ -2,7 +2,7 @@ import { UserProvider } from "./context/UserContext";
 import { CartProvider } from "./context/CartContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Content from "./components/Content";
+import Content from "./layout/Content";
 
 function App() {
   return (

@@ -1,4 +1,5 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
@@ -8,8 +9,12 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="/products">Products</Nav.Link>
-            <Nav.Link href="/cart">Cart</Nav.Link>
+            <Nav.Link as={NavLink} to="/products">
+              Products
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/cart">
+              Cart
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -18,3 +23,4 @@ function Header() {
 }
 
 export default Header;
+
