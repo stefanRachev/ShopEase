@@ -50,6 +50,8 @@ function Register() {
       });
 
       const data = await response.json();
+      
+      
 
       if (response.ok) {
         localStorage.setItem("accessToken", data.accessToken);

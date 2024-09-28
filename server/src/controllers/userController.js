@@ -9,7 +9,6 @@ exports.register = async (req, res) => {
     const { accessToken, user } = await userService.registerUser(
       email,
       password,
-      username
     );
 
     res.status(201).json({

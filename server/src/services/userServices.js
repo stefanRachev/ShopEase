@@ -14,7 +14,7 @@ exports.signRefreshToken = (userId) => {
   });
 };
 
-exports.registerUser = async (email, password, username) => {
+exports.registerUser = async (email, password,) => {
   const existingUser = await User.findOne({ email });
   if (existingUser) {
     throw new Error("User already exists with this email");
