@@ -1,9 +1,62 @@
+// import { Navbar, Nav, Container } from "react-bootstrap";
+// import { NavLink } from "react-router-dom";
+// import { useUser } from "../context/useUser";
+
+// function Header() {
+//   const { user } = useUser();
+
+//   return (
+//     <Navbar bg="dark" variant="dark" expand="lg">
+//       <Container>
+//         <Navbar.Brand href="/">ShopEase</Navbar.Brand>
+//         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+//         <Navbar.Collapse id="basic-navbar-nav">
+//           <Nav className="me-auto">
+
+//             <Nav.Link as={NavLink} to="/products" onClick={() => document.querySelector('.navbar-toggler').click()}>
+//               Products
+//             </Nav.Link>
+//             <Nav.Link as={NavLink} to="/cart" onClick={() => document.querySelector('.navbar-toggler').click()}>
+//               Cart
+//             </Nav.Link>
+//           </Nav>
+
+//           <Nav className="ms-auto">
+//             {user ? (
+//               <>
+//                 <Nav.Link as={NavLink} to="/logout" onClick={() => document.querySelector('.navbar-toggler').click()}>
+//                   Logout
+//                 </Nav.Link>
+//                 <Nav.Link disabled>Welcome, {user.email}</Nav.Link>
+//               </>
+//             ) : (
+//               <>
+//                 <Nav.Link as={NavLink} to="/register" onClick={() => document.querySelector('.navbar-toggler').click()}>
+//                   Register
+//                 </Nav.Link>
+//                 <Nav.Link as={NavLink} to="/login" onClick={() => document.querySelector('.navbar-toggler').click()}>
+//                   Login
+//                 </Nav.Link>
+//                 <Nav.Link disabled>Guest, please log in or register.</Nav.Link>
+//               </>
+//             )}
+//           </Nav>
+//         </Navbar.Collapse>
+//       </Container>
+//     </Navbar>
+//   );
+// }
+
+// export default Header;
+
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useUser } from "../context/useUser";
+import { useLanguage } from "../context/useLanguage"; // Импортиране на useLanguage
 
 function Header() {
   const { user } = useUser();
+  const { language, toggleLanguage } = useLanguage(); // Извличане на езика и функцията за превключване
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
@@ -12,35 +65,72 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            
-            <Nav.Link as={NavLink} to="/products" onClick={() => document.querySelector('.navbar-toggler').click()}>
-              Products
+            <Nav.Link
+              as={NavLink}
+              to="/products"
+              onClick={() => document.querySelector(".navbar-toggler").click()}
+            >
+              {language === "en" ? "Products" : "Продукти"}
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/cart" onClick={() => document.querySelector('.navbar-toggler').click()}>
-              Cart
+            <Nav.Link
+              as={NavLink}
+              to="/cart"
+              onClick={() => document.querySelector(".navbar-toggler").click()}
+            >
+              {language === "en" ? "Cart" : "Кошница"}
             </Nav.Link>
           </Nav>
 
-         
           <Nav className="ms-auto">
             {user ? (
               <>
-                <Nav.Link as={NavLink} to="/logout" onClick={() => document.querySelector('.navbar-toggler').click()}>
-                  Logout
+                <Nav.Link
+                  as={NavLink}
+                  to="/logout"
+                  onClick={() =>
+                    document.querySelector(".navbar-toggler").click()
+                  }
+                >
+                  {language === "en" ? "Logout" : "Изход"}
                 </Nav.Link>
-                <Nav.Link disabled>Welcome, {user.email}</Nav.Link>
+                <Nav.Link disabled>
+                  {language === "en"
+                    ? `Welcome, ${user.email}`
+                    : `Добре дошъл, ${user.email}`}
+                </Nav.Link>
               </>
             ) : (
               <>
-                <Nav.Link as={NavLink} to="/register" onClick={() => document.querySelector('.navbar-toggler').click()}>
-                  Register
+                <Nav.Link
+                  as={NavLink}
+                  to="/register"
+                  onClick={() =>
+                    document.querySelector(".navbar-toggler").click()
+                  }
+                >
+                  {language === "en" ? "Register" : "Регистрация"}
                 </Nav.Link>
-                <Nav.Link as={NavLink} to="/login" onClick={() => document.querySelector('.navbar-toggler').click()}>
-                  Login
+                <Nav.Link
+                  as={NavLink}
+                  to="/login"
+                  onClick={() =>
+                    document.querySelector(".navbar-toggler").click()
+                  }
+                >
+                  {language === "en" ? "Login" : "Вход"}
                 </Nav.Link>
-                <Nav.Link disabled>Guest, please log in or register.</Nav.Link>
+                <Nav.Link disabled>
+                  {language === "en"
+                    ? "Guest, please log in or register."
+                    : "Гост, моля влезте или се регистрирайте."}
+                </Nav.Link>
               </>
             )}
+            <Nav.Link onClick={toggleLanguage}>
+              {language === "en"
+                ? "Switch to Bulgarian"
+                : "Превключи на английски"}
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
