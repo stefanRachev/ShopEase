@@ -34,7 +34,7 @@ function CarouselComponent(){
             </div>
             <div className="carousel-item">
               <img
-                src="https://i.imgur.com/mSaNqjc.jpg"
+                src="https://i.imgur.com/l0AdIeW.jpg"
                 className={`d-block w-100 ${styles.carouselImage}`} 
                 alt="Second slide"
               />
