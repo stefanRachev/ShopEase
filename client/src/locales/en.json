@@ -1,7 +1,15 @@
 {
-    "welcome": "Welcome to ShopEase",
-    "login": "Login",
-    "register": "Register",
-    "products": "Products",
-    "cart": "Cart"
-  }
+  "welcome": "Welcome to ShopEase!",
+  "login": "Login",
+  "register": "Register",
+  "products": "Products",
+  "cart": "Cart",
+  "slogan": "Discover your strength with our amazing fitness products!",
+  "popularCategories": "Popular Categories",
+  "bestSellers": "Best Selling Products",
+  "testimonials": "Customer Testimonials",
+  "testimonialQuote": "FitShop changed the way I train!",
+  "discoverMore": "Discover More",
+  "about": "About Us",
+  "contact": "Contact"
+}
