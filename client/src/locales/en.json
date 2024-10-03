@@ -25,5 +25,9 @@
   "join": "Join the Fitness Revolution!",
   "startJourney": "Start your journey with us today!",
   "achieve": "Achieve Your Goals!",
-  "guestMessage": "Guest, please log in or register."
+  "guestMessage": "Guest, please log in or register.",
+  "product1": "Free Weights",
+  "description1": "High-quality free weights for your workout.",
+  "featuredProducts": "Featured Products",
+  "addToCart": "Add to Cart"
 }
