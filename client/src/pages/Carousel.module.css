@@ -1,6 +1,12 @@
 .carouselImage {
-    width: 100%; /* Запазва широчината на изображението на 100% от родителя */
-    height: auto; /* Височината автоматично се регулира */
-    max-height: 400px; /* Задайте максимална височина, която желаете */
-    object-fit: contain; /* Запазва оригиналното съотношение на страните, без да изрязва изображението */
+    width: 100%;
+    /* height: auto;  */
+    max-height: 700px; 
+    object-fit: cover; 
+    /* object-position: top; */
+}
+
+.carouselInner{
+    width: 100%;
+    max-height: 700px;
 }
