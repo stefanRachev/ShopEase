@@ -7,7 +7,7 @@ import translationsBg from "../locales/bg.json"
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState("en"); 
+  const [language, setLanguage] = useState("bg"); 
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === "en" ? "bg" : "en"));
