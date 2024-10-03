@@ -1,12 +1,29 @@
 .carouselImage {
-    width: 100%;
-    /* height: auto;  */
-    max-height: 700px; 
-    object-fit: cover; 
-    /* object-position: top; */
+  width: 100%;
+  /* height: auto;  */
+  max-height: 700px;
+  object-fit: cover;
+  /* object-position: top; */
 }
 
-.carouselInner{
-    width: 100%;
-    max-height: 700px;
+.carouselInner {
+  width: 100%;
+  max-height: 700px;
+}
+
+.carouselCaption {
+  color: white;
+  padding: 10px;
+}
+
+@media (max-width: 576px) {
+  .carouselCaption {
+    font-size: 0.8rem;
+  }
+  .carouselCaption h5 {
+    font-size: 0.8rem;
+  }
+  .carouselCaption p {
+    font-size: 0.7rem;
+  }
 }

@@ -1,50 +1,29 @@
-
-import styles from "./Carousel.module.css"; 
+import styles from "./Carousel.module.css";
 import { useLanguage } from "../context/useLanguage";
 
 function CarouselComponent() {
-  const { language } = useLanguage();
+  const { language, translations } = useLanguage();
 
   const slides = [
     {
       image: "https://i.imgur.com/kHLUDfd.jpg",
-      title:
-        language === "en" ? "Welcome to ShopEase!" : "Добре дошли в ShopEase!",
-      description:
-        language === "en"
-          ? "Discover your strength with our amazing fitness products!"
-          : "Открий своята сила с нашите страхотни фитнес продукти!",
+      title: translations[language].welcome,
+      description: translations[language].slogan,
     },
     {
       image: "https://i.imgur.com/VHgJGkF.jpg",
-      title:
-        language === "en"
-          ? "Elevate Your Workout!"
-          : "Подобрете тренировката си!",
-      description:
-        language === "en"
-          ? "Shop now and get 20% off!"
-          : "Пазарувайте сега и получете 20% отстъпка!",
+      title: translations[language].elevate,
+      description: translations[language].shopNow,
     },
     {
       image: "https://i.imgur.com/W9yloIv.jpg",
-      title:
-        language === "en"
-          ? "Join the Fitness Revolution!"
-          : "Присъединете се към фитнес революцията!",
-      description:
-        language === "en"
-          ? "Explore our latest arrivals!"
-          : "Разгледайте нашите последни пристигания!",
+      title: translations[language].join,
+      description: translations[language].explore,
     },
     {
       image: "https://i.imgur.com/j1ivDQd.jpg",
-      title:
-        language === "en" ? "Achieve Your Goals!" : "Постигнете целите си!",
-      description:
-        language === "en"
-          ? "Start your journey with us today!"
-          : "Започнете своето пътуване с нас днес!",
+      title: translations[language].achieve,
+      description: translations[language].startJourney,
     },
   ];
 
@@ -67,7 +46,10 @@ function CarouselComponent() {
                 className={styles.carouselImage}
                 alt={`Slide ${index + 1}`}
               />
-              <div className="carousel-caption d-none d-md-block">
+              {/* carousel-caption d-none d-md-block */}
+              <div
+                className={`carousel-caption d-block ${styles.carouselCaption}`}
+              >
                 <h5>{slide.title}</h5>
                 <p>{slide.description}</p>
               </div>
