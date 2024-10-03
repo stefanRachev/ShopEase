@@ -33,7 +33,7 @@ function CarouselComponent() {
         id="carouselExampleIndicators"
         className="carousel slide"
         data-bs-ride="carousel"
-        data-bs-interval="4000"
+        data-bs-interval="3000"
       >
         <div className={`carousel-inner ${styles.carouselInner}`}>
           {slides.map((slide, index) => (
@@ -46,7 +46,7 @@ function CarouselComponent() {
                 className={styles.carouselImage}
                 alt={`Slide ${index + 1}`}
               />
-              {/* carousel-caption d-none d-md-block */}
+
               <div
                 className={`carousel-caption d-block ${styles.carouselCaption}`}
               >

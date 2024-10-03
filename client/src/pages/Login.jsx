@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
+import { useLanguage } from "../context/useLanguage";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -12,7 +13,8 @@ function Login() {
   });
 
   const [error, setError] = useState("");
-  const { setUser,setToken} = useContext(UserContext);
+  const { setUser, setToken } = useContext(UserContext);
+  const { language, translations } = useLanguage();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -46,7 +48,7 @@ function Login() {
 
         setUser(data.data.user);
         setToken(data.accessToken);
-      
+
         setError("");
         setFormData({
           email: "",
@@ -54,10 +56,10 @@ function Login() {
         });
         navigate("/");
       } else {
-        setError(data.message || "Login failed");
+        setError(data.message || translations[language].loginFailed);
       }
     } catch (error) {
-      setError("An error occurred: " + error.message);
+      setError(translations[language].errorOccurred + error.message);
     }
   };
 
@@ -65,14 +67,14 @@ function Login() {
     <Container>
       <Row className="justify-content-center">
         <Col md={6}>
-          <h2 className="text-center mb-4">Login</h2>
+          <h2 className="text-center mb-4">{translations[language].login}</h2>
           {error && <div className="alert alert-danger">{error}</div>}
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formEmail">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>{translations[language].email}</Form.Label>
               <Form.Control
                 type="email"
-                placeholder="Enter email"
+                placeholder={translations[language].enterEmail}
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -81,10 +83,10 @@ function Login() {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>{translations[language].password}</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="Password"
+                placeholder={translations[language].password}
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
@@ -93,7 +95,7 @@ function Login() {
             </Form.Group>
 
             <Button variant="primary" type="submit">
-              Login
+              {translations[language].login}
             </Button>
           </Form>
         </Col>

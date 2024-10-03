@@ -1,57 +1,63 @@
+// ProductDescription.jsx
+import styles from './ProductDescription.module.css';
 import { useLanguage } from "../context/useLanguage";
-import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "./ProductDescription.module.css";
 
-const ProductDescription = () => {
-  const { language } = useLanguage();
+function ProductDescription() {
+  const { language, translations } = useLanguage();
+
+  const products = [
+    {
+      id: 1,
+      name: translations[language].product1,
+      description: translations[language].description1,
+      price: "100.00",
+      image: "https://via.placeholder.com/300x300",
+    },
+    {
+      id: 2,
+      name: translations[language].product2,
+      description: translations[language].description2,
+      price: "150.00",
+      image: "https://via.placeholder.com/300x300",
+    },
+    {
+      id: 3,
+      name: translations[language].product3,
+      description: translations[language].description3,
+      price: "200.00",
+      image: "https://via.placeholder.com/300x300",
+    },
+  ];
 
   return (
-    <div className={`container text-center ${styles.productDescription}`}>
-      <h2>{language === "en" ? "Our Products" : "Нашите Продукти"}</h2>
-      <p>
-        {language === "en"
-          ? "Explore our range of fitness products designed to enhance your workout!"
-          : "Разгледайте нашата гама от фитнес продукти, предназначени да подобрят вашата тренировка!"}
-      </p>
-      <ul className="list-unstyled">
-        <li className="mb-4">
-          <h4>{language === "en" ? "Fitness Equipment" : "Фитнес уреди"}</h4>
-          <p>
-            {language === "en"
-              ? "Find the perfect equipment for home workouts."
-              : "Намерете идеалния уред за тренировка вкъщи."}
-          </p>
-          <a className="btn btn-primary" href="/products/fitness-machines">
-            {language === "en" ? "Explore" : "Разгледайте"}
-          </a>
-        </li>
-        <li className="mb-4">
-          <h4>
-            {language === "en" ? "Workout Clothes" : "Дрехи за тренировка"}
-          </h4>
-          <p>
-            {language === "en"
-              ? "Stylish and comfortable clothes to inspire you."
-              : "Модерни и удобни дрехи, които ще ви вдъхновят."}
-          </p>
-          <a className="btn btn-primary" href="/products/workout-clothes">
-            {language === "en" ? "Explore" : "Разгледайте"}
-          </a>
-        </li>
-        <li className="mb-4">
-          <h4>{language === "en" ? "Supplements" : "Добавки"}</h4>
-          <p>
-            {language === "en"
-              ? "Support your workouts with high-quality supplements."
-              : "Подкрепете тренировките си с висококачествени добавки."}
-          </p>
-          <a className="btn btn-primary" href="/products/supplements">
-            {language === "en" ? "Explore" : "Разгледайте"}
-          </a>
-        </li>
-      </ul>
+    <div className={styles.productContainer}>
+      <h2>{translations[language].featuredProducts}</h2>
+      <div className="row">
+        {products.map((product) => (
+          <div key={product.id} className="col-md-4">
+            <div className={`card ${styles.productCard}`}>
+              <img
+                src={product.image}
+                className={`card-img-top ${styles.productImage}`}
+                alt={product.name}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{product.name}</h5>
+                <p className="card-text">{product.description}</p>
+                <p className="card-text">
+                  <strong>{product.price} лв.</strong>
+                </p>
+                <button className="btn btn-primary">
+                  {translations[language].addToCart}
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
-};
+}
 
 export default ProductDescription;
+
