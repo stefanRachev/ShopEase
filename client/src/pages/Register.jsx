@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
+import { useLanguage } from "../context/useLanguage";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -13,7 +14,8 @@ function Register() {
   });
 
   const [error, setError] = useState("");
-  const { setUser,setToken} = useContext(UserContext);
+  const { setUser, setToken } = useContext(UserContext);
+  const { language, translations } = useLanguage();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -28,12 +30,12 @@ function Register() {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match!");
+      setError(translations[language].passwordMismatch);
       return;
     }
 
     if (formData.password.length < 6) {
-      setError("Passwords must be at least 6 characters long");
+      setError(translations[language].shortPassword);
       return;
     }
 
@@ -50,8 +52,6 @@ function Register() {
       });
 
       const data = await response.json();
-      
-      
 
       if (response.ok) {
         localStorage.setItem("accessToken", data.accessToken);
@@ -68,10 +68,10 @@ function Register() {
         });
         navigate("/");
       } else {
-        setError(data.message || "Registration failed");
+        setError(data.message || translations[language].registrationFailed);
       }
     } catch (error) {
-      setError("An error occurred: " + error.message);
+      setError(translations[language].errorOccurred + error.message);
     }
   };
 
@@ -79,14 +79,16 @@ function Register() {
     <Container>
       <Row className="justify-content-center">
         <Col md={6}>
-          <h2 className="text-center mb-4">Register</h2>
-          {error && <div className="alert alert-danger">{error}</div>}{" "}
+          <h2 className="text-center mb-4">
+            {translations[language].register}
+          </h2>{" "}
+          {error && <div className="alert alert-danger">{error}</div>}
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formEmail">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>{translations[language].email}</Form.Label>{" "}
               <Form.Control
                 type="email"
-                placeholder="Enter email"
+                placeholder={translations[language].enterEmail}
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -95,10 +97,10 @@ function Register() {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>{translations[language].password}</Form.Label>{" "}
               <Form.Control
                 type="password"
-                placeholder="Password"
+                placeholder={translations[language].password}
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
@@ -107,10 +109,10 @@ function Register() {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formConfirmPassword">
-              <Form.Label>Confirm Password</Form.Label>
+              <Form.Label>{translations[language].confirmPassword}</Form.Label>{" "}
               <Form.Control
                 type="password"
-                placeholder="Confirm Password"
+                placeholder={translations[language].confirmPassword}
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
@@ -118,9 +120,8 @@ function Register() {
               />
             </Form.Group>
 
-
             <Button variant="primary" type="submit">
-              Register
+              {translations[language].register}{" "}
             </Button>
           </Form>
         </Col>
