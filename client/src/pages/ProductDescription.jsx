@@ -15,22 +15,19 @@ function ProductDescription() {
       id: 2,
       name: translations[language].product2,
       description: translations[language].description2,
-      price: "150.00",
-      image: "https://via.placeholder.com/300x300",
+      image: "https://i.imgur.com/iDxkTnw.jpg",
     },
     {
       id: 3,
       name: translations[language].product3,
       description: translations[language].description3,
-      price: "200.00",
-      image: "https://via.placeholder.com/300x300",
+      image: "https://i.imgur.com/5GkGTXH.jpg",
     },
     {
       id: 4,
       name: translations[language].product4,
       description: translations[language].description4,
-      price: "250.00",
-      image: "https://via.placeholder.com/300x300",
+      image: "https://i.imgur.com/NWTgIOe.jpg",
     },
   ];
 
