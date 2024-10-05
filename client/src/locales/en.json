@@ -35,5 +35,13 @@
   "description3": "Great choice for your fitness!",
   "description4": "All about individual sports!",
   "featuredProducts": "Featured Products",
-  "addToCart": "Add to Cart"
+  "addToCart": "Add to Cart",
+  "dumbbells": "Hexagonal Dumbbell full set",
+  "descriptionDumbbells": "Made of high-quality material that is resistant to wear and corrosion, this dumbbell is built to withstand intense training.",
+  "weights": "Strength Training Products",
+  "takeALook": "Take a look",
+  "barbells": "Barbells",
+  "descriptionBarbells": "Barbells for discs and short, long, Olympic",
+  "barbellDiscs": "Discs for barbells",
+  "descriptionBarbellDiscs": "All sizes, Olympic discs, discs for adjustable dumbbells"
 }

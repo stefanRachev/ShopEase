@@ -1,48 +1,42 @@
-// ProductDescription.js
-import styles from "./ProductDescription.module.css";
 import { useLanguage } from "../context/useLanguage";
 import { Link } from "react-router-dom";
 
-function ProductDescription() {
+function Weights() {
   const { language, translations } = useLanguage();
-
   const products = [
     {
       id: 1,
-      name: translations[language].product1,
-      description: translations[language].description1,
-      image: "https://i.imgur.com/RxODxfH.jpg",
-      link: "/weights",
+      name: translations[language].dumbbells,
+      description: translations[language].descriptionDumbbells,
+      image: "https://i.imgur.com/y7xXSK2.jpg",
+      link: "/dumbbells",
     },
     {
       id: 2,
-      name: translations[language].product2,
-      description: translations[language].description2,
-      image: "https://i.imgur.com/iDxkTnw.jpg",
+      name: translations[language].barbells,
+      description: translations[language].descriptionBarbells,
+      image: "https://i.imgur.com/8FkvkTE.jpg",
+      link: "/barbells",
     },
     {
       id: 3,
-      name: translations[language].product3,
-      description: translations[language].description3,
-      image: "https://i.imgur.com/5GkGTXH.jpg",
-    },
-    {
-      id: 4,
-      name: translations[language].product4,
-      description: translations[language].description4,
-      image: "https://i.imgur.com/NWTgIOe.jpg",
+      name: translations[language].barbellDiscs,
+      description: translations[language].descriptionBarbellDiscs,
+      image: "https://i.imgur.com/E1JXl1s.jpg",
+      link :"/discs"
     },
   ];
 
   return (
-    <div className="container">
+    <div className="container mt-5">
+      <h1 className="text-center mb-4">{translations[language].weights}</h1>
       <div className="row">
         {products.map((product) => (
           <div key={product.id} className="col-md-6 col-lg-4 mb-4">
-            <div className={`card ${styles.cardCustom}`}>
+            <div className="card h-100">
               <img
                 src={product.image}
-                className={`card-img-top ${styles.cardImage}`}
+                className="card-img-top"
                 alt={product.name}
               />
               <div className="card-body">
@@ -62,4 +56,4 @@ function ProductDescription() {
   );
 }
 
-export default ProductDescription;
+export default Weights;

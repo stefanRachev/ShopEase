@@ -4,17 +4,18 @@ import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Content from "./layout/Content";
+//import Weights from "./pages/Weights";
 
 function App() {
   return (
     <UserProvider>
       <CartProvider>
-      <LanguageProvider> 
-        <Header />
+        <LanguageProvider>
+          <Header />
+          {/* <Weights /> */}
+          <Content />
 
-        <Content />
-
-        <Footer />
+          <Footer />
         </LanguageProvider>
       </CartProvider>
     </UserProvider>

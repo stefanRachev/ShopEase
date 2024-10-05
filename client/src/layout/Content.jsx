@@ -5,6 +5,7 @@ import Cart from "../pages/Cart";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Logout from "../pages/Logout";
+import Weights from "../pages/Weights";
 
 
 function Content() {
@@ -15,6 +16,7 @@ function Content() {
       <Route path="/register" element={<Register />} />
       <Route path="/logout" element={<Logout />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/weights" element={<Weights />} />
       <Route path="/cart" element={<Cart />} />
       {/* Добави още маршрути тук */}
     </Routes>
