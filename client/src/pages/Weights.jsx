@@ -23,7 +23,7 @@ function Weights() {
       name: translations[language].barbellDiscs,
       description: translations[language].descriptionBarbellDiscs,
       image: "https://i.imgur.com/E1JXl1s.jpg",
-      link :"/discs"
+      link: "/discs",
     },
   ];
 
@@ -39,14 +39,14 @@ function Weights() {
                 className="card-img-top"
                 alt={product.name}
               />
-              <div className="card-body">
+              <div className="card-body flex-grow-1">
                 <h5 className="card-title">{product.name}</h5>
                 <p className="card-text">{product.description}</p>
-                {product.link && (
-                  <Link to={product.link} className="btn btn-primary">
-                    {translations[language].takeALook} {product.name}
-                  </Link>
-                )}
+              </div>
+              <div className="card-footer">
+                <Link to={product.link} className="btn btn-primary">
+                  {translations[language].takeALook} {product.name}
+                </Link>
               </div>
             </div>
           </div>

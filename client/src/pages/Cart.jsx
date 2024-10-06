@@ -1,47 +1,63 @@
+//Cart.jsx
+
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext"; // Ако използваш контекст за управление на състоянието на кошницата
-import { Button, Table } from "react-bootstrap";
+import { CartContext } from "../context/CartContext";
+import { Button, Table, Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const { cartItems, removeFromCart, totalAmount } = useContext(CartContext);
 
   return (
-    <div className="cart-container">
-      <h2>My Cart</h2>
+    <Container className="cart-container mt-5">
+      <h2 className="text-center mb-4">My Cart</h2>
       {cartItems.length === 0 ? (
-        <p>Your cart is empty</p>
+        <div className="text-center">
+          <p>Your cart is empty</p>
+          <Link to="/products" className="btn btn-primary">
+            Browse Products
+          </Link>
+        </div>
       ) : (
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cartItems.map((item) => (
-              <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>{item.price}</td>
-                <td>{item.quantity}</td>
-                <td>
-                  <Button
-                    variant="danger"
-                    onClick={() => removeFromCart(item.id)}
-                  >
-                    Remove
-                  </Button>
-                </td>
+        <>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+            <tbody>
+              {cartItems.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.name}</td>
+                  <td>{item.price} лв</td>
+                  <td>{item.quantity}</td>
+                  <td>
+                    <Button
+                      variant="danger"
+                      onClick={() => removeFromCart(item.id)}
+                    >
+                      Remove
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+          <Row className="mt-3">
+            <Col>
+              <h3>Total: {totalAmount} лв</h3>
+            </Col>
+            <Col className="text-right">
+              <Button variant="success">Proceed to Checkout</Button>
+            </Col>
+          </Row>
+        </>
       )}
-      <h3>Total: ${totalAmount}</h3>
-      <Button variant="success">Proceed to Checkout</Button>
-    </div>
+    </Container>
   );
 }
 
