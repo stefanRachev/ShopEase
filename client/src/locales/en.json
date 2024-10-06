@@ -1,6 +1,9 @@
 {
   "welcome": "Welcome to ShopEase!",
   "login": "Login",
+  "logout":"Logout",
+  "noAccount":"Don't have an account?",
+  "registerHere":"Create an account here",
   "register": "Register",
   "enterEmail": "Enter email",
   "password": "Password",

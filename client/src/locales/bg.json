@@ -1,6 +1,9 @@
 {
   "welcome": "Добре дошли в ShopEase",
   "login": "Вход",
+  "logout":"Излез",
+  "noAccount":"Нямате акаунт?",
+  "registerHere":"Създайте акаунт тук",
   "register": "Регистрация",
   "enterEmail": "Имейл адрес",
   "products": "Продукти",

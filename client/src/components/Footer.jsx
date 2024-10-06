@@ -1,17 +1,17 @@
-import classNames from "classnames";
-import styles from "./Footer.module.css";
+// Footer.jsx
+
 import { Container } from "react-bootstrap";
 
 function Footer() {
   return (
-    <footer
-    className={classNames("bg-dark", "mt-5", "p-3", "text-center", styles.footer)}
-    >
+    <footer className="bg-dark p-3 text-center">
       <Container>
-        <p>© 2024 ShopEase. All Rights Reserved.</p>
+        <p className="text-light mb-0">© 2024 ShopEase. All Rights Reserved.</p>
       </Container>
     </footer>
   );
 }
 
 export default Footer;
+
+

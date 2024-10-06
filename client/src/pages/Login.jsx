@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { useLanguage } from "../context/useLanguage";
 
@@ -98,6 +98,10 @@ function Login() {
               {translations[language].login}
             </Button>
           </Form>
+          <p className="mt-3">
+            {translations[language].noAccount}{" "}
+            <Link to="/register">{translations[language].registerHere}</Link>
+          </p>
         </Col>
       </Row>
     </Container>
