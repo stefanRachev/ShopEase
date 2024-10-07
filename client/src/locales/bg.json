@@ -20,6 +20,7 @@
   "testimonials": "Отзиви от клиенти",
   "testimonialQuote": "FitShop промени начина, по който тренирам!",
   "discoverMore": "Открий повече",
+  "diameter":"мм",
   "about": "За нас",
   "contact": "Контакти",
   "elevate": "Подобрете тренировката си!",
@@ -37,6 +38,12 @@
   "description2": "Голям избор и качество на ниво.",
   "description3": "Голям избор за вашия фитнес!",
   "description4": "Всичко за отделните спортове!",
+  "description5": "Олимпийски крив лост",
+  "description6": "Класически Олимпийски лост",
+  "description7": "Крив лост",
+  "description8": "Крив лост",
+  "description9": "Лост за дъмбел",
+  "description10": "Прав лост 150 cm",
   "featuredProducts": "Избрани продукти",
   "addToCart": "Добави в количката",
   "dumbbells": "Хексагонален Дъмбел пълен сет",
@@ -49,7 +56,10 @@
   "descriptionBarbellDiscs": "Всякакви размери, Олимписки дискове ,дискове за регулируеми дъмбели",
   "dumbbellsDescription": "Професионални дъмбели",
   "dumbbellsDescription1": "Налични от 2.5 кг до 40 кг, идеални за домашна и професионална употреба.",
+  "barbellsDescription":"Лостове за дискове",
+  "barbellsDescription1":"Олимпийски Ф50,Ф30,Ф28",
   "buyNow": "Купи сега",
-  "price":"Цена: ",
-  "lv":"лв"
+  "price": "Цена: ",
+  "lv": "лв",
+  "kg": "кг"
 }

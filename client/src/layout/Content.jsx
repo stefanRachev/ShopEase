@@ -7,6 +7,7 @@ import Register from "../pages/Register";
 import Logout from "../pages/Logout";
 import Weights from "../pages/Weights";
 import Dumbbells from "../pages/Dumbbells";
+import Barbells from "../pages/Barbells";
 
 
 
@@ -20,6 +21,7 @@ function Content() {
       <Route path="/products" element={<Products />} />
       <Route path="/weights" element={<Weights />} />
       <Route path="/dumbbells" element={<Dumbbells />} />
+      <Route path="/barbells" element={<Barbells />} />
       <Route path="/cart" element={<Cart />} />
       {/* Добави още маршрути тук */}
     </Routes>

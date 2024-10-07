@@ -124,11 +124,10 @@ function Dumbbells() {
                 alt={`Дъмбел ${dumbbell.weight} кг`}
               />
               <div className="card-body">
-                <h5 className="card-title">{dumbbell.weight} кг</h5>
+                <h5 className="card-title">{dumbbell.weight} {translations[language].kg}</h5>
                 <p className="card-text">{translations[language].price}{dumbbell.price} {translations[language].lv}</p>
                 <button
                   className="btn btn-primary"
-                  //onClick={() => addToCart(dumbbell)} // Използвай директно addToCart
                   onClick={() => handleAddToCart(dumbbell)}
                 >
                   {translations[language].buyNow}

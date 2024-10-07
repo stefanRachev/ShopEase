@@ -20,6 +20,7 @@
   "testimonials": "Customer Testimonials",
   "testimonialQuote": "FitShop changed the way I train!",
   "discoverMore": "Discover More",
+  "diameter":"mm",
   "about": "About Us",
   "contact": "Contact",
   "elevate": "Elevate Your Workout!",
@@ -37,6 +38,12 @@
   "description2": "Great selection and level quality.",
   "description3": "Great choice for your fitness!",
   "description4": "All about individual sports!",
+  "description5":"Olympic barbell crooked",
+  "description6":"Classic Olympic bar",
+  "description7": "Barbell crooked",
+  "description8": "Barbell crooked",
+  "description9": "Dumbbell bar",
+  "description10": "Straight bar 150 cm",
   "featuredProducts": "Featured Products",
   "addToCart": "Add to Cart",
   "dumbbells": "Hexagonal Dumbbell full set",
@@ -49,7 +56,10 @@
   "descriptionBarbellDiscs": "All sizes, Olympic discs, discs for adjustable dumbbells",
   "dumbbellsDescription":"Professional dumbbells",
   "dumbbellsDescription1":"Available from 2.5kg to 40kg, ideal for home and professional use.",
+  "barbellsDescription":"Disc levers",
+  "barbellsDescription1":"Olympic F50, F30, F28",
   "buyNow":"Buy now",
   "price":"Price: ",
-  "lv":"lv"
+  "lv":"lv",
+  "kg":"kg"
 }
