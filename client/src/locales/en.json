@@ -46,5 +46,10 @@
   "barbells": "Barbells",
   "descriptionBarbells": "Barbells for discs and short, long, Olympic",
   "barbellDiscs": "Discs for barbells",
-  "descriptionBarbellDiscs": "All sizes, Olympic discs, discs for adjustable dumbbells"
+  "descriptionBarbellDiscs": "All sizes, Olympic discs, discs for adjustable dumbbells",
+  "dumbbellsDescription":"Professional dumbbells",
+  "dumbbellsDescription1":"Available from 2.5kg to 40kg, ideal for home and professional use.",
+  "buyNow":"Buy now",
+  "price":"Price: ",
+  "lv":"lv"
 }
