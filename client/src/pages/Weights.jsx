@@ -43,8 +43,8 @@ function Weights() {
                 <h5 className="card-title">{product.name}</h5>
                 <p className="card-text">{product.description}</p>
               </div>
-              <div className="card-footer">
-                <Link to={product.link} className="btn btn-primary">
+              <div className="card-footer d-flex justify-content-center">
+                <Link to={product.link} className="btn btn-primary w-100">
                   {translations[language].takeALook} {product.name}
                 </Link>
               </div>
