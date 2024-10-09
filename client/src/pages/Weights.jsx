@@ -23,7 +23,7 @@ function Weights() {
       name: translations[language].barbellDiscs,
       description: translations[language].descriptionBarbellDiscs,
       image: "https://i.imgur.com/E1JXl1s.jpg",
-      link: "/discs",
+      link: "/weight-plates",
     },
   ];
 
