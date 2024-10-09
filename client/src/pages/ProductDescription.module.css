@@ -1,16 +1,16 @@
-/* Стилове за картите */
+
 .cardCustom {
-  width: 100%; /* Картите заемат 100% от родителя си */
+  width: 100%;
 }
 
 .cardImage {
-  height: 200px; /* Височината на изображението */
-  object-fit: cover; /* Запазва съотношението на изображението */
+  height: 200px; 
+  object-fit: cover; 
 }
 
-/* Адаптивност за по-малки екрани */
+
 @media (max-width: 768px) {
   .cardCustom {
-    margin-bottom: 20px; /* Разстояние между картите на мобилни устройства */
+    margin-bottom: 20px; 
   }
 }
