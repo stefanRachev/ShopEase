@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
 
 function FitnessEquipment() {
   const [show, setShow] = useState(false);
@@ -12,11 +12,11 @@ function FitnessEquipment() {
       id: 1,
       name: "Bench Press",
       description: "A great tool for building upper body strength.",
-      image: "https://i.imgur.com/YOUR_IMAGE_1.jpg",
+      image: "https://i.imgur.com/t8CKyQn.jpg",
       details: {
         images: [
-          "https://i.imgur.com/YOUR_IMAGE_1_1.jpg",
-          "https://i.imgur.com/YOUR_IMAGE_1_2.jpg",
+          "https://i.imgur.com/zfo5cx2.jpg",
+          "https://i.imgur.com/7xAdpGD.jpg",
         ],
         fullDescription: "This bench press is designed for heavy lifting...",
       },
@@ -25,11 +25,37 @@ function FitnessEquipment() {
       id: 2,
       name: "Squat Rack",
       description: "Essential for leg workouts and strength training.",
-      image: "https://i.imgur.com/YOUR_IMAGE_2.jpg",
+      image: "https://i.imgur.com/ekW3zC1.jpg",
       details: {
         images: [
-          "https://i.imgur.com/YOUR_IMAGE_2_1.jpg",
-          "https://i.imgur.com/YOUR_IMAGE_2_2.jpg",
+          "https://i.imgur.com/WbzX0oy.jpg",
+          "https://i.imgur.com/QXtBEIG.jpg",
+        ],
+        fullDescription: "This squat rack offers stability and safety...",
+      },
+    },
+    {
+      id: 3,
+      name: "Rowing machine",
+      description: "Essential for leg workouts and strength training.",
+      image: "https://i.imgur.com/bEkLu0T.jpg",
+      details: {
+        images: [
+          "https://i.imgur.com/GUTdB3a.jpg",
+          "https://i.imgur.com/qRUB7Kh.jpg",
+        ],
+        fullDescription: "This squat rack offers stability and safety...",
+      },
+    },
+    {
+      id: 4,
+      name: "Treadmill",
+      description: "Essential for leg workouts and strength training.",
+      image: "https://i.imgur.com/a0rcIWw.jpg",
+      details: {
+        images: [
+          "https://i.imgur.com/jxxYBjZ.jpg",
+          "https://i.imgur.com/HPIVecl.jpg",
         ],
         fullDescription: "This squat rack offers stability and safety...",
       },
