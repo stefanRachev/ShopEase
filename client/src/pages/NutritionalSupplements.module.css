@@ -1,0 +1,19 @@
+.arrow {
+    font-size: 50px;
+    color: #007bff; 
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%); 
+    z-index: 1; 
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px; 
+  }
+  
+  

@@ -1,9 +1,37 @@
-
+import styles from "../pages/NutritionalSupplements.module.css";
 import { useLanguage } from "../context/useLanguage";
 import { Link } from "react-router-dom";
-import Slider from "react-slick"; 
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import PropTypes from "prop-types";
+
+const SampleNextArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <div className={`${styles.arrow} ${styles.next}`} onClick={onClick}>
+      &#x203A;
+    </div>
+  );
+};
+
+SampleNextArrow.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
+
+const SamplePrevArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <div className={`${styles.arrow} ${styles.prev}`} onClick={onClick}>
+      &#x2039;
+    </div>
+  );
+};
+
+SamplePrevArrow.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 
 function NutritionalSupplements() {
   const { language, translations } = useLanguage();
@@ -36,19 +64,19 @@ function NutritionalSupplements() {
       image: "https://i.imgur.com/HpibGkT.jpg",
       link: "/weight-plates",
     },
-    
   ];
 
-  
   const sliderSettings = {
-    dots: false, 
+    dots: false,
     infinite: true,
-    speed: 2000, 
+    speed: 2000,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true, 
-    autoplaySpeed: 3000, 
-    cssEase: "linear", 
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -60,19 +88,20 @@ function NutritionalSupplements() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1, 
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
     ],
+    // afterChange: (index) => setCurrentSlide(index),
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 position-relative">
       <h1 className="text-center mb-4">{translations[language].weights}</h1>
       <Slider {...sliderSettings}>
         {products.map((product) => (
-          <div key={product.id} className="p-2">
+          <div key={product.id} className="col-12 col-md-6 col-lg-4 p-2">
             <div className="card h-100">
               <img
                 src={product.image}
@@ -96,4 +125,4 @@ function NutritionalSupplements() {
   );
 }
 
-export default NutritionalSupplements;
+export default NutritionalSupplements; // Экспорт на компонента
