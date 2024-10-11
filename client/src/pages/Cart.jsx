@@ -30,11 +30,12 @@ function Cart() {
               </tr>
             </thead>
             <tbody>
-              {cartItems.map((item) => (
-                <tr key={item.id}>
+              {cartItems.map((item, index) => (
+                <tr key={`${item.id}-${index}`}>
                   <td>{item.name}</td>
                   <td>{item.price} лв</td>
                   <td>{item.quantity}</td>
+                  <td>{item.description}</td>
                   <td>
                     <Button
                       variant="danger"
