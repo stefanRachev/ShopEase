@@ -1,66 +1,66 @@
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-//import "bootstrap/dist/css/bootstrap.min.css";
+import { useLanguage } from "../context/useLanguage";
 
 function FitnessEquipment() {
   const [show, setShow] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const { language, translations } = useLanguage();
 
   const products = [
     {
       id: 1,
-      name: "Bench Press",
-      description: "A great tool for building upper body strength.",
+      name: translations[language].benchPress,
+      description: translations[language].descriptionBenches,
       image: "https://i.imgur.com/t8CKyQn.jpg",
       details: {
         images: [
           "https://i.imgur.com/zfo5cx2.jpg",
           "https://i.imgur.com/7xAdpGD.jpg",
         ],
-        fullDescription: "This bench press is designed for heavy lifting...",
+        fullDescription: translations[language].fullDescriptionBench,
       },
     },
     {
       id: 2,
-      name: "Squat Rack",
-      description: "Essential for leg workouts and strength training.",
+      name: translations[language].squatRack,
+      description: translations[language].descriptionSquatRack,
       image: "https://i.imgur.com/ekW3zC1.jpg",
       details: {
         images: [
           "https://i.imgur.com/WbzX0oy.jpg",
           "https://i.imgur.com/QXtBEIG.jpg",
         ],
-        fullDescription: "This squat rack offers stability and safety...",
+        fullDescription: translations[language].fullDescriptionSquatRack,
       },
     },
     {
       id: 3,
-      name: "Rowing machine",
-      description: "Essential for leg workouts and strength training.",
+      name: translations[language].rowingMachine,
+      description: translations[language].descriptionRowingMachine,
       image: "https://i.imgur.com/bEkLu0T.jpg",
       details: {
         images: [
           "https://i.imgur.com/GUTdB3a.jpg",
           "https://i.imgur.com/qRUB7Kh.jpg",
         ],
-        fullDescription: "This squat rack offers stability and safety...",
+        fullDescription: translations[language].fullDescriptionRowingMachine,
       },
     },
     {
       id: 4,
-      name: "Treadmill",
-      description: "Essential for leg workouts and strength training.",
+      name: translations[language].treadmill,
+      description: translations[language].descriptionTreadmill,
       image: "https://i.imgur.com/a0rcIWw.jpg",
       details: {
         images: [
           "https://i.imgur.com/jxxYBjZ.jpg",
           "https://i.imgur.com/HPIVecl.jpg",
         ],
-        fullDescription: "This squat rack offers stability and safety...",
+        fullDescription: translations[language].fullDescriptionTreadmill,
       },
     },
-    // Добави още продукти тук
   ];
 
   const handleShow = (product) => {
