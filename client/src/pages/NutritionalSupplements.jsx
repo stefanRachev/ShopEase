@@ -45,24 +45,17 @@ function NutritionalSupplements() {
     },
     {
       id: 2,
-      name: translations[language].barbells,
-      description: translations[language].descriptionBarbells,
+      name: translations[language].aminoAcids,
+      description: translations[language].descriptionAminoAcids,
       image: "https://i.imgur.com/Rp0z1Kn.jpg",
-      link: "/barbells",
+      link: "/description-aminoAcids",
     },
     {
       id: 3,
-      name: translations[language].barbellDiscs,
-      description: translations[language].descriptionBarbellDiscs,
+      name: translations[language].vitamins,
+      description: translations[language].descriptionVitamins,
       image: "https://i.imgur.com/idpp3Bb.jpg",
-      link: "/weight-plates",
-    },
-    {
-      id: 4,
-      name: translations[language].barbellDiscs,
-      description: translations[language].descriptionBarbellDiscs,
-      image: "https://i.imgur.com/HpibGkT.jpg",
-      link: "/weight-plates",
+      link: "/vitamins",
     },
   ];
 
@@ -93,12 +86,11 @@ function NutritionalSupplements() {
         },
       },
     ],
-    // afterChange: (index) => setCurrentSlide(index),
   };
 
   return (
-    <div className="container mt-5 position-relative">
-      <h1 className="text-center mb-4">{translations[language].weights}</h1>
+    <div className={`${styles.container} mt-5 position-relative`}>
+      <h1 className="text-center mb-4">{translations[language].nutritionalSupplements}</h1>
       <Slider {...sliderSettings}>
         {products.map((product) => (
           <div key={product.id} className="col-12 col-md-6 col-lg-4 p-2">
@@ -125,4 +117,4 @@ function NutritionalSupplements() {
   );
 }
 
-export default NutritionalSupplements; // Экспорт на компонента
+export default NutritionalSupplements;

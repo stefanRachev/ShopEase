@@ -26,6 +26,7 @@ function ProductDescription() {
       name: translations[language].product3,
       description: translations[language].description3,
       image: "https://i.imgur.com/5GkGTXH.jpg",
+      link: "/fitness-equipment",
     },
     {
       id: 4,

@@ -15,5 +15,12 @@
   .next {
     right: 10px; 
   }
+
+  .container {
+    background-color:orangered;
+    padding: 20px; 
+    border-radius: 8px; 
+  }
+  
   
   

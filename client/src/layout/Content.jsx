@@ -10,7 +10,7 @@ import Dumbbells from "../pages/Dumbbells";
 import Barbells from "../pages/Barbells";
 import WeightPlates from "../pages/WeightPlates";
 import NutritionalSupplements from "../pages/NutritionalSupplements";
-
+import FitnessEquipment from "../pages/FitnessEquipment";
 
 
 function Content() {
@@ -23,6 +23,7 @@ function Content() {
       <Route path="/products" element={<Products />} />
       <Route path="/weights" element={<Weights />} />
       <Route path="/nutritional-supplements" element={<NutritionalSupplements />} />
+      <Route path="/fitness-equipment" element={<FitnessEquipment />} />
       <Route path="/dumbbells" element={<Dumbbells />} />
       <Route path="/weight-plates" element={<WeightPlates />} />
       <Route path="/barbells" element={<Barbells />} />
