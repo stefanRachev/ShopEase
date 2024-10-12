@@ -13,7 +13,7 @@ import NutritionalSupplements from "../pages/NutritionalSupplements";
 import FitnessEquipment from "../pages/FitnessEquipment";
 import Proteins from "../pages/Proteins";
 import AminoAcids from "../pages/AminoAcids";
-
+import Vitamins from "../pages/Vitamins";
 
 function Content() {
   return (
@@ -27,6 +27,7 @@ function Content() {
       <Route path="/nutritional-supplements" element={<NutritionalSupplements />} />
       <Route path="/proteins" element={<Proteins />} />
       <Route path="/amino-acids" element={<AminoAcids />} />
+      <Route path="/vitamins" element={<Vitamins />} />
       <Route path="/fitness-equipment" element={<FitnessEquipment />} />
       <Route path="/dumbbells" element={<Dumbbells />} />
       <Route path="/weight-plates" element={<WeightPlates />} />
