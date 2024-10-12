@@ -48,7 +48,7 @@ function NutritionalSupplements() {
       name: translations[language].aminoAcids,
       description: translations[language].descriptionAminoAcids,
       image: "https://i.imgur.com/Rp0z1Kn.jpg",
-      link: "/description-aminoAcids",
+      link: "/amino-acids",
     },
     {
       id: 3,

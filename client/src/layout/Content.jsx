@@ -12,6 +12,7 @@ import WeightPlates from "../pages/WeightPlates";
 import NutritionalSupplements from "../pages/NutritionalSupplements";
 import FitnessEquipment from "../pages/FitnessEquipment";
 import Proteins from "../pages/Proteins";
+import AminoAcids from "../pages/AminoAcids";
 
 
 function Content() {
@@ -25,6 +26,7 @@ function Content() {
       <Route path="/weights" element={<Weights />} />
       <Route path="/nutritional-supplements" element={<NutritionalSupplements />} />
       <Route path="/proteins" element={<Proteins />} />
+      <Route path="/amino-acids" element={<AminoAcids />} />
       <Route path="/fitness-equipment" element={<FitnessEquipment />} />
       <Route path="/dumbbells" element={<Dumbbells />} />
       <Route path="/weight-plates" element={<WeightPlates />} />
