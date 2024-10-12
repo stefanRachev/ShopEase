@@ -1,31 +1,40 @@
-.sport-card {
+.sportCard {
     text-decoration: none;
     color: inherit;
   }
   
-  .hover-card {
+  .hoverCard {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .hover-card:hover {
+  .hoverCard:hover,
+  .activeCard {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
   
-  .image-wrapper {
+  .imageWrapper {
     overflow: hidden;
-    height: 200px; /* Можеш да коригираш височината според нуждите си */
+    height: 200px; 
   }
   
-  .image-wrapper img {
+  .imageWrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Запазва пропорциите на изображението */
+    object-fit: cover;
   }
   
-  .card-title {
+  .cardTitle {
     font-size: 1.25rem;
     font-weight: bold;
     text-align: center;
+  }
+  
+  
+  @media (hover: none) {
+    .hoverCard:hover {
+      transform: none;
+      box-shadow: none;
+    }
   }
   
