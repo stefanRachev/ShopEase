@@ -1,8 +1,174 @@
+import { useState } from "react";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import { useLanguage } from "../context/useLanguage";
+import { useCart } from "../context/useCart";
+import { useUser } from "../context/useUser";
+import { useNavigate } from "react-router-dom";
+
 function Proteins() {
+  const [show, setShow] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const { language, translations } = useLanguage();
+  const { user } = useUser();
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const products = [
+    {
+      id: "protein-1",
+      name: translations[language].proteinPowder,
+      description: translations[language].proteinBrand,
+      price: 25,
+      quantity: 1,
+      image: "https://i.imgur.com/Dr54bKs.jpg",
+      details: {
+        fullDescription: translations[language].fullDescriptionProteinPowder,
+        additionalInfo: [
+          "Contains 20g of protein per serving.",
+          "Rich in amino acids for muscle recovery.",
+          "Available in various flavors: chocolate, vanilla, and strawberry.",
+        ],
+      },
+    },
+    {
+      id: "protein-2",
+      name: translations[language].wheyProtein,
+      description: translations[language].proteinBrand,
+      price: 30,
+      quantity: 1,
+      image: "https://i.imgur.com/Dr54bKs.jpg",
+      details: {
+        fullDescription: translations[language].fullDescriptionWheyProtein,
+        additionalInfo: [
+          "High-quality whey protein isolate.",
+          "Low sugar and low fat.",
+          "Ideal for post-workout recovery.",
+        ],
+      },
+    },
+    {
+      id: "protein-3",
+      name: translations[language].wheyProtein,
+      description: translations[language].proteinBrand,
+      price: 30,
+      quantity: 1,
+      image: "https://i.imgur.com/Dr54bKs.jpg",
+      details: {
+        fullDescription: translations[language].fullDescriptionWheyProtein,
+        additionalInfo: [
+          "High-quality whey protein isolate.",
+          "Low sugar and low fat.",
+          "Ideal for post-workout recovery.",
+        ],
+      },
+    },
+    {
+      id: "protein-4",
+      name: translations[language].wheyProtein,
+      description: translations[language].proteinBrand,
+      price: 30,
+      quantity: 1,
+      image: "https://i.imgur.com/Dr54bKs.jpg",
+      details: {
+        fullDescription: translations[language].fullDescriptionWheyProtein,
+        additionalInfo: [
+          "High-quality whey protein isolate.",
+          "Low sugar and low fat.",
+          "Ideal for post-workout recovery.",
+        ],
+      },
+    },
+    {
+      id: "protein-5",
+      name: translations[language].wheyProtein,
+      description: translations[language].proteinBrand,
+      price: 30,
+      quantity: 1,
+      image: "https://i.imgur.com/Dr54bKs.jpg",
+      details: {
+        fullDescription: translations[language].fullDescriptionWheyProtein,
+        additionalInfo: [
+          "High-quality whey protein isolate.",
+          "Low sugar and low fat.",
+          "Ideal for post-workout recovery.",
+        ],
+      },
+    },
+  ];
+
+  const handleAddToCart = (product) => {
+    if (!user) {
+      navigate("/login");
+    } else {
+      addToCart(product);
+    }
+  };
+
+  const handleShow = (product) => {
+    setSelectedProduct(product);
+    setShow(true);
+  };
+
+  const handleClose = () => {
+    setShow(false);
+    setSelectedProduct(null);
+  };
+
   return (
-    <div>
-      <h1>Proteins</h1>
-      <p>Proteins are large biomolecules, or macromolecules, consisting of one or more long chains of amino acid residues. Proteins perform a vast array of functions within organisms, including catalysing metabolic reactions, DNA replication, responding to stimuli, providing structure to cells and organisms, and transporting molecules from one location to another. Proteins differ from one another primarily in their sequence of amino acids, which is dictated by the nucleotide sequence of their genes, and which usually results in protein folding into a specific three-dimensional structure that determines its activity.</p>
+    <div className="container mt-5">
+      <h1 className="text-center mb-4">{translations[language].proteins}</h1>
+      <div className="row">
+        {products.map((product) => (
+          <div key={product.id} className="col-md-4 mb-4">
+            <div className="card">
+              <img
+                src={product.image}
+                className="card-img-top"
+                alt={product.name}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{product.name}</h5>
+                <p className="card-text">{product.description}</p>
+                <p className="card-text">
+                  {translations[language].price}
+                  {product.price} {translations[language].lv}
+                </p>
+                <Button variant="primary" onClick={() => handleShow(product)}>
+                  {translations[language].takeALook}
+                </Button>{" "}
+                <Button
+                  variant="success"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  {translations[language].buyNow}
+                </Button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {selectedProduct && (
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>{selectedProduct.name}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>{selectedProduct.details.fullDescription}</p>
+            <ul>
+              {selectedProduct.details.additionalInfo.map((info, index) => (
+                <li key={index}>{info}</li>
+              ))}
+            </ul>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </div>
   );
 }

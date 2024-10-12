@@ -111,5 +111,10 @@
   "price": "Price: ",
   "lv": "lv",
   "kg": "kg",
-  "fitnessEquipment": "Fitness Equipment"
+  "fitnessEquipment": "Fitness Equipment",
+  "fullDescriptionProteinPowder": "Protein powder for muscle growth",
+  "fullDescriptionWheyProtein": "Whey protein for muscle recovery",
+  "proteinPowder": "Protein Powder",
+  "wheyProtein": "Whey Protein",
+  "proteinBrand": "The brand of the product is exemplary"
 }
