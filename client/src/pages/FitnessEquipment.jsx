@@ -16,7 +16,7 @@ function FitnessEquipment() {
 
   const products = [
     {
-      id: 1,
+      id: "bench-1",
       name: translations[language].benchPress,
       description: translations[language].descriptionBenches,
       price: 25,
@@ -31,7 +31,7 @@ function FitnessEquipment() {
       },
     },
     {
-      id: 2,
+      id: "rack-1",
       name: translations[language].squatRack,
       price: 25,
       quantity: 1,
@@ -46,7 +46,7 @@ function FitnessEquipment() {
       },
     },
     {
-      id: 3,
+      id: "rower-1",
       name: translations[language].rowingMachine,
       description: translations[language].descriptionRowingMachine,
       price: 25,
@@ -61,7 +61,7 @@ function FitnessEquipment() {
       },
     },
     {
-      id: 4,
+      id: "treadmill-1",
       name: translations[language].treadmill,
       description: translations[language].descriptionTreadmill,
       price: 25,

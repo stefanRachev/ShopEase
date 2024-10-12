@@ -12,7 +12,7 @@ function Barbells() {
 
   const barbells = [
     {
-      id: 1,
+      id: "barbell-1",
       name: translations[language].barbell1,
       weight: 10,
       price: 100,
@@ -22,7 +22,7 @@ function Barbells() {
       description: translations[language].description5,
     },
     {
-      id: 2,
+      id: "barbell-2",
       name: translations[language].barbell2,
       weight: 20,
       price: 300,
@@ -32,7 +32,7 @@ function Barbells() {
       description: translations[language].description6,
     },
     {
-      id: 3,
+      id: "barbell-3",
       name: translations[language].barbell3,
       weight: 8,
       price: 50,
@@ -42,7 +42,7 @@ function Barbells() {
       description: translations[language].description7,
     },
     {
-      id: 4,
+      id: "barbell-4",
       name: translations[language].barbell4,
       weight: 6,
       price: 45,
@@ -52,7 +52,7 @@ function Barbells() {
       description: translations[language].description8,
     },
     {
-      id: 5,
+      id: "barbell-5",
       name: translations[language].barbell5,
       weight: 2,
       price: 18,
@@ -62,7 +62,7 @@ function Barbells() {
       description: translations[language].description9,
     },
     {
-      id: 6,
+      id: "barbell-6",
       name: translations[language].barbell6,
       weight: 2,
       price: 20,
@@ -72,7 +72,7 @@ function Barbells() {
       description: translations[language].description9,
     },
     {
-      id: 7,
+      id: "barbell-7",
       name: translations[language].barbell7,
       weight: 10,
       price: 55,
@@ -82,7 +82,7 @@ function Barbells() {
       description: translations[language].description10,
     },
     {
-      id: 8,
+      id: "barbell-8",
       name: translations[language].barbell8,
       weight: 10,
       price: 55,

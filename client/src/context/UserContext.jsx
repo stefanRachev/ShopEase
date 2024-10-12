@@ -125,6 +125,8 @@ export const UserProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("tokenIssuedTime");
+    localStorage.removeItem("cartItems");
+    localStorage.removeItem("totalAmount");
     setUser(null);
     setToken(null);
     setTokenIssuedTime(null);

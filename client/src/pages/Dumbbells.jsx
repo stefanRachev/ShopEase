@@ -12,7 +12,7 @@ function Dumbbells() {
 
   const products = [
     {
-      id: 1,
+      id: "dumbbell-1",
       name: translations[language].dumbbell1,
       weight: 2.5,
       price: 15,
@@ -20,7 +20,7 @@ function Dumbbells() {
       image: "https://i.imgur.com/Wvxru9f.jpg",
     },
     {
-      id: 2,
+      id: "dumbbell-2",
       name: translations[language].dumbbell2,
       weight: 5,
       price: 25,
@@ -28,7 +28,7 @@ function Dumbbells() {
       image: "https://i.imgur.com/Wvxru9f.jpg",
     },
     {
-      id: 3,
+      id: "dumbbell-3",
       name: translations[language].dumbbell3,
       weight: 7.5,
       price: 35,
@@ -36,7 +36,7 @@ function Dumbbells() {
       image: "https://i.imgur.com/Wvxru9f.jpg",
     },
     {
-      id: 4,
+      id: "dumbbell-4",
       name: translations[language].dumbbell4,
       weight: 10,
       price: 45,
@@ -44,7 +44,7 @@ function Dumbbells() {
       image: "https://i.imgur.com/Wvxru9f.jpg",
     },
     {
-      id: 5,
+      id: "dumbbell-5",
       name: translations[language].dumbbell5,
       weight: 12.5,
       price: 55,
@@ -52,7 +52,7 @@ function Dumbbells() {
       image: "https://i.imgur.com/Wvxru9f.jpg",
     },
     {
-      id: 6,
+      id: "dumbbell-6",
       name: translations[language].dumbbell6,
       weight: 14,
       price: 55,
@@ -60,7 +60,7 @@ function Dumbbells() {
       image: "https://i.imgur.com/Wvxru9f.jpg",
     },
     {
-      id: 7,
+      id: "dumbbell-7",
       name: translations[language].dumbbell7,
       weight: 17.5,
       price: 55,
@@ -68,7 +68,7 @@ function Dumbbells() {
       image: "https://i.imgur.com/Wvxru9f.jpg",
     },
     {
-      id: 8,
+      id: "dumbbell-8",
       name: translations[language].dumbbell8,
       weight: 22,
       price: 55,
@@ -76,7 +76,7 @@ function Dumbbells() {
       image: "https://i.imgur.com/Wvxru9f.jpg",
     },
     {
-      id: 9,
+      id: "dumbbell-9",
       name: translations[language].dumbbell9,
       weight: 24,
       price: 55,
@@ -84,7 +84,7 @@ function Dumbbells() {
       image: "https://i.imgur.com/Wvxru9f.jpg",
     },
     {
-      id: 10,
+      id: "dumbbell-10",
       name: translations[language].dumbbell10,
       weight: 26,
       price: 55,
@@ -92,7 +92,7 @@ function Dumbbells() {
       image: "https://i.imgur.com/Wvxru9f.jpg",
     },
     {
-      id: 11,
+      id: "dumbbell-11",
       name: translations[language].dumbbell11,
       weight: 30,
       price: 55,
@@ -101,7 +101,7 @@ function Dumbbells() {
     },
 
     {
-      id: 12,
+      id: "dumbbell-12",
       name: translations[language].dumbbell12,
       weight: 40,
       price: 55,
@@ -136,8 +136,13 @@ function Dumbbells() {
                 alt={`Дъмбел ${product.weight} кг`}
               />
               <div className="card-body">
-                <h5 className="card-title">{product.weight} {translations[language].kg}</h5>
-                <p className="card-text">{translations[language].price}{product.price} {translations[language].lv}</p>
+                <h5 className="card-title">
+                  {product.weight} {translations[language].kg}
+                </h5>
+                <p className="card-text">
+                  {translations[language].price}
+                  {product.price} {translations[language].lv}
+                </p>
                 <button
                   className="btn btn-primary"
                   onClick={() => handleAddToCart(product)}

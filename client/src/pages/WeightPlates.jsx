@@ -11,7 +11,7 @@ function WeightPlates() {
 
   const plates = [
     {
-      id: 1,
+      id: "plate-1",
       weight: 5,
       price: 20,
       diameter: 50,
@@ -20,7 +20,7 @@ function WeightPlates() {
       description: translations[language].discDescription,
     },
     {
-      id: 2,
+      id: "plate-2",
       weight: 20,
       price: 50,
       diameter: 50,
@@ -29,7 +29,7 @@ function WeightPlates() {
       description: translations[language].discDescription,
     },
     {
-      id: 3,
+      id: "plate-3",
       weight: 10,
       price: 20,
       diameter: 30,
@@ -38,7 +38,7 @@ function WeightPlates() {
       description: translations[language].discDescription,
     },
     {
-      id: 4,
+      id: "plate-4",
       weight: 2,
       price: 8,
       diameter: 28,
@@ -47,7 +47,7 @@ function WeightPlates() {
       description: translations[language].discDescription,
     },
     {
-      id: 5,
+      id: "plate-5",
       weight: 10,
       price: 18,
       diameter: 28,
@@ -56,7 +56,7 @@ function WeightPlates() {
       description: translations[language].discDescription,
     },
     {
-      id: 6,
+      id: "plate-6",
       weight: 2,
       price: 20,
       diameter: 30,
@@ -65,7 +65,7 @@ function WeightPlates() {
       description: translations[language].discDescription,
     },
     {
-      id: 7,
+      id: "plate-7",
       weight: 10,
       price: 25,
       diameter: 30,
@@ -74,7 +74,7 @@ function WeightPlates() {
       description: translations[language].discDescription,
     },
     {
-      id: 8,
+      id: "plate-8",
       weight: 10,
       price: 40,
       diameter: 30,
