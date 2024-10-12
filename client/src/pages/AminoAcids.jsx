@@ -23,12 +23,8 @@ function AminoAcids() {
       quantity: 1,
       image: "https://i.imgur.com/begJJvo.jpg",
       details: {
-        fullDescription: translations[language].fullDescriptionProteinPowder,
-        additionalInfo: [
-          "Contains 20g of protein per serving.",
-          "Rich in amino acids for muscle recovery.",
-          "Available in various flavors: chocolate, vanilla, and strawberry.",
-        ],
+        fullDescription: translations[language].fullDescriptionAminoAcids,
+        additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
@@ -39,12 +35,8 @@ function AminoAcids() {
       quantity: 1,
       image: "https://i.imgur.com/begJJvo.jpg",
       details: {
-        fullDescription: translations[language].fullDescriptionWheyProtein,
-        additionalInfo: [
-          "High-quality whey protein isolate.",
-          "Low sugar and low fat.",
-          "Ideal for post-workout recovery.",
-        ],
+        fullDescription: translations[language].fullDescriptionAminoAcids,
+        additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
@@ -55,12 +47,8 @@ function AminoAcids() {
       quantity: 1,
       image: "https://i.imgur.com/begJJvo.jpg",
       details: {
-        fullDescription: translations[language].fullDescriptionWheyProtein,
-        additionalInfo: [
-          "High-quality whey protein isolate.",
-          "Low sugar and low fat.",
-          "Ideal for post-workout recovery.",
-        ],
+        fullDescription: translations[language].fullDescriptionAminoAcids,
+        additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
@@ -71,12 +59,8 @@ function AminoAcids() {
       quantity: 1,
       image: "https://i.imgur.com/begJJvo.jpg",
       details: {
-        fullDescription: translations[language].fullDescriptionWheyProtein,
-        additionalInfo: [
-          "High-quality whey protein isolate.",
-          "Low sugar and low fat.",
-          "Ideal for post-workout recovery.",
-        ],
+        fullDescription: translations[language].fullDescriptionAminoAcids,
+        additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
@@ -87,12 +71,8 @@ function AminoAcids() {
       quantity: 1,
       image: "https://i.imgur.com/begJJvo.jpg",
       details: {
-        fullDescription: translations[language].fullDescriptionWheyProtein,
-        additionalInfo: [
-          "High-quality whey protein isolate.",
-          "Low sugar and low fat.",
-          "Ideal for post-workout recovery.",
-        ],
+        fullDescription: translations[language].fullDescriptionAminoAcids,
+        additionalInfo: translations[language].exampleProductInfo,
       },
     },
   ];

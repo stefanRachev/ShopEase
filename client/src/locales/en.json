@@ -114,7 +114,15 @@
   "fitnessEquipment": "Fitness Equipment",
   "fullDescriptionProteinPowder": "Protein powder for muscle growth",
   "fullDescriptionWheyProtein": "Whey protein for muscle recovery",
+  "fullDescriptionAminoAcids" : "Amino acids for muscle growth",
   "proteinPowder": "Protein Powder",
   "wheyProtein": "Whey Protein",
-  "proteinBrand": "The brand of the product is exemplary"
+  "proteinBrand": "The brand of the product is exemplary",
+  "exampleProductInfo": [
+    "The description is for example only and is not for the actual product",
+    "Example description 1.",
+    "Example description 2.",
+    "Example description 3.",
+    "Example description 4."
+  ]
 }

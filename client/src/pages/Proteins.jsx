@@ -24,11 +24,7 @@ function Proteins() {
       image: "https://i.imgur.com/Dr54bKs.jpg",
       details: {
         fullDescription: translations[language].fullDescriptionProteinPowder,
-        additionalInfo: [
-          "Contains 20g of protein per serving.",
-          "Rich in amino acids for muscle recovery.",
-          "Available in various flavors: chocolate, vanilla, and strawberry.",
-        ],
+        additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
@@ -40,11 +36,7 @@ function Proteins() {
       image: "https://i.imgur.com/Dr54bKs.jpg",
       details: {
         fullDescription: translations[language].fullDescriptionWheyProtein,
-        additionalInfo: [
-          "High-quality whey protein isolate.",
-          "Low sugar and low fat.",
-          "Ideal for post-workout recovery.",
-        ],
+        additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
@@ -56,11 +48,7 @@ function Proteins() {
       image: "https://i.imgur.com/Dr54bKs.jpg",
       details: {
         fullDescription: translations[language].fullDescriptionWheyProtein,
-        additionalInfo: [
-          "High-quality whey protein isolate.",
-          "Low sugar and low fat.",
-          "Ideal for post-workout recovery.",
-        ],
+        additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
@@ -72,11 +60,7 @@ function Proteins() {
       image: "https://i.imgur.com/Dr54bKs.jpg",
       details: {
         fullDescription: translations[language].fullDescriptionWheyProtein,
-        additionalInfo: [
-          "High-quality whey protein isolate.",
-          "Low sugar and low fat.",
-          "Ideal for post-workout recovery.",
-        ],
+        additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
@@ -88,11 +72,7 @@ function Proteins() {
       image: "https://i.imgur.com/Dr54bKs.jpg",
       details: {
         fullDescription: translations[language].fullDescriptionWheyProtein,
-        additionalInfo: [
-          "High-quality whey protein isolate.",
-          "Low sugar and low fat.",
-          "Ideal for post-workout recovery.",
-        ],
+        additionalInfo: translations[language].exampleProductInfo,
       },
     },
   ];
