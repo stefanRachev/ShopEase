@@ -14,6 +14,7 @@ function Dumbbells() {
     {
       id: "dumbbell-1",
       name: translations[language].dumbbell1,
+      description: translations[language].descriptionDumbbells1,
       weight: 2.5,
       price: 15,
       quantity: 1,
@@ -22,6 +23,7 @@ function Dumbbells() {
     {
       id: "dumbbell-2",
       name: translations[language].dumbbell2,
+      description: translations[language].descriptionDumbbells1,
       weight: 5,
       price: 25,
       quantity: 1,
@@ -30,6 +32,7 @@ function Dumbbells() {
     {
       id: "dumbbell-3",
       name: translations[language].dumbbell3,
+      description: translations[language].descriptionDumbbells1,
       weight: 7.5,
       price: 35,
       quantity: 1,
@@ -38,6 +41,7 @@ function Dumbbells() {
     {
       id: "dumbbell-4",
       name: translations[language].dumbbell4,
+      description: translations[language].descriptionDumbbells1,
       weight: 10,
       price: 45,
       quantity: 1,
@@ -46,6 +50,7 @@ function Dumbbells() {
     {
       id: "dumbbell-5",
       name: translations[language].dumbbell5,
+      description: translations[language].descriptionDumbbells1,
       weight: 12.5,
       price: 55,
       quantity: 1,
@@ -54,6 +59,7 @@ function Dumbbells() {
     {
       id: "dumbbell-6",
       name: translations[language].dumbbell6,
+      description: translations[language].descriptionDumbbells1,
       weight: 14,
       price: 55,
       quantity: 1,
@@ -62,6 +68,7 @@ function Dumbbells() {
     {
       id: "dumbbell-7",
       name: translations[language].dumbbell7,
+      description: translations[language].descriptionDumbbells1,
       weight: 17.5,
       price: 55,
       quantity: 1,
@@ -70,6 +77,7 @@ function Dumbbells() {
     {
       id: "dumbbell-8",
       name: translations[language].dumbbell8,
+      description: translations[language].descriptionDumbbells1,
       weight: 22,
       price: 55,
       quantity: 1,
@@ -78,6 +86,7 @@ function Dumbbells() {
     {
       id: "dumbbell-9",
       name: translations[language].dumbbell9,
+      description: translations[language].descriptionDumbbells1,
       weight: 24,
       price: 55,
       quantity: 1,
@@ -86,6 +95,7 @@ function Dumbbells() {
     {
       id: "dumbbell-10",
       name: translations[language].dumbbell10,
+      description: translations[language].descriptionDumbbells1,
       weight: 26,
       price: 55,
       quantity: 1,
@@ -94,6 +104,7 @@ function Dumbbells() {
     {
       id: "dumbbell-11",
       name: translations[language].dumbbell11,
+      description: translations[language].descriptionDumbbells1,
       weight: 30,
       price: 55,
       quantity: 1,
@@ -103,6 +114,7 @@ function Dumbbells() {
     {
       id: "dumbbell-12",
       name: translations[language].dumbbell12,
+      description: translations[language].descriptionDumbbells1,
       weight: 40,
       price: 55,
       quantity: 1,
