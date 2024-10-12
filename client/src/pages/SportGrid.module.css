@@ -1,0 +1,31 @@
+.sport-card {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image-wrapper {
+    overflow: hidden;
+    height: 200px; /* Можеш да коригираш височината според нуждите си */
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Запазва пропорциите на изображението */
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  

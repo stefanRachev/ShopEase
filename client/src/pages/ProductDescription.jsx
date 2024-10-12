@@ -33,6 +33,7 @@ function ProductDescription() {
       name: translations[language].product4,
       description: translations[language].description4,
       image: "https://i.imgur.com/NWTgIOe.jpg",
+      link: "/sport",
     },
   ];
 
