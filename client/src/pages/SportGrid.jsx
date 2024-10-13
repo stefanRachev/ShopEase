@@ -3,9 +3,11 @@
 import { useState } from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import styles from "./SportGrid.module.css";
+import { useLanguage } from "../context/useLanguage";
 
 function SportGrid() {
   const [activeCard, setActiveCard] = useState(null);
+  const { language, translations } = useLanguage();
 
   const sports = [
     {
@@ -47,10 +49,11 @@ function SportGrid() {
   return (
     <Row className="g-4">
       <Col xs={12} className="text-center mb-4">
-        <h1 className="text-warning fw-bold">Разгледайте нашите продукти по спортни категорий</h1>
+        <h1 className="text-warning fw-bold">
+          {translations[language].sportTitle1}
+        </h1>
         <p className="text-secondary fs-5">
-          Изберете отделението за Вашия спорт и открийте продукти, които ще Ви
-          помогнат да постигнете най-доброто от себе си!
+          {translations[language].sportTitle2}
         </p>
       </Col>
 
