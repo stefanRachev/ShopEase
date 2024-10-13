@@ -15,6 +15,7 @@ import Proteins from "../pages/Proteins";
 import AminoAcids from "../pages/AminoAcids";
 import Vitamins from "../pages/Vitamins";
 import SportGrid from "../pages/SportGrid";
+import Boxing from "../pages/Boxing";
 
 function Content() {
   return (
@@ -26,6 +27,7 @@ function Content() {
       <Route path="/products" element={<Products />} />
       <Route path="/weights" element={<Weights />} />
       <Route path="/sport" element={<SportGrid />} />
+      <Route path="/sports/boxing" element={<Boxing />} />
       <Route path="/nutritional-supplements" element={<NutritionalSupplements />} />
       <Route path="/proteins" element={<Proteins />} />
       <Route path="/amino-acids" element={<AminoAcids />} />

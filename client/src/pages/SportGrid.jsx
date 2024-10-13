@@ -38,7 +38,6 @@ function SportGrid() {
       image: "https://i.imgur.com/eEyP95l.jpg",
       link: "/sports/kickboxing",
     },
-    
   ];
 
   const handleTouchStart = (index) => {
@@ -47,6 +46,14 @@ function SportGrid() {
 
   return (
     <Row className="g-4">
+      <Col xs={12} className="text-center mb-4">
+        <h1 className="text-warning fw-bold">Разгледайте нашите продукти по спортни категорий</h1>
+        <p className="text-secondary fs-5">
+          Изберете отделението за Вашия спорт и открийте продукти, които ще Ви
+          помогнат да постигнете най-доброто от себе си!
+        </p>
+      </Col>
+
       {sports.map((sport, index) => (
         <Col key={index} md={4} sm={6} xs={12}>
           <a href={sport.link} className={styles.sportCard}>
