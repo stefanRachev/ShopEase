@@ -1,7 +1,7 @@
 // SportGrid.jsx
 
 import { useState } from "react";
-import { Card, Row, Col } from "react-bootstrap";
+import { Container, Card, Row, Col } from "react-bootstrap";
 import styles from "./SportGrid.module.css";
 import { useLanguage } from "../context/useLanguage";
 
@@ -47,43 +47,45 @@ function SportGrid() {
   };
 
   return (
-    <Row className="g-4">
-      <Col xs={12} className="text-center mb-4">
-        <h1 className="text-warning fw-bold">
-          {translations[language].sportTitle1}
-        </h1>
-        <p className="text-secondary fs-5">
-          {translations[language].sportTitle2}
-        </p>
-      </Col>
-
-      {sports.map((sport, index) => (
-        <Col key={index} md={4} sm={6} xs={12}>
-          <a href={sport.link} className={styles.sportCard}>
-            <Card
-              className={`m-2 ${styles.hoverCard} ${
-                activeCard === index ? styles.activeCard : ""
-              }`}
-              onTouchStart={() => handleTouchStart(index)}
-            >
-              <div className={styles.imageWrapper}>
-                <Card.Img
-                  variant="top"
-                  src={sport.image}
-                  alt={sport.name}
-                  className="img-fluid"
-                />
-              </div>
-              <Card.Body>
-                <Card.Title className={styles.cardTitle}>
-                  {sport.name}
-                </Card.Title>
-              </Card.Body>
-            </Card>
-          </a>
+    <Container>
+      <Row className="g-4">
+        <Col xs={12} className="text-center mb-4">
+          <h1 className="text-warning fw-bold">
+            {translations[language].sportTitle1}
+          </h1>
+          <p className="text-secondary fs-5">
+            {translations[language].sportTitle2}
+          </p>
         </Col>
-      ))}
-    </Row>
+
+        {sports.map((sport, index) => (
+          <Col key={index} md={4} sm={6} xs={12}>
+            <a href={sport.link} className={styles.sportCard}>
+              <Card
+                className={`m-2 ${styles.hoverCard} ${
+                  activeCard === index ? styles.activeCard : ""
+                }`}
+                onTouchStart={() => handleTouchStart(index)}
+              >
+                <div className={styles.imageWrapper}>
+                  <Card.Img
+                    variant="top"
+                    src={sport.image}
+                    alt={sport.name}
+                    className="img-fluid"
+                  />
+                </div>
+                <Card.Body>
+                  <Card.Title className={styles.cardTitle}>
+                    {sport.name}
+                  </Card.Title>
+                </Card.Body>
+              </Card>
+            </a>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 }
 
