@@ -5,7 +5,7 @@ import { useLanguage } from "../context/useLanguage";
 import { useCart } from "../context/useCart";
 import { useUser } from "../context/useUser";
 import { useNavigate } from "react-router-dom";
-//import styles from "./Boxing.module.css";
+
 
 function Boxing() {
   const [show, setShow] = useState(false);
