@@ -59,7 +59,7 @@ function Yoga() {
       quantity: 1,
       description: translations[language].yogaCubeDescription,
       details: {
-        image: "https://i.imgur.com/Ldw0ZxW.jpg",
+        image: "https://i.imgur.com/LnOBHPW.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
@@ -71,7 +71,7 @@ function Yoga() {
       quantity: 1,
       description: translations[language].yogaCubeDescription,
       details: {
-        image: "https://i.imgur.com/Ldw0ZxW.jpg",
+        image: "https://i.imgur.com/LnOBHPW.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
@@ -83,7 +83,7 @@ function Yoga() {
       quantity: 1,
       description: translations[language].yogaCubeDescription,
       details: {
-        image: "https://i.imgur.com/Ldw0ZxW.jpg",
+        image: "https://i.imgur.com/LnOBHPW.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
