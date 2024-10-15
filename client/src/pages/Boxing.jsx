@@ -17,37 +17,73 @@ function Boxing() {
   const products = [
     {
       id: "boxing-1",
-      name: "Боксови Ръкавици",
+      name: translations[language].boxingGloves,
       image: "https://i.imgur.com/5npwqHh.jpg",
-      price: "45 лв.",
+      price: 45,
       quantity: 1,
-      description: "Комфортни и здрави боксови ръкавици за тренировки.",
+      description: translations[language].boxingGlovesDescription,
       details: {
-        image: "https://i.imgur.com/jxxYBjZ.jpg",
+        image: "https://i.imgur.com/rilb15l.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
       id: "boxing-2",
-      name: "Боксов Чувал",
+      name: translations[language].boxingGloves,
       image: "https://i.imgur.com/KU1nhkR.jpg",
-      price: "120 лв.",
+      price: 45,
       quantity: 1,
-      description: "Тежък чувал за професионални тренировки.",
+      description: translations[language].boxingGlovesDescription,
       details: {
-        image: "https://i.imgur.com/jxxYBjZ.jpg",
+        image: "https://i.imgur.com/rilb15l.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
       id: "boxing-3",
-      name: "Боксов Каска",
+      name: translations[language].boxingGloves,
       image: "https://i.imgur.com/o8K4kBD.jpg",
-      price: "75 лв.",
+      price: 75,
       quantity: 1,
-      description: "Лека каска за безопасност при спаринг.",
+      description: translations[language].boxingGlovesDescription,
       details: {
-        image: "https://i.imgur.com/jxxYBjZ.jpg",
+        image: "https://i.imgur.com/rilb15l.jpg",
+        additionalInfo: translations[language].exampleProductInfo,
+      },
+    },
+    {
+      id: "boxing-4",
+      name: translations[language].punchingBag,
+      image: "https://i.imgur.com/vbPKOdC.jpg",
+      price: 120,
+      quantity: 1,
+      description: translations[language].punchingBagDescription,
+      details: {
+        image: "https://i.imgur.com/isJ6DuY.jpg",
+        additionalInfo: translations[language].exampleProductInfo,
+      },
+    },
+    {
+      id: "boxing-5",
+      name: translations[language].punchingBag,
+      image: "https://i.imgur.com/vbPKOdC.jpg",
+      price: 120,
+      quantity: 1,
+      description: translations[language].punchingBagDescription,
+      details: {
+        image: "https://i.imgur.com/isJ6DuY.jpg",
+        additionalInfo: translations[language].exampleProductInfo,
+      },
+    },
+    {
+      id: "boxing-6",
+      name: translations[language].punchingBag,
+      image: "https://i.imgur.com/vbPKOdC.jpg",
+      price: 120,
+      quantity: 1,
+      description: translations[language].punchingBagDescription,
+      details: {
+        image: "https://i.imgur.com/isJ6DuY.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
@@ -78,8 +114,7 @@ function Boxing() {
           {translations[language].titleBoxing}
         </h1>
         <p className="text-center mb-5">
-          Разгледайте нашите висококачествени продукти за бокс. Подходящи както
-          за начинаещи, така и за професионалисти.
+          {translations[language].boxingGlovesDescription2}
         </p>
       </Col>
 
@@ -98,16 +133,21 @@ function Boxing() {
                   <Card.Title>{product.name}</Card.Title>
                   <Card.Text>{product.description}</Card.Text>
                 </div>
+                <hr />
                 <div className="d-flex justify-content-between align-items-center mt-auto">
-                  <span className="text-success fw-bold">{product.price}</span>
+                  <span className="text-success fw-bold">
+                    {translations[language].price}
+                    {product.price} {translations[language].lv}
+                  </span>
                   <Button variant="primary" onClick={() => handleShow(product)}>
                     {translations[language].takeALook}
-                  </Button>{" "}
+                  </Button>
                   <Button
-                    variant="primary"
+                    variant="success"
                     onClick={() => handleAddToCart(product)}
+                    className="ms-2"
                   >
-                    Купи
+                    {translations[language].buyNow}
                   </Button>
                 </div>
               </Card.Body>

@@ -123,6 +123,11 @@
   "proteinBrand": "The brand of the product is exemplary",
   "vitamins:": "Vitamins",
   "titleBoxing": "Products for Boxing",
+  "boxingGloves": "Boxing Gloves",
+  "punchingBag":"Punching Bag",
+  "boxingGlovesDescription": "Professional boxing gloves for training and competition",
+  "boxingGlovesDescription2":"Check out our high quality boxing products. Suitable for both beginners and professionals.",
+  "punchingBagDescription":"Professional punching bag for training and competition",
   "exampleProductInfo": [
     "The description is for example only and is not for the actual product",
     "Example description 1.",
