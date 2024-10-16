@@ -124,6 +124,7 @@
   "vitamins:": "Vitamins",
   "titleBoxing": "Products for Boxing",
   "titleYoga": "Products for Yoga",
+  "titleCrossFit": "Products for CrossFit",
   "boxingGloves": "Boxing Gloves",
   "punchingBag":"Punching Bag",
   "boxingGlovesDescription": "Professional boxing gloves for training and competition",
@@ -134,6 +135,10 @@
   "yogaCube":"Yoga Cube",
   "yogaCubeDescription":"Professional yoga cube for home and professional use",
   "yogaMatDescription":"Professional yoga mat for home and professional use",
+  "crossFitDescription2":"Professional equipment for CrossFit",
+  "crossFitRopeDescription":"Professional CrossFit rope for home and professional use",
+  "crossFitBox":"Wooden CrossFit box for home and professional use",
+  "crossFitBoxDescription":"Rectangular box with different sizes for CrossFit",
   "exampleProductInfo": [
     "The description is for example only and is not for the actual product",
     "Example description 1.",

@@ -17,11 +17,11 @@ function CrossFit() {
   const products = [
     {
       id: "crossFit-1",
-      name: translations[language].yogaMat,
+      name: translations[language].crossFitRope,
       image: "https://i.imgur.com/GABPTbx.jpg",
       price: 20,
       quantity: 1,
-      description: translations[language].yogaMatDescription,
+      description: translations[language].crossFitRopeDescription,
       details: {
         image: "https://i.imgur.com/AKYSpKt.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -29,11 +29,11 @@ function CrossFit() {
     },
     {
       id: "crossFit-2",
-      name: translations[language].yogaMat,
+      name: translations[language].crossFitRope,
       image: "https://i.imgur.com/GABPTbx.jpg",
       price: 20,
       quantity: 1,
-      description: translations[language].yogaMatDescription,
+      description: translations[language].crossFitRopeDescription,
       details: {
         image: "https://i.imgur.com/AKYSpKt.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -41,11 +41,11 @@ function CrossFit() {
     },
     {
       id: "crossFit-3",
-      name: translations[language].yogaMat,
+      name: translations[language].crossFitRope,
       image: "https://i.imgur.com/GABPTbx.jpg",
       price: 20,
       quantity: 1,
-      description: translations[language].yogaMatDescription,
+      description: translations[language].crossFitRopeDescription,
       details: {
         image: "https://i.imgur.com/AKYSpKt.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -53,11 +53,11 @@ function CrossFit() {
     },
     {
       id: "crossFit-4",
-      name: translations[language].yogaCube,
+      name: translations[language].crossFitBox,
       image: "https://i.imgur.com/HxztS4y.jpg",
       price: 30,
       quantity: 1,
-      description: translations[language].yogaCubeDescription,
+      description: translations[language].crossFitBoxDescription,
       details: {
         image: "https://i.imgur.com/UIoMwUW.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -65,11 +65,11 @@ function CrossFit() {
     },
     {
       id: "crossFit-5",
-      name: translations[language].yogaCube,
+      name: translations[language].crossFitBox,
       image: "https://i.imgur.com/HxztS4y.jpg",
       price: 30,
       quantity: 1,
-      description: translations[language].yogaCubeDescription,
+      description: translations[language].crossFitBoxDescription,
       details: {
         image: "https://i.imgur.com/UIoMwUW.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -77,11 +77,11 @@ function CrossFit() {
     },
     {
       id: "crossFit-6",
-      name: translations[language].yogaCube,
+      name: translations[language].crossFitBox,
       image: "https://i.imgur.com/HxztS4y.jpg",
       price: 30,
       quantity: 1,
-      description: translations[language].yogaCubeDescription,
+      description: translations[language].crossFitBoxDescription,
       details: {
         image: "https://i.imgur.com/UIoMwUW.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -111,10 +111,10 @@ function CrossFit() {
     <Container className="mt-5">
       <Col xs={12}>
         <h1 className="text-center text-primary mb-4">
-          {translations[language].titleYoga}
+          {translations[language].titleCrossFit}
         </h1>
         <p className="text-center mb-5">
-          {translations[language].yogaDescription2}
+          {translations[language].crossFitDescription2}
         </p>
       </Col>
 
