@@ -1,5 +1,4 @@
-
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useUser } from "../context/useUser";
 import { useLanguage } from "../context/useLanguage";
@@ -15,21 +14,48 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link
-              as={NavLink}
-              to="/products"
-              onClick={() => document.querySelector(".navbar-toggler").click()}
+            {/* Тук използваме NavDropdown с NavLink за вътрешни линкове */}
+            <NavDropdown
+              title={translations[language].products}
+              id="products-dropdown"
             >
-              {translations[language].products}{" "}
-              
-            </Nav.Link>
+              <NavDropdown.Item as={NavLink} to="/fitness-uredi">
+                Фитнес уреди
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={NavLink} to="/fitness-uredi/kardio">
+                Кардио уреди
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/fitness-uredi/silovi">
+                Силови уреди
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={NavLink} to="/dobavki">
+                Добавки
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/dobavki/protein">
+                Протеини
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/dobavki/vitamini">
+                Витамини
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={NavLink} to="/sportove">
+                Спортове
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/sportove/futbol">
+                Футбол
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/sportove/tenis">
+                Тенис
+              </NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link
               as={NavLink}
               to="/cart"
               onClick={() => document.querySelector(".navbar-toggler").click()}
             >
               {translations[language].cart}{" "}
-             
             </Nav.Link>
           </Nav>
 
@@ -44,7 +70,6 @@ function Header() {
                   }
                 >
                   {translations[language].logout}{" "}
-                 
                 </Nav.Link>
                 <Nav.Link disabled>
                   {language === "en"
@@ -62,7 +87,6 @@ function Header() {
                   }
                 >
                   {translations[language].register}{" "}
-             
                 </Nav.Link>
                 <Nav.Link
                   as={NavLink}
@@ -72,11 +96,10 @@ function Header() {
                   }
                 >
                   {translations[language].login}{" "}
-                
                 </Nav.Link>
                 <Nav.Link disabled>
                   {language === "en"
-                    ? translations[language].guestMessage 
+                    ? translations[language].guestMessage
                     : translations[language].guestMessage}{" "}
                 </Nav.Link>
               </>
