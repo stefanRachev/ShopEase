@@ -17,11 +17,11 @@ function KikBoxing() {
   const products = [
     {
       id: "kik-1",
-      name: translations[language].bandagesForMma,
+      name: translations[language].combatSportsPaws,
       image: "https://i.imgur.com/yLkwxkS.jpg",
       price: 20,
       quantity: 1,
-      description: translations[language].bandagesForMmaDescription,
+      description: translations[language].combatSportsPawsDescription,
       details: {
         image: "https://i.imgur.com/sR2OU19.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -29,11 +29,11 @@ function KikBoxing() {
     },
     {
       id: "kik-2",
-      name: translations[language].bandagesForMma,
+      name: translations[language].combatSportsPaws,
       image: "https://i.imgur.com/yLkwxkS.jpg",
       price: 20,
       quantity: 1,
-      description: translations[language].bandagesForMmaDescription,
+      description: translations[language].combatSportsPawsDescription,
       details: {
         image: "https://i.imgur.com/sR2OU19.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -41,11 +41,11 @@ function KikBoxing() {
     },
     {
       id: "kik-3",
-      name: translations[language].bandagesForMma,
+      name: translations[language].combatSportsPaws,
       image: "https://i.imgur.com/yLkwxkS.jpg",
       price: 20,
       quantity: 1,
-      description: translations[language].bandagesForMmaDescription,
+      description: translations[language].combatSportsPawsDescription,
       details: {
         image: "https://i.imgur.com/sR2OU19.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -53,11 +53,11 @@ function KikBoxing() {
     },
     {
       id: "kik-4",
-      name: translations[language].glovesForMma,
+      name: translations[language].kickboxingBags,
       image: "https://i.imgur.com/NSpiHuE.jpg",
       price: 30,
       quantity: 1,
-      description: translations[language].glovesForMmaDescription,
+      description: translations[language].kickboxingBagsDescription,
       details: {
         image: "https://i.imgur.com/X08JYid.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -65,11 +65,11 @@ function KikBoxing() {
     },
     {
       id: "kik-5",
-      name: translations[language].glovesForMma,
+      name: translations[language].kickboxingBags,
       image: "https://i.imgur.com/NSpiHuE.jpg",
       price: 30,
       quantity: 1,
-      description: translations[language].glovesForMmaDescription,
+      description: translations[language].kickboxingBagsDescription,
       details: {
         image: "https://i.imgur.com/X08JYid.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -77,11 +77,11 @@ function KikBoxing() {
     },
     {
       id: "kik-6",
-      name: translations[language].glovesForMma,
+      name: translations[language].kickboxingBags,
       image: "https://i.imgur.com/NSpiHuE.jpg",
       price: 30,
       quantity: 1,
-      description: translations[language].glovesForMmaDescription,
+      description: translations[language].kickboxingBagsDescription,
       details: {
         image: "https://i.imgur.com/X08JYid.jpg",
         additionalInfo: translations[language].exampleProductInfo,
