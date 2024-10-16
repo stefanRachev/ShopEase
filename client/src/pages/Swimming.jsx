@@ -16,11 +16,11 @@ function Swimming() {
   const products = [
     {
       id: "swimming-1",
-      name: translations[language].crossFitRope,
+      name: translations[language].swimmingGoggles,
       image: "https://i.imgur.com/JD6muJn.jpg",
       price: 20,
       quantity: 1,
-      description: translations[language].crossFitRopeDescription,
+      description: translations[language].swimmingGogglesDescription,
       details: {
         image: "https://i.imgur.com/dwJaPsm.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -28,11 +28,11 @@ function Swimming() {
     },
     {
       id: "swimming-2",
-      name: translations[language].crossFitRope,
+      name: translations[language].swimmingGoggles,
       image: "https://i.imgur.com/JD6muJn.jpg",
       price: 20,
       quantity: 1,
-      description: translations[language].crossFitRopeDescription,
+      description: translations[language].swimmingGogglesDescription,
       details: {
         image: "https://i.imgur.com/dwJaPsm.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -40,11 +40,11 @@ function Swimming() {
     },
     {
       id: "swimming-3",
-      name: translations[language].crossFitRope,
+      name: translations[language].swimmingGoggles,
       image: "https://i.imgur.com/JD6muJn.jpg",
       price: 20,
       quantity: 1,
-      description: translations[language].crossFitRopeDescription,
+      description: translations[language].swimmingGogglesDescription,
       details: {
         image: "https://i.imgur.com/dwJaPsm.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -52,11 +52,11 @@ function Swimming() {
     },
     {
       id: "swimming-4",
-      name: translations[language].crossFitBox,
+      name: translations[language].swimmingCap,
       image: "https://i.imgur.com/rbFQFyg.jpg",
       price: 30,
       quantity: 1,
-      description: translations[language].crossFitBoxDescription,
+      description: translations[language].swimmingCapDescription,
       details: {
         image: "https://i.imgur.com/RfMJhfQ.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -64,11 +64,11 @@ function Swimming() {
     },
     {
       id: "swimming-5",
-      name: translations[language].crossFitBox,
+      name: translations[language].swimmingCap,
       image: "https://i.imgur.com/rbFQFyg.jpg",
       price: 30,
       quantity: 1,
-      description: translations[language].crossFitBoxDescription,
+      description: translations[language].swimmingCapDescription,
       details: {
         image: "https://i.imgur.com/RfMJhfQ.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -76,11 +76,11 @@ function Swimming() {
     },
     {
       id: "swimming-6",
-      name: translations[language].crossFitBox,
+      name: translations[language].swimmingCap,
       image: "https://i.imgur.com/rbFQFyg.jpg",
       price: 30,
       quantity: 1,
-      description: translations[language].crossFitBoxDescription,
+      description: translations[language].swimmingCapDescription,
       details: {
         image: "https://i.imgur.com/RfMJhfQ.jpg",
         additionalInfo: translations[language].exampleProductInfo,
@@ -110,10 +110,10 @@ function Swimming() {
     <Container className="mt-5">
       <Col xs={12}>
         <h1 className="text-center text-primary mb-4">
-          {translations[language].titleCrossFit}
+          {translations[language].titleSwimming}
         </h1>
         <p className="text-center mb-5">
-          {translations[language].crossFitDescription2}
+          {translations[language].swimmingDescription2}
         </p>
       </Col>
 
