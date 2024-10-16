@@ -18,72 +18,72 @@ function KikBoxing() {
     {
       id: "kik-1",
       name: translations[language].bandagesForMma,
-      image: "https://i.imgur.com/yn0OiKJ.jpg",
+      image: "https://i.imgur.com/yLkwxkS.jpg",
       price: 20,
       quantity: 1,
       description: translations[language].bandagesForMmaDescription,
       details: {
-        image: "https://i.imgur.com/J4j0lwa.jpg",
+        image: "https://i.imgur.com/sR2OU19.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
       id: "kik-2",
       name: translations[language].bandagesForMma,
-      image: "https://i.imgur.com/yn0OiKJ.jpg",
+      image: "https://i.imgur.com/yLkwxkS.jpg",
       price: 20,
       quantity: 1,
       description: translations[language].bandagesForMmaDescription,
       details: {
-        image: "https://i.imgur.com/J4j0lwa.jpg",
+        image: "https://i.imgur.com/sR2OU19.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
       id: "kik-3",
       name: translations[language].bandagesForMma,
-      image: "https://i.imgur.com/yn0OiKJ.jpg",
+      image: "https://i.imgur.com/yLkwxkS.jpg",
       price: 20,
       quantity: 1,
       description: translations[language].bandagesForMmaDescription,
       details: {
-        image: "https://i.imgur.com/J4j0lwa.jpg",
+        image: "https://i.imgur.com/sR2OU19.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
       id: "kik-4",
       name: translations[language].glovesForMma,
-      image: "https://i.imgur.com/4fZLn2l.jpg",
+      image: "https://i.imgur.com/NSpiHuE.jpg",
       price: 30,
       quantity: 1,
       description: translations[language].glovesForMmaDescription,
       details: {
-        image: "https://i.imgur.com/avHN0yW.jpg",
+        image: "https://i.imgur.com/X08JYid.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
       id: "kik-5",
       name: translations[language].glovesForMma,
-      image: "https://i.imgur.com/4fZLn2l.jpg",
+      image: "https://i.imgur.com/NSpiHuE.jpg",
       price: 30,
       quantity: 1,
       description: translations[language].glovesForMmaDescription,
       details: {
-        image: "https://i.imgur.com/avHN0yW.jpg",
+        image: "https://i.imgur.com/X08JYid.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
       id: "kik-6",
       name: translations[language].glovesForMma,
-      image: "https://i.imgur.com/4fZLn2l.jpg",
+      image: "https://i.imgur.com/NSpiHuE.jpg",
       price: 30,
       quantity: 1,
       description: translations[language].glovesForMmaDescription,
       details: {
-        image: "https://i.imgur.com/avHN0yW.jpg",
+        image: "https://i.imgur.com/X08JYid.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
@@ -111,10 +111,10 @@ function KikBoxing() {
     <Container className="mt-5">
       <Col xs={12}>
         <h1 className="text-center text-primary mb-4">
-          {translations[language].titleMma}
+          {translations[language].titleKickBoxing}
         </h1>
         <p className="text-center mb-5">
-          {translations[language].mmaDescription2}
+          {translations[language].KikBoxingDescription2}
         </p>
       </Col>
 
