@@ -16,74 +16,74 @@ function Mma() {
 
   const products = [
     {
-      id: "swimming-1",
-      name: translations[language].swimmingGoggles,
-      image: "https://i.imgur.com/JD6muJn.jpg",
+      id: "mma-1",
+      name: translations[language].bandagesForMma,
+      image: "https://i.imgur.com/yn0OiKJ.jpg",
       price: 20,
       quantity: 1,
-      description: translations[language].swimmingGogglesDescription,
+      description: translations[language].bandagesForMmaDescription,
       details: {
-        image: "https://i.imgur.com/dwJaPsm.jpg",
+        image: "https://i.imgur.com/J4j0lwa.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
-      id: "swimming-2",
-      name: translations[language].swimmingGoggles,
-      image: "https://i.imgur.com/JD6muJn.jpg",
+      id: "mma-2",
+      name: translations[language].bandagesForMma,
+      image: "https://i.imgur.com/yn0OiKJ.jpg",
       price: 20,
       quantity: 1,
-      description: translations[language].swimmingGogglesDescription,
+      description: translations[language].bandagesForMmaDescription,
       details: {
-        image: "https://i.imgur.com/dwJaPsm.jpg",
+        image: "https://i.imgur.com/J4j0lwa.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
-      id: "swimming-3",
-      name: translations[language].swimmingGoggles,
-      image: "https://i.imgur.com/JD6muJn.jpg",
+      id: "mma-3",
+      name: translations[language].bandagesForMma,
+      image: "https://i.imgur.com/yn0OiKJ.jpg",
       price: 20,
       quantity: 1,
-      description: translations[language].swimmingGogglesDescription,
+      description: translations[language].bandagesForMmaDescription,
       details: {
-        image: "https://i.imgur.com/dwJaPsm.jpg",
+        image: "https://i.imgur.com/J4j0lwa.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
-      id: "swimming-4",
-      name: translations[language].swimmingCap,
-      image: "https://i.imgur.com/rbFQFyg.jpg",
+      id: "mma-4",
+      name: translations[language].glovesForMma,
+      image: "https://i.imgur.com/4fZLn2l.jpg",
       price: 30,
       quantity: 1,
-      description: translations[language].swimmingCapDescription,
+      description: translations[language].glovesForMmaDescription,
       details: {
-        image: "https://i.imgur.com/RfMJhfQ.jpg",
+        image: "https://i.imgur.com/avHN0yW.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
-      id: "swimming-5",
-      name: translations[language].swimmingCap,
-      image: "https://i.imgur.com/rbFQFyg.jpg",
+      id: "mma-5",
+      name: translations[language].glovesForMma,
+      image: "https://i.imgur.com/4fZLn2l.jpg",
       price: 30,
       quantity: 1,
-      description: translations[language].swimmingCapDescription,
+      description: translations[language].glovesForMmaDescription,
       details: {
-        image: "https://i.imgur.com/RfMJhfQ.jpg",
+        image: "https://i.imgur.com/avHN0yW.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
     {
-      id: "swimming-6",
-      name: translations[language].swimmingCap,
-      image: "https://i.imgur.com/rbFQFyg.jpg",
+      id: "mma-6",
+      name: translations[language].glovesForMma,
+      image: "https://i.imgur.com/4fZLn2l.jpg",
       price: 30,
       quantity: 1,
-      description: translations[language].swimmingCapDescription,
+      description: translations[language].glovesForMmaDescription,
       details: {
-        image: "https://i.imgur.com/RfMJhfQ.jpg",
+        image: "https://i.imgur.com/avHN0yW.jpg",
         additionalInfo: translations[language].exampleProductInfo,
       },
     },
@@ -111,10 +111,10 @@ function Mma() {
     <Container className="mt-5">
       <Col xs={12}>
         <h1 className="text-center text-primary mb-4">
-          {translations[language].titleSwimming}
+          {translations[language].titleMma}
         </h1>
         <p className="text-center mb-5">
-          {translations[language].swimmingDescription2}
+          {translations[language].mmaDescription2}
         </p>
       </Col>
 
