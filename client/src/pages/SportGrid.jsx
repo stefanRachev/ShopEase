@@ -38,7 +38,7 @@ function SportGrid() {
     {
       name: "Kickboxing",
       image: "https://i.imgur.com/eEyP95l.jpg",
-      link: "/sports/kickboxing",
+      link: "/sports/kick-boxing",
     },
   ];
 

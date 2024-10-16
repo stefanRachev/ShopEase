@@ -20,6 +20,7 @@ import Yoga from "../pages/Yoga";
 import CrossFit from "../pages/CrossFit";
 import Swimming from "../pages/Swimming";
 import Mma from "../pages/Mma";
+import KikBoxing from "../pages/KickBoxing";
 
 function Content() {
   return (
@@ -36,6 +37,7 @@ function Content() {
       <Route path="/sports/cross-fit" element={<CrossFit />} />
       <Route path="/sports/swimming" element={<Swimming />} />
       <Route path="/sports/mma" element={<Mma />} />
+      <Route path="/sports/kick-boxing" element={<KikBoxing />} />
       <Route path="/nutritional-supplements" element={<NutritionalSupplements />} />
       <Route path="/proteins" element={<Proteins />} />
       <Route path="/amino-acids" element={<AminoAcids />} />
