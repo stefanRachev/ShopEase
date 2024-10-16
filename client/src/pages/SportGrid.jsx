@@ -23,7 +23,7 @@ function SportGrid() {
     {
       name: "CrossFit",
       image: "https://i.imgur.com/LCP7znY.jpg",
-      link: "/sports/crossFit",
+      link: "/sports/cross-fit",
     },
     {
       name: "Swimming",

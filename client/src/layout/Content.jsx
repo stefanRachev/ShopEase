@@ -17,6 +17,7 @@ import Vitamins from "../pages/Vitamins";
 import SportGrid from "../pages/SportGrid";
 import Boxing from "../pages/Boxing";
 import Yoga from "../pages/Yoga";
+import CrossFit from "../pages/CrossFit";
 
 function Content() {
   return (
@@ -30,6 +31,7 @@ function Content() {
       <Route path="/sport" element={<SportGrid />} />
       <Route path="/sports/boxing" element={<Boxing />} />
       <Route path="/sports/yoga" element={<Yoga />} />
+      <Route path="/sports/cross-fit" element={<CrossFit />} />
       <Route path="/nutritional-supplements" element={<NutritionalSupplements />} />
       <Route path="/proteins" element={<Proteins />} />
       <Route path="/amino-acids" element={<AminoAcids />} />
