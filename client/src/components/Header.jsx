@@ -14,42 +14,28 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            {/* Тук използваме NavDropdown с NavLink за вътрешни линкове */}
             <NavDropdown
               title={translations[language].products}
               id="products-dropdown"
             >
-              <NavDropdown.Item as={NavLink} to="/fitness-uredi">
-                Фитнес уреди
+              <NavDropdown.Item as={NavLink} to="/weights">
+                Свободни тежести
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/weights/dumbbells">
+                Дъмбели
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/weights/barbells">
+                Лостове за тежести
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/weights/plates">
+                Плочи за тежести
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={NavLink} to="/fitness-uredi/kardio">
-                Кардио уреди
-              </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/fitness-uredi/silovi">
-                Силови уреди
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item as={NavLink} to="/dobavki">
-                Добавки
-              </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/dobavki/protein">
-                Протеини
-              </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/dobavki/vitamini">
-                Витамини
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item as={NavLink} to="/sportove">
-                Спортове
-              </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/sportove/futbol">
-                Футбол
-              </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/sportove/tenis">
-                Тенис
+              <NavDropdown.Item as={NavLink} to="/nutritional-supplements">
+                Продукти за здраве и сила
               </NavDropdown.Item>
             </NavDropdown>
+
             <Nav.Link
               as={NavLink}
               to="/cart"

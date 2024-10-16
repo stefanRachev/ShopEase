@@ -9,21 +9,21 @@ function Weights() {
       name: translations[language].dumbbells,
       description: translations[language].descriptionDumbbells,
       image: "https://i.imgur.com/y7xXSK2.jpg",
-      link: "/dumbbells",
+      link: "/weights/dumbbells",
     },
     {
       id: 2,
       name: translations[language].barbells,
       description: translations[language].descriptionBarbells,
       image: "https://i.imgur.com/8FkvkTE.jpg",
-      link: "/barbells",
+      link: "/weights/barbells",
     },
     {
       id: 3,
       name: translations[language].barbellDiscs,
       description: translations[language].descriptionBarbellDiscs,
       image: "https://i.imgur.com/E1JXl1s.jpg",
-      link: "/weight-plates",
+      link: "/weights/plates",
     },
   ];
 
