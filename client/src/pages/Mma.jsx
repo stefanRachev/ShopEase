@@ -6,14 +6,14 @@ import { useCart } from "../context/useCart";
 import { useUser } from "../context/useUser";
 import { useNavigate } from "react-router-dom";
 
-function Swimming() {
+function Mma() {
   const [show, setShow] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const { language, translations } = useLanguage();
   const { user } = useUser();
   const { addToCart } = useCart();
   const navigate = useNavigate();
-  
+
   const products = [
     {
       id: "swimming-1",
@@ -183,5 +183,4 @@ function Swimming() {
     </Container>
   );
 }
-
-export default Swimming;
+export default Mma;
