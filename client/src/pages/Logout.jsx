@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useUser } from "../context/useUser";
+import { useCart } from "../context/useCart";
 
 function Logout() {
   const navigate = useNavigate();
   const { logout } = useUser();
+  const { setCartItems } = useCart();
 
   useEffect(() => {
     const performLogout = async () => {
@@ -18,6 +20,7 @@ function Logout() {
         });
 
         if (response.ok) {
+          setCartItems([]);
           logout();
           navigate("/login");
         } else {
@@ -29,7 +32,7 @@ function Logout() {
     };
 
     performLogout();
-  }, [logout, navigate]);
+  }, [logout, navigate, setCartItems]);
 
   return null;
 }
