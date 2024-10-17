@@ -93,6 +93,84 @@ function Header() {
               >
                 {translations[language].vitamins}
               </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item
+                className="dropdown-item font-weight-bold text-warning"
+                as={NavLink}
+                to="/fitness-equipment"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
+                {translations[language].fitnessEquipment}
+              </NavDropdown.Item>
+
+              <NavDropdown.Divider />
+              <NavDropdown.Item
+                className="dropdown-item font-weight-bold text-warning"
+                as={NavLink}
+                to="/sports/boxing"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
+                Boxing
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item
+                className="dropdown-item font-weight-bold text-warning"
+                as={NavLink}
+                to="/sports/yoga"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
+                Yoga
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item
+                className="dropdown-item font-weight-bold text-warning"
+                as={NavLink}
+                to="/sports/cross-fit"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
+                CrossFit
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item
+                className="dropdown-item font-weight-bold text-warning"
+                as={NavLink}
+                to="/sports/swimming"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
+                Swimming
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item
+                className="dropdown-item font-weight-bold text-warning"
+                as={NavLink}
+                to="/sports/mma"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
+                MMA
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item
+                className="dropdown-item font-weight-bold text-warning"
+                as={NavLink}
+                to="/sports/kick-boxing"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
+                Kickboxing
+              </NavDropdown.Item>
             </NavDropdown>
 
             <Nav.Link
@@ -149,7 +227,12 @@ function Header() {
                 </Nav.Link>
               </>
             )}
-            <Nav.Link onClick={toggleLanguage}>
+            <Nav.Link
+              onClick={() => {
+                toggleLanguage();
+                document.querySelector(".navbar-toggler").click();
+              }}
+            >
               {language === "en"
                 ? "Switch to Bulgarian"
                 : "Превключи на английски"}
