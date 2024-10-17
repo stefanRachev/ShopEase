@@ -90,7 +90,9 @@ function NutritionalSupplements() {
 
   return (
     <div className={`${styles.container} mt-5 position-relative`}>
-      <h1 className="text-center mb-4">{translations[language].nutritionalSupplements}</h1>
+      <h1 className="text-center mb-4">
+        {translations[language].nutritionalSupplements}
+      </h1>
       <Slider {...sliderSettings}>
         {products.map((product) => (
           <div key={product.id} className="col-12 col-md-6 col-lg-4 p-2">

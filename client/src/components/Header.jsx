@@ -19,13 +19,14 @@ function Header() {
               id="products-dropdown"
             >
               <NavDropdown.Item
+                className="dropdown-item font-weight-bold text-warning"
                 as={NavLink}
                 to="/weights"
                 onClick={() =>
                   document.querySelector(".navbar-toggler").click()
                 }
               >
-                Всички тежести
+                {translations[language].weights}
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={NavLink}
@@ -34,7 +35,7 @@ function Header() {
                   document.querySelector(".navbar-toggler").click()
                 }
               >
-                Дъмбели
+                {translations[language].dumbbells}
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={NavLink}
@@ -43,7 +44,7 @@ function Header() {
                   document.querySelector(".navbar-toggler").click()
                 }
               >
-                Лостове за тежести
+                {translations[language].barbells}
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={NavLink}
@@ -52,17 +53,18 @@ function Header() {
                   document.querySelector(".navbar-toggler").click()
                 }
               >
-                Плочи за тежести
+                {translations[language].barbellDiscs}
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item
+                className="dropdown-item font-weight-bold text-warning"
                 as={NavLink}
                 to="/nutritional-supplements"
                 onClick={() =>
                   document.querySelector(".navbar-toggler").click()
                 }
               >
-                Продукти за здраве и сила
+                {translations[language].nutritionalSupplements}
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={NavLink}
@@ -71,7 +73,7 @@ function Header() {
                   document.querySelector(".navbar-toggler").click()
                 }
               >
-                Протеини
+                {translations[language].protein}
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={NavLink}
@@ -80,7 +82,7 @@ function Header() {
                   document.querySelector(".navbar-toggler").click()
                 }
               >
-                Аминокиселини
+                {translations[language].aminoAcids}
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={NavLink}
@@ -89,7 +91,7 @@ function Header() {
                   document.querySelector(".navbar-toggler").click()
                 }
               >
-                Витамини
+                {translations[language].vitamins}
               </NavDropdown.Item>
             </NavDropdown>
 
