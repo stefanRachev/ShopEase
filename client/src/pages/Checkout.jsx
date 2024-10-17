@@ -39,8 +39,10 @@ function Checkout() {
           <Row>
             {cartItems.map((item, index) => (
               <Col xs={12} key={`${item.id}-${index}`} className="mb-4">
-                <p>
-                  {item.name} - {item.price}  {translations[language].lv}
+                <hr />
+                <p className="text-danger">
+                  {item.name} - {item.price} {translations[language].lv} /{" "}
+                  {translations[language].quantity} {item.quantity}
                 </p>
               </Col>
             ))}
@@ -85,7 +87,6 @@ function Checkout() {
                   {translations[language].creditCard}
                 </option>
                 <option value="paypal">{translations[language].paypal}</option>
-                
               </Form.Control>
             </Form.Group>
 
