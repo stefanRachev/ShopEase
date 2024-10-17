@@ -22,7 +22,7 @@ function Cart() {
         <div className="text-center">
           <p>{translations[language].cartStatus}</p>
           <Link to="/" className="btn btn-primary">
-            Browse Products
+            {translations[language].browseProducts}
           </Link>
         </div>
       ) : (
@@ -56,15 +56,18 @@ function Cart() {
                     variant="danger"
                     onClick={() => removeFromCart(item.id)}
                   >
-                    Remove
+                    {translations[language].remove}
                   </Button>
                 </Card.Body>
               </Card>
             </Col>
           ))}
           <Col xs={12} className="mt-3">
-            <h3>{translations[language].total} {totalAmount} {translations[language].lv}</h3>
-            <Button variant="success">Proceed to Checkout</Button>
+            <h3>
+              {translations[language].total} {totalAmount}{" "}
+              {translations[language].lv}
+            </h3>
+            <Button variant="success">{translations[language].checkout}</Button>
           </Col>
         </Row>
       )}

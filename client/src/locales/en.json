@@ -116,6 +116,8 @@
   "total": "Total price: ",
   "quantity": "Quantity: ",
   "description": "Description: ",
+  "checkout": "Proceed to Checkout",
+  "remove":"Remove",
   "hideDetails": "Hide details",
   "showDetails": "Show details",
   "fitnessEquipment": "Fitness Equipment",
@@ -164,6 +166,7 @@
   "combatSportsPawsDescription": "Professional combat sports paws",
   "kickboxingBags": "Kickboxing Bags",
   "kickboxingBagsDescription": "Different sizes and colors",
+  "browseProducts": "Browse Products",
   "exampleProductInfo": [
     "The description is for example only and is not for the actual product",
     "Example description 1.",

@@ -8,12 +8,14 @@ import { useNavigate } from "react-router-dom";
 
 
 function Boxing() {
+
   const [show, setShow] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const { language, translations } = useLanguage();
   const { user } = useUser();
   const { addToCart } = useCart();
   const navigate = useNavigate();
+  
   const products = [
     {
       id: "boxing-1",
