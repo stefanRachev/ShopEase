@@ -63,7 +63,7 @@ function Cart() {
             </Col>
           ))}
           <Col xs={12} className="mt-3">
-            <h3>Total: {totalAmount} лв</h3>
+            <h3>{translations[language].total} {totalAmount} {translations[language].lv}</h3>
             <Button variant="success">Proceed to Checkout</Button>
           </Col>
         </Row>

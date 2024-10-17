@@ -113,6 +113,7 @@
   "price": "Price: ",
   "lv": "lv",
   "kg": "kg",
+  "total": "Total price: ",
   "quantity": "Quantity: ",
   "description": "Description: ",
   "hideDetails": "Hide details",
