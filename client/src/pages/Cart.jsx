@@ -7,10 +7,9 @@ import { useState } from "react";
 import { useLanguage } from "../context/useLanguage";
 
 function Cart() {
-  const { cartItems, removeFromCart, totalAmount,} = useCart();
+  const { cartItems, removeFromCart, totalAmount } = useCart();
   const [expandedItem, setExpandedItem] = useState(null);
   const { language, translations } = useLanguage();
-
 
   const toggleDetails = (id) => {
     setExpandedItem(expandedItem === id ? null : id);
@@ -34,10 +33,11 @@ function Cart() {
                 <Card.Body>
                   <Card.Title>{item.name}</Card.Title>
                   <Card.Text>
-                    <strong>Price:</strong> {item.price} лв
+                    <strong>{translations[language].price}</strong> {item.price}{" "}
+                    {translations[language].lv}
                   </Card.Text>
                   <Card.Text>
-                    <strong>Quantity:</strong> {item.quantity}
+                    <strong>{translations[language].quantity}</strong> {item.quantity}
                   </Card.Text>
 
                   <Button variant="link" onClick={() => toggleDetails(item.id)}>
@@ -45,7 +45,7 @@ function Cart() {
                   </Button>
                   {expandedItem === item.id && (
                     <Card.Text>
-                      <strong>Description:</strong> {item.description}
+                      <strong>{translations[language].description}</strong> {item.description}
                     </Card.Text>
                   )}
                   <Button
