@@ -115,6 +115,8 @@
   "kg": "kg",
   "quantity": "Quantity: ",
   "description": "Description: ",
+  "hideDetails": "Hide details",
+  "showDetails": "Show details",
   "fitnessEquipment": "Fitness Equipment",
   "fullDescriptionProteinPowder": "Protein powder for muscle growth",
   "fullDescriptionWheyProtein": "Whey protein for muscle recovery",

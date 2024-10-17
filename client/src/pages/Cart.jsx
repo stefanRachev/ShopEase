@@ -37,15 +37,19 @@ function Cart() {
                     {translations[language].lv}
                   </Card.Text>
                   <Card.Text>
-                    <strong>{translations[language].quantity}</strong> {item.quantity}
+                    <strong>{translations[language].quantity}</strong>{" "}
+                    {item.quantity}
                   </Card.Text>
 
                   <Button variant="link" onClick={() => toggleDetails(item.id)}>
-                    {expandedItem === item.id ? "Hide Details" : "Show Details"}
+                    {expandedItem === item.id
+                      ? translations[language].hideDetails
+                      : translations[language].showDetails}
                   </Button>
                   {expandedItem === item.id && (
                     <Card.Text>
-                      <strong>{translations[language].description}</strong> {item.description}
+                      <strong>{translations[language].description}</strong>{" "}
+                      {item.description}
                     </Card.Text>
                   )}
                   <Button
