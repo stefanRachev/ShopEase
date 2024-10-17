@@ -1,11 +1,13 @@
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useUser } from "../context/useUser";
+import { useCart } from "../context/useCart";
 import { useLanguage } from "../context/useLanguage";
 
 function Header() {
   const { user } = useUser();
   const { language, toggleLanguage, translations } = useLanguage();
+  const { isCartActive } = useCart();
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
@@ -178,7 +180,15 @@ function Header() {
               to="/cart"
               onClick={() => document.querySelector(".navbar-toggler").click()}
             >
-              {translations[language].cart}{" "}
+              <i
+                className={`bi bi-cart cart-icon ${
+                  isCartActive ? "active" : ""
+                }`}
+              >
+                {translations[language].cart}
+              </i>
+              {/* <i className="bi bi-cart"></i> {translations[language].cart} */}
+              {/* {translations[language].cart}{" "} */}
             </Nav.Link>
           </Nav>
 

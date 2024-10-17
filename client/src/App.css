@@ -1,1 +1,7 @@
-
+.cart-icon {
+    transition: color 0.3s ease;
+  }
+  
+  .cart-icon.active {
+    color: #28a745; /* Променя цвета на иконката на зелен при активиране */
+  }

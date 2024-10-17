@@ -1,13 +1,13 @@
 // Cart.jsx;
 
-import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+//import { useContext } from "react";
+import { useCart } from "../context/useCart";
 import { Button, Card, Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Cart() {
-  const { cartItems, removeFromCart, totalAmount } = useContext(CartContext);
+  const { cartItems, removeFromCart, totalAmount,} = useCart();
   const [expandedItem, setExpandedItem] = useState(null);
 
   const toggleDetails = (id) => {
