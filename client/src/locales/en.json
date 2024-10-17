@@ -14,6 +14,8 @@
   "errorOccurred": "An error occurred: ",
   "products": "Products",
   "cart": "Cart",
+  "cartStatus": "Your cart is empty",
+  "cartTitle":"My Cart",
   "slogan": "Discover your strength with our amazing fitness products!",
   "popularCategories": "Popular Categories",
   "bestSellers": "Best Selling Products",

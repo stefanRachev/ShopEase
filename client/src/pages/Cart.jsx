@@ -4,10 +4,13 @@ import { useCart } from "../context/useCart";
 import { Button, Card, Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useLanguage } from "../context/useLanguage";
 
 function Cart() {
   const { cartItems, removeFromCart, totalAmount,} = useCart();
   const [expandedItem, setExpandedItem] = useState(null);
+  const { language, translations } = useLanguage();
+
 
   const toggleDetails = (id) => {
     setExpandedItem(expandedItem === id ? null : id);
@@ -15,11 +18,11 @@ function Cart() {
 
   return (
     <Container className="cart-container mt-5">
-      <h2 className="text-center mb-4">My Cart</h2>
+      <h2 className="text-center mb-4">{translations[language].cartTitle}</h2>
       {cartItems.length === 0 ? (
         <div className="text-center">
-          <p>Your cart is empty</p>
-          <Link to="/products" className="btn btn-primary">
+          <p>{translations[language].cartStatus}</p>
+          <Link to="/" className="btn btn-primary">
             Browse Products
           </Link>
         </div>

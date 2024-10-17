@@ -28,9 +28,9 @@ function Header() {
             >
               {translations[language].cart}
             </i>
-            {itemCount > 0 && ( // Проверка дали количеството е по-голямо от нула
+            {itemCount > 0 && (
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                {itemCount} {/* Числово показване на количеството */}
+                {itemCount}
                 <span className="visually-hidden">unread messages</span>
               </span>
             )}
