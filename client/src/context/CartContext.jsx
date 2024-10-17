@@ -16,7 +16,9 @@ export const CartProvider = ({ children }) => {
     return savedTotalAmount ? JSON.parse(savedTotalAmount) : 0;
   });
 
-  const [isCartActive, setIsCartActive] = useState(false); // Ново състояние за активност
+  const [isCartActive, setIsCartActive] = useState(false);
+
+  const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   const calculateTotal = (items) => {
     const total = items.reduce(
@@ -37,7 +39,7 @@ export const CartProvider = ({ children }) => {
     if (cartItems.length > 0) {
       setIsCartActive(true);
       const timeout = setTimeout(() => {
-        setIsCartActive(false); // Върни обратно след 1 секунда
+        setIsCartActive(false);
       }, 1000);
       return () => clearTimeout(timeout);
     }
@@ -85,7 +87,14 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, totalAmount, isCartActive }}
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        totalAmount,
+        isCartActive,
+        itemCount,
+      }}
     >
       {children}
     </CartContext.Provider>

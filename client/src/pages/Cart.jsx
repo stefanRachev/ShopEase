@@ -1,6 +1,5 @@
 // Cart.jsx;
 
-//import { useContext } from "react";
 import { useCart } from "../context/useCart";
 import { Button, Card, Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
