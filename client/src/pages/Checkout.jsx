@@ -40,7 +40,7 @@ function Checkout() {
             {cartItems.map((item, index) => (
               <Col xs={12} key={`${item.id}-${index}`} className="mb-4">
                 <p>
-                  {item.name} - {item.price} {translations[language].lv}
+                  {item.name} - {item.price}  {translations[language].lv}
                 </p>
               </Col>
             ))}
