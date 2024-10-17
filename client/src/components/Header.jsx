@@ -19,10 +19,7 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Nav className="ms-auto">
-          <Nav.Link as={NavLink}
-           to="/cart"
-           className="position-relative"
-           >
+          <Nav.Link as={NavLink} to="/cart" className="position-relative">
             <i
               className={`bi bi-cart cart-icon ${isCartActive ? "active" : ""}`}
             >
@@ -197,20 +194,6 @@ function Header() {
                 Kickboxing
               </NavDropdown.Item>
             </NavDropdown>
-
-            {/* <Nav.Link
-              as={NavLink}
-              to="/cart"
-              onClick={() => document.querySelector(".navbar-toggler").click()}
-            >
-              <i
-                className={`bi bi-cart cart-icon ${
-                  isCartActive ? "active" : ""
-                }`}
-              >
-                {translations[language].cart}
-              </i>
-            </Nav.Link> */}
           </Nav>
 
           <Nav className="ms-auto">
@@ -264,9 +247,17 @@ function Header() {
                 document.querySelector(".navbar-toggler").click();
               }}
             >
-              {language === "en"
-                ? "Switch to Bulgarian"
-                : "Превключи на английски"}
+              {language === "en" ? (
+                <>
+                  <span className="flag-icon flag-icon-bg"></span> Switch to
+                  Bulgarian
+                </>
+              ) : (
+                <>
+                  <span className="flag-icon flag-icon-gb"></span> Превключи на
+                  английски
+                </>
+              )}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
