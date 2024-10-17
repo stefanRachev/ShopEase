@@ -85,7 +85,7 @@ function Checkout() {
                   {translations[language].creditCard}
                 </option>
                 <option value="paypal">{translations[language].paypal}</option>
-                {/* Добави други методи на плащане тук */}
+                
               </Form.Control>
             </Form.Group>
 
@@ -122,7 +122,7 @@ function Checkout() {
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="success" type="submit">
               {translations[language].confirmOrder}
             </Button>
           </Form>

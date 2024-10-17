@@ -1,5 +1,13 @@
 {
   "welcome": "Welcome to ShopEase!",
+  "name": "Name",
+  "address": "Address",
+  "paymentMethod": "Payment Method",
+  "paypal": "PayPal",
+  "cardNumber": "Card Number",
+  "expirationDate": "Expiration Date",
+  "cvv": "CVV",
+  "confirmOrder": "Confirm Order",
   "email": "Email",
   "login": "Login",
   "logout": "Logout",

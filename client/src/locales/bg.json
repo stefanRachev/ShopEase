@@ -1,5 +1,13 @@
 {
   "welcome": "Добре дошли в ShopEase",
+  "name": "Име",
+  "address": "Адрес",
+  "paymentMethod": "Метод на плащане",
+  "paypal": "PayPal",
+  "cardNumber": "Номер на карта",
+  "expirationDate": "Срок на валидност",
+  "cvv": "CVV",
+  "confirmOrder": "Потвърди поръчката",
   "email": "Имейл",
   "login": "Вход",
   "logout": "Излез",
