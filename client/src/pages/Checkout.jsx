@@ -32,7 +32,7 @@ function Checkout() {
         {translations[language].checkoutTitle}
       </h2>
       {cartItems.length === 0 ? (
-        <p>{translations[language].emptyCart}</p>
+        <p>{translations[language].cartStatus}</p>
       ) : (
         <>
           <h4>{translations[language].orderSummary}</h4>
@@ -46,7 +46,7 @@ function Checkout() {
             ))}
           </Row>
           <h5>
-            {translations[language].total}: {totalAmount}{" "}
+            {translations[language].total} {totalAmount}{" "}
             {translations[language].lv}
           </h5>
 

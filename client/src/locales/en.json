@@ -167,6 +167,8 @@
   "kickboxingBags": "Kickboxing Bags",
   "kickboxingBagsDescription": "Different sizes and colors",
   "browseProducts": "Browse Products",
+  "checkoutTitle": "Order Finalization",
+  "orderSummary": "Order Summary",
   "exampleProductInfo": [
     "The description is for example only and is not for the actual product",
     "Example description 1.",

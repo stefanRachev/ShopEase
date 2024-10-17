@@ -20,6 +20,7 @@ import CrossFit from "../pages/CrossFit";
 import Swimming from "../pages/Swimming";
 import Mma from "../pages/Mma";
 import KikBoxing from "../pages/KickBoxing";
+import Checkout from "../pages/Checkout";
 
 function Content() {
   return (
@@ -51,6 +52,7 @@ function Content() {
       <Route path="/weights/plates" element={<WeightPlates />} />
       <Route path="/weights/barbells" element={<Barbells />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/checkout" element={<Checkout />} />
       {/* Добави още маршрути тук */}
     </Routes>
   );
