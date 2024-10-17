@@ -41,21 +41,21 @@ function NutritionalSupplements() {
       name: translations[language].protein,
       description: translations[language].descriptionProtein,
       image: "https://i.imgur.com/rYJaSfB.jpg",
-      link: "/proteins",
+      link: "/nutritional-supplements/proteins",
     },
     {
       id: 2,
       name: translations[language].aminoAcids,
       description: translations[language].descriptionAminoAcids,
       image: "https://i.imgur.com/Rp0z1Kn.jpg",
-      link: "/amino-acids",
+      link: "/nutritional-supplements/amino-acids",
     },
     {
       id: 3,
       name: translations[language].vitamins,
       description: translations[language].descriptionVitamins,
       image: "https://i.imgur.com/idpp3Bb.jpg",
-      link: "/vitamins",
+      link: "/nutritional-supplements/vitamins",
     },
   ];
 

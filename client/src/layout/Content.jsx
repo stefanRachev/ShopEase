@@ -36,10 +36,16 @@ function Content() {
       <Route path="/sports/swimming" element={<Swimming />} />
       <Route path="/sports/mma" element={<Mma />} />
       <Route path="/sports/kick-boxing" element={<KikBoxing />} />
-      <Route path="/nutritional-supplements" element={<NutritionalSupplements />} />
-      <Route path="/proteins" element={<Proteins />} />
-      <Route path="/amino-acids" element={<AminoAcids />} />
-      <Route path="/vitamins" element={<Vitamins />} />
+      <Route
+        path="/nutritional-supplements"
+        element={<NutritionalSupplements />}
+      />
+      <Route path="/nutritional-supplements/proteins" element={<Proteins />} />
+      <Route
+        path="/nutritional-supplements/amino-acids"
+        element={<AminoAcids />}
+      />
+      <Route path="/nutritional-supplements/vitamins" element={<Vitamins />} />
       <Route path="/fitness-equipment" element={<FitnessEquipment />} />
       <Route path="/weights/dumbbells" element={<Dumbbells />} />
       <Route path="/weights/plates" element={<WeightPlates />} />

@@ -18,21 +18,78 @@ function Header() {
               title={translations[language].products}
               id="products-dropdown"
             >
-              <NavDropdown.Item as={NavLink} to="/weights">
-                Свободни тежести
+              <NavDropdown.Item
+                as={NavLink}
+                to="/weights"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
+                Всички тежести
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/weights/dumbbells">
+              <NavDropdown.Item
+                as={NavLink}
+                to="/weights/dumbbells"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
                 Дъмбели
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/weights/barbells">
+              <NavDropdown.Item
+                as={NavLink}
+                to="/weights/barbells"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
                 Лостове за тежести
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/weights/plates">
+              <NavDropdown.Item
+                as={NavLink}
+                to="/weights/plates"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
                 Плочи за тежести
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={NavLink} to="/nutritional-supplements">
+              <NavDropdown.Item
+                as={NavLink}
+                to="/nutritional-supplements"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
                 Продукти за здраве и сила
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/nutritional-supplements/proteins"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
+                Протеини
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/nutritional-supplements/amino-acids"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
+                Аминокиселини
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/nutritional-supplements/vitamins"
+                onClick={() =>
+                  document.querySelector(".navbar-toggler").click()
+                }
+              >
+                Витамини
               </NavDropdown.Item>
             </NavDropdown>
 
