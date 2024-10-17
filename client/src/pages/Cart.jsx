@@ -5,14 +5,26 @@ import { Button, Card, Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useLanguage } from "../context/useLanguage";
+import { useUser } from "../context/useUser";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const { cartItems, removeFromCart, totalAmount } = useCart();
   const [expandedItem, setExpandedItem] = useState(null);
   const { language, translations } = useLanguage();
+  const { user } = useUser();
+  const navigate = useNavigate();
 
   const toggleDetails = (id) => {
     setExpandedItem(expandedItem === id ? null : id);
+  };
+
+  const handleCheckout = () => {
+    if (!user) {
+      navigate("/login");
+    } else {
+      navigate("/checkout");
+    }
   };
 
   return (
@@ -67,7 +79,9 @@ function Cart() {
               {translations[language].total} {totalAmount}{" "}
               {translations[language].lv}
             </h3>
-            <Button variant="success">{translations[language].checkout}</Button>
+            <Button variant="success" onClick={handleCheckout}>
+              {translations[language].checkout}
+            </Button>
           </Col>
         </Row>
       )}
