@@ -12,8 +12,22 @@ function Header() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="/">ShopEase</Navbar.Brand>
+        <Navbar.Brand as={NavLink} to="/">
+          ShopEase
+        </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+        <Nav className="ms-auto">
+          <Nav.Link as={NavLink} to="/cart">
+            <i
+              className={`bi bi-cart cart-icon ${isCartActive ? "active" : ""}`}
+            >
+              {translations[language].cart}
+            </i>
+          </Nav.Link>
+        </Nav>
+
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown
@@ -175,7 +189,7 @@ function Header() {
               </NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link
+            {/* <Nav.Link
               as={NavLink}
               to="/cart"
               onClick={() => document.querySelector(".navbar-toggler").click()}
@@ -187,9 +201,7 @@ function Header() {
               >
                 {translations[language].cart}
               </i>
-              {/* <i className="bi bi-cart"></i> {translations[language].cart} */}
-              {/* {translations[language].cart}{" "} */}
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
 
           <Nav className="ms-auto">
