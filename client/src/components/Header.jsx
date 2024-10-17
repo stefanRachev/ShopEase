@@ -7,7 +7,7 @@ import { useLanguage } from "../context/useLanguage";
 function Header() {
   const { user } = useUser();
   const { language, toggleLanguage, translations } = useLanguage();
-  const { isCartActive } = useCart();
+  const { isCartActive, itemCount } = useCart();
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
@@ -19,12 +19,21 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Nav className="ms-auto">
-          <Nav.Link as={NavLink} to="/cart">
+          <Nav.Link as={NavLink}
+           to="/cart"
+           className="position-relative"
+           >
             <i
               className={`bi bi-cart cart-icon ${isCartActive ? "active" : ""}`}
             >
               {translations[language].cart}
             </i>
+            {itemCount > 0 && ( // Проверка дали количеството е по-голямо от нула
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {itemCount} {/* Числово показване на количеството */}
+                <span className="visually-hidden">unread messages</span>
+              </span>
+            )}
           </Nav.Link>
         </Nav>
 
