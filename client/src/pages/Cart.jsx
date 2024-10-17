@@ -59,10 +59,26 @@ function Cart() {
                       : translations[language].showDetails}
                   </Button>
                   {expandedItem === item.id && (
-                    <Card.Text>
-                      <strong>{translations[language].description}</strong>{" "}
-                      {item.description}
-                    </Card.Text>
+                    <>
+                      <Card.Text>
+                        <strong>{translations[language].description}</strong>{" "}
+                        {item.description}
+                      </Card.Text>
+                      {item.diameter && (
+                        <Card.Text>
+                          <strong>{translations[language].diameter}</strong>{" "}
+                          {item.diameter}
+                        </Card.Text>
+                      )}
+                      {item.details?.additionalInfo && (
+                        <Card.Text>
+                          <strong>
+                            {translations[language].additionalInfo}
+                          </strong>{" "}
+                          {item.details.additionalInfo}
+                        </Card.Text>
+                      )}
+                    </>
                   )}
                   <Button
                     variant="danger"
