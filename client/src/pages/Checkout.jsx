@@ -191,7 +191,7 @@ function Checkout() {
   };
 
   return (
-    <Container className="checkout-container mt-5">
+    <Container fluid="md" className="mt-5">
       <h2 className="text-center mb-4">
         {translations[language].checkoutTitle}
       </h2>
@@ -200,7 +200,7 @@ function Checkout() {
       ) : (
         <>
           <h4>{translations[language].orderSummary}</h4>
-          <Row>
+          <Row className="justify-content-center">
             {cartItems.map((item, index) => (
               <Col xs={12} key={`${item.id}-${index}`} className="mb-4">
                 <hr />
@@ -217,7 +217,6 @@ function Checkout() {
           </h5>
 
           <Form onSubmit={handleSubmit} className="mt-4">
-            {error && <p className="text-danger">{error}</p>}
             {error && <p className="text-danger">{error}</p>}
 
             <Form.Group controlId="formName">
@@ -290,7 +289,10 @@ function Checkout() {
             {formData.paymentMethod === "creditCard" && (
               <>
                 <Form.Group controlId="formCardNumber">
-                  <Form.Label>{translations[language].cardNumber}</Form.Label>
+                  <Form.Label>
+                    {translations[language].cardNumber}{" "}
+                    <span className="text-danger">*</span>
+                  </Form.Label>
                   <Form.Control
                     type="text"
                     name="cardNumber"
@@ -304,6 +306,7 @@ function Checkout() {
                 <Form.Group controlId="formExpirationDate">
                   <Form.Label>
                     {translations[language].expirationDate}
+                    <span className="text-danger">*</span>
                   </Form.Label>
                   <Form.Control
                     type="text"
@@ -318,6 +321,7 @@ function Checkout() {
                 <Form.Group controlId="formCVV">
                   <Form.Label>
                     {translations[language].cvv}{" "}
+                    <span className="text-danger">*</span>{" "}
                     <span className="text-danger"></span>
                   </Form.Label>
                   <Form.Control

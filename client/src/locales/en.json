@@ -182,6 +182,7 @@
   "orderSummary": "Order Summary",
   "formError": "Please fill in all required fields correctly.",
   "submit": "Submit",
+  "phone": "Phone",
   "exampleProductInfo": [
     "The description is for example only and is not for the actual product",
     "Example description 1.",
