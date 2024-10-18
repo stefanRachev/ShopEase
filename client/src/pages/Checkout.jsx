@@ -22,7 +22,7 @@
 
 //   const handleSubmit = (e) => {
 //     e.preventDefault();
-//     // Тук можеш да добавиш логика за обработка на плащането
+//
 //     console.log("Submitting payment:", formData);
 //   };
 
@@ -147,7 +147,8 @@ function Checkout() {
   const [formData, setFormData] = useState({
     name: "",
     address: "",
-    paymentMethod: "creditCard",
+    phone: "",
+    paymentMethod: "",
     cardNumber: "",
     expirationDate: "",
     cvv: "",
@@ -157,13 +158,18 @@ function Checkout() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validateForm(formData)) {
-      setError(translations[language].formError);
+
+    const validation = validateForm(formData);
+    if (!validation.valid) {
+      setError(validation.message);
       return;
     }
 
@@ -173,7 +179,8 @@ function Checkout() {
       setFormData({
         name: "",
         address: "",
-        paymentMethod: "creditCard",
+        phone: "",
+        paymentMethod: "",
         cardNumber: "",
         expirationDate: "",
         cvv: "",
@@ -211,37 +218,68 @@ function Checkout() {
 
           <Form onSubmit={handleSubmit} className="mt-4">
             {error && <p className="text-danger">{error}</p>}
+            {error && <p className="text-danger">{error}</p>}
 
             <Form.Group controlId="formName">
-              <Form.Label>{translations[language].name}</Form.Label>
+              <Form.Label>
+                {translations[language].name}{" "}
+                <span className="text-danger">*</span>
+              </Form.Label>
               <Form.Control
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
                 required
+                placeholder="Вашето име"
               />
             </Form.Group>
 
             <Form.Group controlId="formAddress">
-              <Form.Label>{translations[language].address}</Form.Label>
+              <Form.Label>
+                {translations[language].address}{" "}
+                <span className="text-danger">*</span>
+              </Form.Label>
               <Form.Control
                 type="text"
                 name="address"
                 value={formData.address}
                 onChange={handleInputChange}
                 required
+                placeholder="Вашият адрес"
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formPhone">
+              <Form.Label>
+                {translations[language].phone}{" "}
+                <span className="text-danger">*</span>
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                required
+                placeholder="Вашият телефонен номер"
               />
             </Form.Group>
 
             <Form.Group controlId="formPaymentMethod">
-              <Form.Label>{translations[language].paymentMethod}</Form.Label>
+              <Form.Label>
+                {translations[language].selectPaymentMethod}{" "}
+                <span className="text-danger">*</span>
+              </Form.Label>
               <Form.Control
                 as="select"
                 name="paymentMethod"
                 value={formData.paymentMethod}
                 onChange={handleInputChange}
+                required
               >
+                <option value="" disabled>
+                  {translations[language].selectPaymentMethod}{" "}
+                </option>
                 <option value="creditCard">
                   {translations[language].creditCard}
                 </option>
@@ -259,6 +297,7 @@ function Checkout() {
                     value={formData.cardNumber}
                     onChange={handleInputChange}
                     required
+                    placeholder="1234 5678 9012 3456"
                   />
                 </Form.Group>
 
@@ -272,24 +311,29 @@ function Checkout() {
                     value={formData.expirationDate}
                     onChange={handleInputChange}
                     required
+                    placeholder="MM/ГГ"
                   />
                 </Form.Group>
 
                 <Form.Group controlId="formCVV">
-                  <Form.Label>{translations[language].cvv}</Form.Label>
+                  <Form.Label>
+                    {translations[language].cvv}{" "}
+                    <span className="text-danger"></span>
+                  </Form.Label>
                   <Form.Control
                     type="text"
                     name="cvv"
                     value={formData.cvv}
                     onChange={handleInputChange}
                     required
+                    placeholder="123"
                   />
                 </Form.Group>
               </>
             )}
 
-            <Button variant="success" type="submit">
-              {translations[language].confirmOrder}
+            <Button type="submit" className="mt-3" variant="btn btn-success">
+              {translations[language].submit}
             </Button>
           </Form>
         </>

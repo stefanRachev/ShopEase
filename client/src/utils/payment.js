@@ -11,9 +11,35 @@ export const processMockPayment = (formData) => {
 };
 
 export const validateForm = (formData) => {
-  const { name, address, cardNumber, expirationDate, cvv } = formData;
-  if (!name || !address || !cardNumber || !expirationDate || !cvv) {
-    return false;
+  const { name, address, paymentMethod, cardNumber, expirationDate, cvv } = formData;
+
+  
+  if (!name.trim()) {
+    return { valid: false, message: "Name is required." }; 
   }
-  return true;
+  
+  if (!address.trim()) {
+    return { valid: false, message: "Address is required." }; 
+  }
+
+  
+  if (!paymentMethod) {
+    return { valid: false, message: "Payment method is required." }; 
+  }
+
+ 
+  if (paymentMethod === "creditCard") {
+    if (!cardNumber.trim()) {
+      return { valid: false, message: "Card number is required." }; 
+    }
+    if (!expirationDate.trim()) {
+      return { valid: false, message: "Expiration date is required." }; 
+    }
+    if (!cvv.trim()) {
+      return { valid: false, message: "CVV is required." }; 
+    }
+  }
+
+  
+  return { valid: true, message: "" };
 };
