@@ -192,7 +192,7 @@ function Checkout() {
 
   return (
     <Container fluid="md" className="mt-5">
-      <h2 className="text-center mb-4">
+      <h2 className="text-center mb-4 text-success">
         {translations[language].checkoutTitle}
       </h2>
       {cartItems.length === 0 ? (
@@ -211,7 +211,7 @@ function Checkout() {
               </Col>
             ))}
           </Row>
-          <h5>
+          <h5 className="text-success">
             {translations[language].total} {totalAmount}{" "}
             {translations[language].lv}
           </h5>
