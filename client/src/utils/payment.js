@@ -1,4 +1,5 @@
 // src/utils/payment.js
+const apiUrl = import.meta.env.VITE_API_URL;
 
 export const processMockPayment = (formData) => {
   return new Promise((resolve) => {
@@ -42,9 +43,13 @@ export const validateForm = (formData) => {
 
 export const createOrderData = (formData, cartItems, totalAmount) => {
   return {
-    items: cartItems,
+    items: cartItems.map(item => ({
+      productId: item.id, 
+      quantity: item.quantity,
+      price: item.price,
+    })),
     totalAmount: totalAmount,
-    customer: {
+    customer: { 
       name: formData.name,
       address: formData.address,
       phone: formData.phone,
@@ -56,9 +61,10 @@ export const createOrderData = (formData, cartItems, totalAmount) => {
   };
 };
 
+
 export const submitOrder = async (orderData) => {
   try {
-    const response = await fetch("/api/orders", {
+    const response = await fetch(apiUrl + "/api/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
