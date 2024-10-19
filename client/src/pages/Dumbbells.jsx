@@ -15,110 +15,134 @@ function Dumbbells() {
       id: "dumbbell-1",
       name: translations[language].dumbbell1,
       description: translations[language].descriptionDumbbells1,
-      weight: 2.5,
       price: 15,
       quantity: 1,
       image: "https://i.imgur.com/Wvxru9f.jpg",
+      details: {
+        weight: 2.5,
+      },
     },
     {
       id: "dumbbell-2",
       name: translations[language].dumbbell2,
-      description: translations[language].descriptionDumbbells1,
-      weight: 5,
+      description: translations[language].descriptionDumbbells1,     
       price: 25,
       quantity: 1,
       image: "https://i.imgur.com/Wvxru9f.jpg",
+      details: {
+        weight: 5,
+      },
     },
     {
       id: "dumbbell-3",
       name: translations[language].dumbbell3,
-      description: translations[language].descriptionDumbbells1,
-      weight: 7.5,
+      description: translations[language].descriptionDumbbells1,    
       price: 35,
       quantity: 1,
       image: "https://i.imgur.com/Wvxru9f.jpg",
+      details: {
+        weight: 7.5,
+      },
     },
     {
       id: "dumbbell-4",
       name: translations[language].dumbbell4,
-      description: translations[language].descriptionDumbbells1,
-      weight: 10,
+      description: translations[language].descriptionDumbbells1,     
       price: 45,
       quantity: 1,
       image: "https://i.imgur.com/Wvxru9f.jpg",
+      details: {
+        weight: 10,
+      },
     },
     {
       id: "dumbbell-5",
       name: translations[language].dumbbell5,
-      description: translations[language].descriptionDumbbells1,
-      weight: 12.5,
+      description: translations[language].descriptionDumbbells1,     
       price: 55,
       quantity: 1,
       image: "https://i.imgur.com/Wvxru9f.jpg",
+      details: {
+        weight: 12.5,
+      },
     },
     {
       id: "dumbbell-6",
       name: translations[language].dumbbell6,
-      description: translations[language].descriptionDumbbells1,
-      weight: 14,
+      description: translations[language].descriptionDumbbells1,      
       price: 55,
       quantity: 1,
       image: "https://i.imgur.com/Wvxru9f.jpg",
+      details: {
+        weight: 14,
+      },
     },
     {
       id: "dumbbell-7",
       name: translations[language].dumbbell7,
       description: translations[language].descriptionDumbbells1,
-      weight: 17.5,
       price: 55,
       quantity: 1,
       image: "https://i.imgur.com/Wvxru9f.jpg",
+      details: {
+        weight: 17.5,
+      },
     },
     {
       id: "dumbbell-8",
       name: translations[language].dumbbell8,
       description: translations[language].descriptionDumbbells1,
-      weight: 22,
       price: 55,
       quantity: 1,
       image: "https://i.imgur.com/Wvxru9f.jpg",
+      details: {
+        weight: 22,
+      },
     },
     {
       id: "dumbbell-9",
       name: translations[language].dumbbell9,
-      description: translations[language].descriptionDumbbells1,
-      weight: 24,
+      description: translations[language].descriptionDumbbells1,     
       price: 55,
       quantity: 1,
       image: "https://i.imgur.com/Wvxru9f.jpg",
+      details: {
+        weight: 24,
+      },
     },
     {
       id: "dumbbell-10",
       name: translations[language].dumbbell10,
-      description: translations[language].descriptionDumbbells1,
-      weight: 26,
+      description: translations[language].descriptionDumbbells1,    
       price: 55,
       quantity: 1,
       image: "https://i.imgur.com/Wvxru9f.jpg",
+      details: {
+        weight: 26,
+      },
     },
     {
       id: "dumbbell-11",
       name: translations[language].dumbbell11,
       description: translations[language].descriptionDumbbells1,
-      weight: 30,
       price: 55,
       quantity: 1,
       image: "https://i.imgur.com/Wvxru9f.jpg",
+      details: {
+        weight: 30,
+      },
     },
 
     {
       id: "dumbbell-12",
       name: translations[language].dumbbell12,
       description: translations[language].descriptionDumbbells1,
-      weight: 40,
       price: 55,
       quantity: 1,
       image: "https://i.imgur.com/Wvxru9f.jpg",
+      details: {
+        weight: 40,
+      },
     },
   ];
 
@@ -149,7 +173,7 @@ function Dumbbells() {
               />
               <div className="card-body">
                 <h5 className="card-title">
-                  {product.weight} {translations[language].kg}
+                  {product.details.weight} {translations[language].kg}
                 </h5>
                 <p className="card-text">
                   {translations[language].price}

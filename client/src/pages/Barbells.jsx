@@ -14,82 +14,114 @@ function Barbells() {
     {
       id: "barbell-1",
       name: translations[language].barbell1,
-      weight: 10,
+      diameter: 28,
       price: 100,
-      diameter: 50,
+
       quantity: 1,
       image: "https://i.imgur.com/xjkO8aV.jpg",
       description: translations[language].description5,
+      details: {
+        weight: 10,
+        diameter: 50,
+      },
     },
     {
       id: "barbell-2",
       name: translations[language].barbell2,
-      weight: 20,
+
       price: 300,
-      diameter: 50,
+
       quantity: 1,
       image: "https://i.imgur.com/xjkO8aV.jpg",
       description: translations[language].description6,
+      details: {
+        weight: 20,
+        diameter: 50,
+      },
     },
     {
       id: "barbell-3",
       name: translations[language].barbell3,
-      weight: 8,
+
       price: 50,
-      diameter: 30,
+
       quantity: 1,
       image: "https://i.imgur.com/xjkO8aV.jpg",
       description: translations[language].description7,
+      details: {
+        weight: 8,
+        diameter: 30,
+      },
     },
     {
       id: "barbell-4",
       name: translations[language].barbell4,
-      weight: 6,
+
       price: 45,
-      diameter: 28,
+
       quantity: 1,
       image: "https://i.imgur.com/xjkO8aV.jpg",
       description: translations[language].description8,
+      details: {
+        weight: 6,
+        diameter: 28,
+      },
     },
     {
       id: "barbell-5",
       name: translations[language].barbell5,
-      weight: 2,
+
       price: 18,
-      diameter: 28,
+
       quantity: 1,
       image: "https://i.imgur.com/xjkO8aV.jpg",
       description: translations[language].description9,
+      details: {
+        weight: 2,
+        diameter: 28,
+      },
     },
     {
       id: "barbell-6",
       name: translations[language].barbell6,
-      weight: 2,
+
       price: 20,
-      diameter: 30,
+
       quantity: 1,
       image: "https://i.imgur.com/xjkO8aV.jpg",
       description: translations[language].description9,
+      details: {
+        weight: 2,
+        diameter: 30,
+      },
     },
     {
       id: "barbell-7",
       name: translations[language].barbell7,
-      weight: 10,
+
       price: 55,
-      diameter: 28,
+
       quantity: 1,
       image: "https://i.imgur.com/xjkO8aV.jpg",
       description: translations[language].description10,
+      details: {
+        weight: 10,
+        diameter: 28,
+      },
     },
     {
       id: "barbell-8",
       name: translations[language].barbell8,
-      weight: 10,
+
       price: 55,
-      diameter: 30,
+
       quantity: 1,
       image: "https://i.imgur.com/xjkO8aV.jpg",
       description: translations[language].description10,
+      details: {
+        weight: 10,
+        diameter: 30,
+      },
     },
   ];
 
@@ -120,14 +152,14 @@ function Barbells() {
               />
               <div className="card-body">
                 <h5 className="card-title">
-                  {barbells.weight} {translations[language].kg}
+                  {barbells.details.weight} {translations[language].kg}
                 </h5>
                 <p className="card-text">
                   {translations[language].price}
                   {barbells.price} {translations[language].lv}
                 </p>
                 <p className="card-text">
-                  {barbells.diameter} {translations[language].diameter}{" "}
+                  {barbells.details.diameter} {translations[language].diameter}{" "}
                 </p>
                 <p className="card-text">{barbells.description} </p>
                 <button

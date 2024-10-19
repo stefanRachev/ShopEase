@@ -64,10 +64,10 @@ function Cart() {
                         <strong>{translations[language].description}</strong>{" "}
                         {item.description}
                       </Card.Text>
-                      {item.diameter && (
+                      {item.details.diameter && (
                         <Card.Text>
                           <strong>{translations[language].diameter}</strong>{" "}
-                          {item.diameter}
+                          {item.details.diameter}
                         </Card.Text>
                       )}
                       {item.details?.additionalInfo && (

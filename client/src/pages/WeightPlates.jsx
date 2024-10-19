@@ -13,96 +13,96 @@ function WeightPlates() {
     {
       id: "plate-1",
       name: translations[language].discName5,
-      weight: 5,
       price: 20,
       quantity: 1,
       image: "https://i.imgur.com/m35G0Iq.jpg",
       description: translations[language].discDescription50,
       details: {
+        weight: 5,
         diameter: 50,
       },
     },
     {
       id: "plate-2",
       name: translations[language].discName20,
-      weight: 20,
       price: 50,
       quantity: 1,
       image: "https://i.imgur.com/m35G0Iq.jpg",
       description: translations[language].discDescription50,
       details: {
+        weight: 20,
         diameter: 50,
       },
     },
     {
       id: "plate-3",
       name: translations[language].discName10,
-      weight: 10,
       price: 20,
       quantity: 1,
       image: "https://i.imgur.com/m35G0Iq.jpg",
       description: translations[language].discDescription30,
       details: {
+        weight: 10,
         diameter: 30,
       },
     },
     {
       id: "plate-4",
       name: translations[language].discName2,
-      weight: 2,
       price: 8,
       quantity: 1,
       image: "https://i.imgur.com/m35G0Iq.jpg",
       description: translations[language].discDescription28,
       details: {
+        weight: 2,
         diameter: 28,
       },
     },
     {
       id: "plate-5",
       name: translations[language].discName10,
-      weight: 10,
       price: 18,
       quantity: 1,
       image: "https://i.imgur.com/m35G0Iq.jpg",
       description: translations[language].discDescription28,
       details: {
+        weight: 10,
         diameter: 28,
       },
     },
     {
       id: "plate-6",
       name: translations[language].discName2,
-      weight: 2,
       price: 9,
       quantity: 1,
       image: "https://i.imgur.com/m35G0Iq.jpg",
       description: translations[language].discDescription30,
       details: {
+        weight: 2,
         diameter: 30,
       },
     },
     {
       id: "plate-7",
       name: translations[language].discName10,
-      weight: 10,
       price: 25,
       quantity: 1,
       image: "https://i.imgur.com/m35G0Iq.jpg",
       description: translations[language].discDescription30,
       details: {
+        weight: 10,
         diameter: 30,
       },
     },
     {
       id: "plate-8",
       name: translations[language].discName10,
-      weight: 10,
       price: 22,
       quantity: 1,
       image: "https://i.imgur.com/m35G0Iq.jpg",
       description: translations[language].discDescription28,
       details: {
+        weight: 10,
         diameter: 28,
       },
     },
@@ -135,7 +135,7 @@ function WeightPlates() {
               />
               <div className="card-body">
                 <h5 className="card-title">
-                  {plates.weight} {translations[language].kg}
+                  {plates.details.weight} {translations[language].kg}
                 </h5>
                 <p className="card-text">
                   {translations[language].price}
