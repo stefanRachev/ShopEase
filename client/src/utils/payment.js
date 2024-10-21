@@ -60,9 +60,9 @@ export const createOrderData = (formData, cartItems,totalAmount) => {
       phone: formData.phone,
       paymentMethod: formData.paymentMethod,
 
-      cardNumber: formData.cardNumber,
-      expirationDate: formData.expirationDate,
-      cvv: formData.cvv,
+      // cardNumber: formData.cardNumber,
+      // expirationDate: formData.expirationDate,
+      // cvv: formData.cvv,
     },
   };
 };

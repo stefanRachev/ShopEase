@@ -6,7 +6,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Checkout() {
+
   const navigate = useNavigate();
+  
   const { cartItems, totalAmount, setCartItems } = useCart();
   const { language, translations } = useLanguage();
   const [formData, setFormData] = useState({
@@ -39,6 +41,7 @@ function Checkout() {
     }
 
     const orderData = createOrderData(formData, cartItems, totalAmount);
+    console.log("Order data being sent to server:", orderData);
 
     try {
       const paymentResult = await submitOrder(orderData);

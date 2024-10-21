@@ -8,29 +8,41 @@ import "slick-carousel/slick/slick-theme.css";
 import PropTypes from "prop-types";
 
 const SampleNextArrow = (props) => {
-  const { onClick } = props;
+  const { className, style, onClick } = props;
   return (
-    <div className={`${styles.arrow} ${styles.next}`} onClick={onClick}>
+    <div
+      className={`${className} ${styles.arrow} ${styles.next}`}
+      style={{ ...style }}
+      onClick={onClick}
+    >
       &#x203A;
+    </div>
+  );
+};
+
+const SamplePrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} ${styles.arrow} ${styles.prev}`}
+      style={{ ...style }}
+      onClick={onClick}
+    >
+      &#x2039;
     </div>
   );
 };
 
 SampleNextArrow.propTypes = {
   onClick: PropTypes.func.isRequired,
-};
-
-const SamplePrevArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <div className={`${styles.arrow} ${styles.prev}`} onClick={onClick}>
-      &#x2039;
-    </div>
-  );
+  className: PropTypes.string,
+  style: PropTypes.object,
 };
 
 SamplePrevArrow.propTypes = {
   onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  style: PropTypes.object,
 };
 
 function NutritionalSupplements() {
@@ -68,8 +80,8 @@ function NutritionalSupplements() {
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: "linear",
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow onClick={() => {}} />,
+    prevArrow: <SamplePrevArrow onClick={() => {}} />,
     responsive: [
       {
         breakpoint: 1024,
