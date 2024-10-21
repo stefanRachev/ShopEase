@@ -16,6 +16,9 @@ function Checkout() {
     expirationDate: "",
     cvv: "",
   });
+  console.log(totalAmount);
+  typeof totalAmount;
+  
 
   const [error, setError] = useState("");
 
@@ -35,8 +38,9 @@ function Checkout() {
       setError(validation.message);
       return;
     }
-
-    const orderData = createOrderData(formData, cartItems, totalAmount);
+   
+   
+    const orderData = createOrderData(formData, cartItems,totalAmount);
 
     try {
       const paymentResult = await submitOrder(orderData);

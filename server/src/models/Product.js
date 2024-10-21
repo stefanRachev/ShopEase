@@ -20,11 +20,11 @@ const productSchema = new mongoose.Schema({
     type: Number,
     default: 1, // Може да зададеш и по подразбиране колко от продукта имаш
   },
-  stock: {
-    type: Number,
-    required: true,
-    default: 0, // Броя на налични стоки
-  },
+  // stock: {
+  //   type: Number,
+  //   required: true,
+  //   default: 0, // Броя на налични стоки
+  // },
   category: {
     type: String,
   },

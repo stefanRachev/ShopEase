@@ -8,18 +8,28 @@ const orderSchema = new mongoose.Schema({
   },
   items: [
     {
-      productId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
+      name: {
+        type: String,
+        required: true,
+      },
+      image: {
+        type: String,
+        required: true,
+      },
+      price: {
+        type: Number,
         required: true,
       },
       quantity: {
         type: Number,
         required: true,
       },
-      price: {
-        type: Number,
-        required: true,
+      description: {
+        type: String,
+      },
+      details: {
+        weight: { type: Number },
+        diameter: { type: Number },
       },
     },
   ],
@@ -28,13 +38,15 @@ const orderSchema = new mongoose.Schema({
     required: true,
   },
   customer: {
+    // email: { type: String, required: true }, 
     name: { type: String, required: true },
     address: { type: String, required: true },
     phone: { type: String, required: true },
-    paymentMethod: { type: String, required: true },
-    cardNumber: { type: String, required: true },
-    expirationDate: { type: String, required: true },
-    cvv: { type: String, required: true },
+    paymentMethod: {
+      type: String,
+      required: true,
+      enum: ["credit_card", "paypal", "cash_on_delivery"],
+    },
   },
   orderDate: {
     type: Date,
@@ -42,5 +54,20 @@ const orderSchema = new mongoose.Schema({
   },
 });
 
+// Преди да запишем поръчката, можем автоматично да изчислим totalAmount
+orderSchema.pre('save', function (next) {
+  const order = this;
+  let total = 0;
+
+  // Изчисляваме общата сума на базата на продуктовете и количествата
+  order.items.forEach(item => {
+    total += item.price * item.quantity;
+  });
+
+  order.totalAmount = total; // Задаваме общата сума
+  next();
+});
+
 const Order = mongoose.model("Order", orderSchema);
 module.exports = Order;
+

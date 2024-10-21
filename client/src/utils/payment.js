@@ -41,19 +41,43 @@ export const validateForm = (formData) => {
   return { valid: true, message: "" };
 };
 
-export const createOrderData = (formData, cartItems, totalAmount) => {
+// export const createOrderData = (formData, cartItems, totalAmount) => {
+//   return {
+//     items: cartItems.map(item => ({
+//       productId: item.id,
+//       quantity: item.quantity,
+//       price: item.price,
+//     })),
+//     totalAmount: totalAmount,
+//     customer: {
+//       name: formData.name,
+//       address: formData.address,
+//       phone: formData.phone,
+//       paymentMethod: formData.paymentMethod,
+//       // cardNumber: formData.cardNumber,
+//       // expirationDate: formData.expirationDate,
+//       // cvv: formData.cvv,
+//     },
+//   };
+// };
+
+export const createOrderData = (formData, cartItems,totalAmount) => {
   return {
-    items: cartItems.map(item => ({
-      productId: item.id, 
+    items: cartItems.map((item) => ({
+      name: item.name, 
+      image: item.image,
+      price: item.price, 
       quantity: item.quantity,
-      price: item.price,
+      description: item.description,
+      details: item.details, 
     })),
     totalAmount: totalAmount,
-    customer: { 
+    customer: {
       name: formData.name,
       address: formData.address,
       phone: formData.phone,
       paymentMethod: formData.paymentMethod,
+
       cardNumber: formData.cardNumber,
       expirationDate: formData.expirationDate,
       cvv: formData.cvv,
@@ -61,14 +85,13 @@ export const createOrderData = (formData, cartItems, totalAmount) => {
   };
 };
 
-
 export const submitOrder = async (orderData) => {
   try {
-    const response = await fetch(apiUrl + "/api/orders", {
+    const response = await fetch(apiUrl + "/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`, 
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify(orderData),
     });
