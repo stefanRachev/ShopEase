@@ -51,11 +51,9 @@ exports.getUserOrders = async (req, res) => {
 exports.getOrderById = async (req, res) => {
   try {
     const orderId = req.params.id; 
-    console.log("Fetching order with ID:", orderId); // Проверка на ID
-    
+     
     const order = await Order.findById(orderId);
-    console.log("Fetched Order:", order); // Лог на получената поръчка
-
+ 
     if (!order) {
       return res.status(404).json({
         status: "error",
