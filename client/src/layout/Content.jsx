@@ -22,6 +22,8 @@ import Mma from "../pages/Mma";
 import KikBoxing from "../pages/KickBoxing";
 import Checkout from "../pages/Checkout";
 import OrderSummary from "../pages/OrderSummary";
+import TermsOfService from "../components/TermsOfService ";
+import PrivacyPolicy from "../components/PrivacyPolicy";
 
 function Content() {
   return (
@@ -55,6 +57,8 @@ function Content() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/order-summary/:orderId" element={<OrderSummary />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       {/* Добави още маршрути тук */}
     </Routes>
   );
