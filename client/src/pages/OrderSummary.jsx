@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col, Spinner, Alert } from "react-bootstrap";
 import { useLanguage } from "../context/useLanguage";
+import DeliveryInstructions from "./DeliveryInstructions";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -107,12 +108,15 @@ function OrderSummary() {
             ))}
           </Row>
         </Col>
+        <Col xs={12}>
+          <DeliveryInstructions />{" "}
+          {/* Вмъкване на компонента за условия на доставка */}
+        </Col>
       </Row>
 
       <h4 className="text-danger">
         {translations[language].total}
-        {order.totalAmount.toFixed(2)}{" "}
-        {translations[language].lv}
+        {order.totalAmount.toFixed(2)} {translations[language].lv}
       </h4>
     </Container>
   );
