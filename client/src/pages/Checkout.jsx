@@ -41,7 +41,7 @@ function Checkout() {
     }
 
     const orderData = createOrderData(formData, cartItems, totalAmount);
-    console.log("Order data being sent to server:", orderData);
+   
 
     try {
       const paymentResult = await submitOrder(orderData);

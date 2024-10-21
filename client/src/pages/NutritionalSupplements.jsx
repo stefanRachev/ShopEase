@@ -46,7 +46,9 @@ SamplePrevArrow.propTypes = {
 };
 
 function NutritionalSupplements() {
+
   const { language, translations } = useLanguage();
+  
   const products = [
     {
       id: 1,

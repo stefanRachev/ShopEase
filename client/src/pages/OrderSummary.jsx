@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Container, Row, Col, ListGroup, Spinner, Alert } from "react-bootstrap";
- 
+import { Container, Row, Col, Spinner, Alert } from "react-bootstrap";
+import { useLanguage } from "../context/useLanguage";
+
 const apiUrl = import.meta.env.VITE_API_URL;
 
 function OrderSummary() {
-  const { orderId } = useParams(); 
+  const { orderId } = useParams();
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { language, translations } = useLanguage();
 
   useEffect(() => {
     const fetchOrder = async () => {
@@ -18,7 +20,7 @@ function OrderSummary() {
           throw new Error("Failed to fetch order");
         }
         const data = await response.json();
-        setOrder(data.order); 
+        setOrder(data.order);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -31,10 +33,11 @@ function OrderSummary() {
 
   if (loading) {
     return (
-      <Container className="text-center">
+      <Container className="text-center mt-5">
         <Spinner animation="border" role="status">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
+        <p>Loading order details...</p>
       </Container>
     );
   }
@@ -48,40 +51,71 @@ function OrderSummary() {
   }
 
   return (
-    <Container>
-      <h2 className="mt-4">Order Summary</h2>
-      <h3>Order ID: {order._id}</h3>
-      <h4>Customer Details:</h4>
-      <Row>
+    <Container className="mt-4">
+      <h2 className="text-center mb-4">{translations[language].yourOrder}</h2>
+      <h3 className="text-primary">
+        {translations[language].orderId}
+        {order._id}
+      </h3>
+
+      <Row className="mb-4">
         <Col xs={12} md={6}>
-          <p>Name: {order.customer.name}</p>
-          <p>Address: {order.customer.address}</p>
-          <p>Phone: {order.customer.phone}</p>
+          <h4 className="text-success">
+            {translations[language].customerDetails}
+          </h4>
+          <div className="border p-3 rounded">
+            <p>
+              <strong>{translations[language].name}:</strong>{" "}
+              <span className="ms-2">{order.customer.name}</span>
+            </p>
+            <p>
+              <strong>{translations[language].address}:</strong>{" "}
+              <span className="ms-2">{order.customer.address}</span>
+            </p>
+            <p>
+              <strong>{translations[language].phone}:</strong>{" "}
+              <span className="ms-2">{order.customer.phone}</span>
+            </p>
+          </div>
         </Col>
+
         <Col xs={12} md={6}>
-          <h4>Items:</h4>
-          <ListGroup>
+          <h4 className="text-success">{translations[language].items}</h4>
+          <Row>
             {order.items.map((item) => (
-              <ListGroup.Item key={item._id}>
-                <Row>
-                  <Col xs={4}>
-                    <img src={item.image} alt={item.name} className="img-fluid" />
-                  </Col>
-                  <Col xs={8}>
-                    <p>
-                      {item.name} - Quantity: {item.quantity} - Price: ${item.price}
+              <Col xs={12} sm={6} md={4} key={item._id} className="mb-4">
+                <div className="card h-100">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="card-img-top img-fluid rounded"
+                    style={{ maxHeight: "150px", objectFit: "contain" }}
+                  />
+                  <div className="card-body d-flex flex-column">
+                    <h5 className="card-title">{item.name}</h5>
+                    <p className="card-text">
+                      <strong>{translations[language].quantity} </strong>
+                      {item.quantity}
                     </p>
-                  </Col>
-                </Row>
-              </ListGroup.Item>
+                    <p className="card-text">
+                      <strong>{translations[language].price} </strong>
+                      {item.price.toFixed(2)} {translations[language].lv}
+                    </p>
+                  </div>
+                </div>
+              </Col>
             ))}
-          </ListGroup>
+          </Row>
         </Col>
       </Row>
-      <h4>Total Amount: ${order.totalAmount}</h4>
+
+      <h4 className="text-danger">
+        {translations[language].total}
+        {order.totalAmount.toFixed(2)}{" "}
+        {translations[language].lv}
+      </h4>
     </Container>
   );
 }
 
 export default OrderSummary;
-

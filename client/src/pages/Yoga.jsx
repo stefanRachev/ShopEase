@@ -18,7 +18,7 @@ function Yoga() {
     {
       id: "yoga-1",
       name: translations[language].yogaMat,
-      image: "https://i.imgur.com/UApZc0j.jpg",
+      image: "https://i.imgur.com/vVlAncK.jpg",
       price: 20,
       quantity: 1,
       description: translations[language].yogaMatDescription,
@@ -30,7 +30,7 @@ function Yoga() {
     {
       id: "yoga-2",
       name: translations[language].yogaMat,
-      image: "https://i.imgur.com/UApZc0j.jpg",
+      image: "https://i.imgur.com/vVlAncK.jpg",
       price: 20,
       quantity: 1,
       description: translations[language].yogaMatDescription,
@@ -42,7 +42,7 @@ function Yoga() {
     {
       id: "yoga-3",
       name: translations[language].yogaMat,
-      image: "https://i.imgur.com/UApZc0j.jpg",
+      image: "https://i.imgur.com/vVlAncK.jpg",
       price: 20,
       quantity: 1,
       description: translations[language].yogaMatDescription,
