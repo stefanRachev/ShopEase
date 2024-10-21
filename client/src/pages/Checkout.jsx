@@ -3,7 +3,7 @@ import { useCart } from "../context/useCart";
 import { Button, Form, Container, Row, Col } from "react-bootstrap";
 import { useLanguage } from "../context/useLanguage";
 import { useState } from "react";
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function Checkout() {
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ function Checkout() {
       localStorage.removeItem("cartItems");
       localStorage.removeItem("totalAmount");
       setCartItems([]);
-      console.log("Payment Result:", paymentResult);
+
       setFormData({
         name: "",
         address: "",

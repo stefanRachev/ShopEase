@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Container, Row, Col, ListGroup, Spinner, Alert } from "react-bootstrap";
+ 
 const apiUrl = import.meta.env.VITE_API_URL;
 
 function OrderSummary() {
@@ -7,9 +9,6 @@ function OrderSummary() {
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  console.log(orderId);
-  
 
   useEffect(() => {
     const fetchOrder = async () => {
@@ -19,8 +18,6 @@ function OrderSummary() {
           throw new Error("Failed to fetch order");
         }
         const data = await response.json();
-        console.log(data);
-        
         setOrder(data.order); 
       } catch (error) {
         setError(error.message);
@@ -32,39 +29,59 @@ function OrderSummary() {
     fetchOrder();
   }, [orderId]);
 
+  if (loading) {
+    return (
+      <Container className="text-center">
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </Container>
+    );
+  }
 
-  console.log(loading);
-  
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <Container>
+        <Alert variant="danger">Error: {error}</Alert>
+      </Container>
+    );
   }
 
-  if (!order) {
-    return <div>Loading...</div>;
-  }
   return (
-    <div>
-      <h2>Order Summary</h2>
+    <Container>
+      <h2 className="mt-4">Order Summary</h2>
       <h3>Order ID: {order._id}</h3>
       <h4>Customer Details:</h4>
-      <p>Name: {order.customer.name}</p>
-      <p>Address: {order.customer.address}</p>
-      <p>Phone: {order.customer.phone}</p>
-      <h4>Items:</h4>
-      <ul>
-        {order.items.map((item) => (
-          <li key={item.name}>
-            <img src={item.image} alt={item.name} />
-            <p>
-              {item.name} - Quantity: {item.quantity} - Price: ${item.price}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <Row>
+        <Col xs={12} md={6}>
+          <p>Name: {order.customer.name}</p>
+          <p>Address: {order.customer.address}</p>
+          <p>Phone: {order.customer.phone}</p>
+        </Col>
+        <Col xs={12} md={6}>
+          <h4>Items:</h4>
+          <ListGroup>
+            {order.items.map((item) => (
+              <ListGroup.Item key={item._id}>
+                <Row>
+                  <Col xs={4}>
+                    <img src={item.image} alt={item.name} className="img-fluid" />
+                  </Col>
+                  <Col xs={8}>
+                    <p>
+                      {item.name} - Quantity: {item.quantity} - Price: ${item.price}
+                    </p>
+                  </Col>
+                </Row>
+              </ListGroup.Item>
+            ))}
+          </ListGroup>
+        </Col>
+      </Row>
       <h4>Total Amount: ${order.totalAmount}</h4>
-    </div>
+    </Container>
   );
-
 }
 
 export default OrderSummary;
+
