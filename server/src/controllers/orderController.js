@@ -1,38 +1,33 @@
 const Order = require("../models/Order");
 
 exports.createOrder = async (req, res) => {
- 
   try {
-    const { items, customer,totalAmount } = req.body; 
-    const userId = req.user.id; 
+    const { items, customer, totalAmount } = req.body;
+    const userId = req.user.id;
 
-    
     const newOrder = new Order({
-      user: userId, 
-      items, 
-      customer, 
-      totalAmount, 
+      user: userId,
+      items,
+      customer,
+      totalAmount,
     });
 
-    
     await newOrder.save();
 
     res.status(201).json({
       status: "success",
       message: "Order created successfully!",
-      order: newOrder, 
+      orderId: newOrder._id,
     });
   } catch (error) {
-    console.error("Error creating order:", error); 
+    console.error("Error creating order:", error);
     res.status(500).json({
       status: "error",
       message: "Error creating order",
-      error: error.message, 
+      error: error.message,
     });
   }
 };
-
-
 
 exports.getUserOrders = async (req, res) => {
   try {
@@ -51,3 +46,34 @@ exports.getUserOrders = async (req, res) => {
     });
   }
 };
+
+
+exports.getOrderById = async (req, res) => {
+  try {
+    const orderId = req.params.id; 
+    console.log("Fetching order with ID:", orderId); // Проверка на ID
+    
+    const order = await Order.findById(orderId);
+    console.log("Fetched Order:", order); // Лог на получената поръчка
+
+    if (!order) {
+      return res.status(404).json({
+        status: "error",
+        message: "Order not found",
+      });
+    }
+
+    res.status(200).json({
+      status: "success",
+      order,
+    });
+  } catch (error) {
+    console.error("Error fetching order:", error);
+    res.status(500).json({
+      status: "error",
+      message: "Error fetching order",
+      error: error.message,
+    });
+  }
+};
+

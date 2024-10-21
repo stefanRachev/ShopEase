@@ -3,8 +3,10 @@ import { useCart } from "../context/useCart";
 import { Button, Form, Container, Row, Col } from "react-bootstrap";
 import { useLanguage } from "../context/useLanguage";
 import { useState } from "react";
+import { useNavigate  } from 'react-router-dom';
 
 function Checkout() {
+  const navigate = useNavigate();
   const { cartItems, totalAmount, setCartItems } = useCart();
   const { language, translations } = useLanguage();
   const [formData, setFormData] = useState({
@@ -40,7 +42,10 @@ function Checkout() {
 
     try {
       const paymentResult = await submitOrder(orderData);
-      alert("Order created successfully!");
+      alert(translations[language].checkOrder);
+
+      navigate(`/order-summary/${paymentResult.orderId}`);
+
       localStorage.removeItem("cartItems");
       localStorage.removeItem("totalAmount");
       setCartItems([]);

@@ -21,6 +21,7 @@ import Swimming from "../pages/Swimming";
 import Mma from "../pages/Mma";
 import KikBoxing from "../pages/KickBoxing";
 import Checkout from "../pages/Checkout";
+import OrderSummary from "../pages/OrderSummary";
 
 function Content() {
   return (
@@ -53,6 +54,7 @@ function Content() {
       <Route path="/weights/barbells" element={<Barbells />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
+      <Route path="/order-summary/:orderId" element={<OrderSummary />} />
       {/* Добави още маршрути тук */}
     </Routes>
   );

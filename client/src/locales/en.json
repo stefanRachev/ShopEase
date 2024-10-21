@@ -183,6 +183,7 @@
   "formError": "Please fill in all required fields correctly.",
   "submit": "Submit",
   "phone": "Phone",
+  "checkOrder": "Order created successfully!",
   "exampleProductInfo": [
     "The description is for example only and is not for the actual product",
     "Example description 1.",
