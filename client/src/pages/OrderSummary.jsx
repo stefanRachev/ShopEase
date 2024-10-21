@@ -110,7 +110,6 @@ function OrderSummary() {
         </Col>
         <Col xs={12}>
           <DeliveryInstructions />{" "}
-          {/* Вмъкване на компонента за условия на доставка */}
         </Col>
       </Row>
 
