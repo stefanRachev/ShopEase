@@ -41,25 +41,7 @@ export const validateForm = (formData) => {
   return { valid: true, message: "" };
 };
 
-// export const createOrderData = (formData, cartItems, totalAmount) => {
-//   return {
-//     items: cartItems.map(item => ({
-//       productId: item.id,
-//       quantity: item.quantity,
-//       price: item.price,
-//     })),
-//     totalAmount: totalAmount,
-//     customer: {
-//       name: formData.name,
-//       address: formData.address,
-//       phone: formData.phone,
-//       paymentMethod: formData.paymentMethod,
-//       // cardNumber: formData.cardNumber,
-//       // expirationDate: formData.expirationDate,
-//       // cvv: formData.cvv,
-//     },
-//   };
-// };
+
 
 export const createOrderData = (formData, cartItems,totalAmount) => {
   return {

@@ -54,17 +54,17 @@ const orderSchema = new mongoose.Schema({
   },
 });
 
-// Преди да запишем поръчката, можем автоматично да изчислим totalAmount
+
 orderSchema.pre('save', function (next) {
   const order = this;
   let total = 0;
 
-  // Изчисляваме общата сума на базата на продуктовете и количествата
+  
   order.items.forEach(item => {
     total += item.price * item.quantity;
   });
 
-  order.totalAmount = total; // Задаваме общата сума
+  order.totalAmount = total;
   next();
 });
 

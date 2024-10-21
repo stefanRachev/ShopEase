@@ -1,39 +1,39 @@
 const Order = require("../models/Order");
 
 exports.createOrder = async (req, res) => {
-  console.log("Request body:", req.body); // Логваме тялото на заявката
+ 
   try {
-    const { items, customer,totalAmount } = req.body; // Вземаме items и customer от тялото на заявката
-    const userId = req.user.id; // Вземаме ID-то на потребителя от токена
+    const { items, customer,totalAmount } = req.body; 
+    const userId = req.user.id; 
 
-    // Създаване на нова поръчка
+    
     const newOrder = new Order({
-      user: userId, // Добавяме user ID
-      items, // Вземаме items от заявката
-      customer, // Вземаме customer от заявката
-      totalAmount, // Задаваме общата сума на поръчката
+      user: userId, 
+      items, 
+      customer, 
+      totalAmount, 
     });
 
-    // Съхраняваме поръчката в базата данни
+    
     await newOrder.save();
 
     res.status(201).json({
       status: "success",
       message: "Order created successfully!",
-      order: newOrder, // Връщаме новосъздадената поръчка
+      order: newOrder, 
     });
   } catch (error) {
-    console.error("Error creating order:", error); // Логваме грешката
+    console.error("Error creating order:", error); 
     res.status(500).json({
       status: "error",
       message: "Error creating order",
-      error: error.message, // Връщаме детайлите на грешката
+      error: error.message, 
     });
   }
 };
 
 
-// Получаване на поръчки на потребителя
+
 exports.getUserOrders = async (req, res) => {
   try {
     const userId = req.user.id;

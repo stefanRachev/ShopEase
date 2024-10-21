@@ -5,7 +5,7 @@ import { useLanguage } from "../context/useLanguage";
 import { useState } from "react";
 
 function Checkout() {
-  const { cartItems, totalAmount } = useCart();
+  const { cartItems, totalAmount, setCartItems } = useCart();
   const { language, translations } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
@@ -16,9 +16,6 @@ function Checkout() {
     expirationDate: "",
     cvv: "",
   });
-  console.log(totalAmount);
-  typeof totalAmount;
-  
 
   const [error, setError] = useState("");
 
@@ -38,15 +35,15 @@ function Checkout() {
       setError(validation.message);
       return;
     }
-   
-   
-    const orderData = createOrderData(formData, cartItems,totalAmount);
+
+    const orderData = createOrderData(formData, cartItems, totalAmount);
 
     try {
       const paymentResult = await submitOrder(orderData);
-      alert("Order created successfully!"); // Успешно създадена поръчка
-      // Изчисти кошницата, ако е необходимо
-      // localStorage.removeItem("cart"); или обнови контекста
+      alert("Order created successfully!");
+      localStorage.removeItem("cartItems");
+      localStorage.removeItem("totalAmount");
+      setCartItems([]);
       console.log("Payment Result:", paymentResult);
       setFormData({
         name: "",
