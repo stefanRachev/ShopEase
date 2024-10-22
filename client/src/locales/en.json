@@ -128,7 +128,7 @@
   "quantity": "Quantity: ",
   "description": "Description: ",
   "checkout": "Proceed to Checkout",
-  "remove":"Remove",
+  "remove": "Remove",
   "hideDetails": "Hide details",
   "showDetails": "Show details",
   "fitnessEquipment": "Fitness Equipment",
@@ -181,7 +181,7 @@
   "checkoutTitle": "Order Finalization",
   "orderSummary": "Order Summary",
   "yourOrder": "Your Order",
-  "customerDetails" : "Customer Details: ",
+  "customerDetails": "Customer Details: ",
   "orderId": "Order ID:  ",
   "items": "Items",
   "formError": "Please fill in all required fields correctly.",
@@ -194,5 +194,19 @@
     "Example description 2.",
     "Example description 3.",
     "Example description 4."
-  ]
+  ],
+  "termsOfService": {
+    "titleTerms": "Terms of Service",
+    "descriptionTitle": "These terms define the rules for using our site. By accessing the site, you agree to comply with these terms.",
+    "acceptanceTitle": "Acceptance of terms",
+    "acceptanceDescription": "By using our site, you confirm that you have read and understood these terms.",
+    "userRightsTitle": "User Rights and Responsibilities",
+    "userRightsDescription": "Users are allowed to use the site only for legal purposes. Posting illegal or offensive content is prohibited.",
+    "intellectualPropertyTitle": "Intellectual Property",
+    "intellectualPropertyDescription": "All materials on the site are protected by copyright and may not be copied without permission.",
+    "liabilityTitle": "Liability",
+    "liabilityDescription": "We are not responsible for any damages arising from the use of the site.",
+    "changesTitle": "Changes to Terms",
+    "changesDescription": "We reserve the right to change the terms at any time. All changes will be published on the site."
+  }
 }

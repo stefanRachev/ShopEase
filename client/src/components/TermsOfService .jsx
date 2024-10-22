@@ -1,40 +1,42 @@
 import { Container, Row, Col } from "react-bootstrap";
+import { useLanguage } from "../context/useLanguage";
 
 function TermsOfService() {
+  const { language, translations } = useLanguage();
+
   return (
     <Container className="my-4 bg-light p-4 rounded">
       <Row>
         <Col>
-          <h1 className="text-center mb-4">Условия за ползване</h1>
+          <h1 className="text-center mb-4">
+            {translations[language].termsOfService.titleTerms}
+          </h1>
+          <p>{translations[language].termsOfService.descriptionTitle}</p>
+          <h2 className="mt-4">
+            {translations[language].termsOfService.acceptanceTitle}
+          </h2>
+          <p>{translations[language].termsOfService.acceptanceDescription}</p>
+          <h2 className="mt-4">
+            {translations[language].termsOfService.userRightsTitle}
+          </h2>
+          <p>{translations[language].termsOfService.userRightsDescription}</p>
+          <h2 className="mt-4">
+            {translations[language].termsOfService.intellectualPropertyTitle}
+          </h2>
           <p>
-            Тези условия определят правилата за използване на нашия сайт. Чрез
-            достъп до сайта, вие се съгласявате да спазвате тези условия.
+            {
+              translations[language].termsOfService
+                .intellectualPropertyDescription
+            }
           </p>
-          <h2 className="mt-4">Приемане на условията</h2>
-          <p>
-            Чрез използването на нашия сайт, вие потвърждавате, че сте прочели и
-            разбрали тези условия.
-          </p>
-          <h2 className="mt-4">Права и задължения на потребителите</h2>
-          <p>
-            Потребителите имат право да използват сайта само за законни цели.
-            Забранява се публикуването на незаконно или обидно съдържание.
-          </p>
-          <h2 className="mt-4">Интелектуална собственост</h2>
-          <p>
-            Всички материали на сайта са защитени с авторски права и не могат да
-            бъдат копирани без разрешение.
-          </p>
-          <h2 className="mt-4">Отговорност</h2>
-          <p>
-            Ние не носим отговорност за каквито и да било щети, произтичащи от
-            използването на сайта.
-          </p>
-          <h2 className="mt-4">Промени в условията</h2>
-          <p>
-            Ние си запазваме правото да променяме условията по всяко време.
-            Всички промени ще бъдат публикувани на сайта.
-          </p>
+          <h2 className="mt-4">
+            {translations[language].termsOfService.liabilityTitle}
+          </h2>
+          <p>{translations[language].termsOfService.liabilityDescription}</p>
+          <h2 className="mt-4">
+            {translations[language].termsOfService.changesTitle}
+          </h2>
+          <p>{translations[language].termsOfService.changesDescription}</p>
         </Col>
       </Row>
     </Container>
