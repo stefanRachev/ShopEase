@@ -222,5 +222,11 @@
     "dataProtectionDescription": "We implement appropriate security measures to protect your personal data.",
     "userRightsTitle": "User Rights",
     "userRightsDescription": "You have the right to request access to your personal data and to request corrections or deletion of the information if necessary."
+  },
+  "deliveryInstructions": {
+    "deliveryTermsTitle": "Delivery Terms",
+    "descriptionDelivery1": "Thank you for choosing our services! Your order will be delivered within 3-5 business days.",
+    "descriptionDelivery2": "Please ensure that the address and contact information you provided are correct to avoid any delays in delivery.",
+    "descriptionDelivery3": "If you have any questions regarding delivery, please contact our support team."
   }
 }

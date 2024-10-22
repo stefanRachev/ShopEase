@@ -1,22 +1,18 @@
 // DeliveryInstructions.jsx
 import { Container } from "react-bootstrap";
+import { useLanguage } from "../context/useLanguage";
 
 function DeliveryInstructions() {
+  const { language, translations } = useLanguage();
+
   return (
     <Container className="my-4">
-      <h5 className="text-success">Условия за доставка</h5>
-      <p>
-        Благодарим Ви, че избрахте нашите услуги! Вашата поръчка ще бъде
-        доставена в рамките на 3-5 работни дни.
-      </p>
-      <p>
-        Моля, уверете се, че предоставените от вас адрес и информация за контакт
-        са верни, за да избегнете забавяне на доставката.
-      </p>
-      <p>
-        При въпроси относно доставката, моля, свържете се с нашия екип за
-        поддръжка.
-      </p>
+      <h5 className="text-success">
+        {translations[language].deliveryInstructions.deliveryTermsTitle}
+      </h5>
+      <p>{translations[language].deliveryInstructions.descriptionDelivery1}</p>
+      <p>{translations[language].deliveryInstructions.descriptionDelivery2}</p>
+      <p>{translations[language].deliveryInstructions.descriptionDelivery3}</p>
     </Container>
   );
 }
