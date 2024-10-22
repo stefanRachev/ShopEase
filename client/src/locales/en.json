@@ -208,5 +208,19 @@
     "liabilityDescription": "We are not responsible for any damages arising from the use of the site.",
     "changesTitle": "Changes to Terms",
     "changesDescription": "We reserve the right to change the terms at any time. All changes will be published on the site."
+  },
+  "privacyPolicy": {
+    "titlePolicy": "Privacy Policy",
+    "descriptionPolicy": "We value your privacy and are committed to protecting your personal data. This policy explains what data we collect, how we use it, and how we protect it.",
+    "dataCollectionTitle": "Data Collection",
+    "dataCollectionDescription": "We collect personal data when you interact with our site, such as your name and email address.",
+    "dataUsageTitle": "Data Usage",
+    "dataUsageDescription": "We use your data to inform you about news and updates regarding our services.",
+    "dataSharingTitle": "Data Sharing",
+    "dataSharingDescription": "We will not share your personal data with third parties without your consent, unless necessary for providing our services.",
+    "dataProtectionTitle": "Data Protection",
+    "dataProtectionDescription": "We implement appropriate security measures to protect your personal data.",
+    "userRightsTitle": "User Rights",
+    "userRightsDescription": "You have the right to request access to your personal data and to request corrections or deletion of the information if necessary."
   }
 }

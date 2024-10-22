@@ -20,7 +20,7 @@ function OrderSummary() {
         if (!response.ok) {
           throw new Error("Failed to fetch order");
         }
-        const data = await response.json();
+        const data = await response.json();   
         setOrder(data.order);
       } catch (error) {
         setError(error.message);
@@ -76,6 +76,10 @@ function OrderSummary() {
             <p>
               <strong>{translations[language].phone}:</strong>{" "}
               <span className="ms-2">{order.customer.phone}</span>
+            </p>
+            <p>
+              <strong>{translations[language].email}:</strong>{" "}
+              <span className="ms-2">{order.user.email}</span>
             </p>
           </div>
         </Col>

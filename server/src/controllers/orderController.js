@@ -52,7 +52,7 @@ exports.getOrderById = async (req, res) => {
   try {
     const orderId = req.params.id; 
      
-    const order = await Order.findById(orderId);
+    const order = await Order.findById(orderId).populate("user", "email");;
  
     if (!order) {
       return res.status(404).json({
@@ -63,7 +63,10 @@ exports.getOrderById = async (req, res) => {
 
     res.status(200).json({
       status: "success",
-      order,
+      order: {
+        ...order.toObject(), // Преобразува поръчката в обикновен обект
+        userEmail: order.user.email, // Добавя имейла в отговора
+      },
     });
   } catch (error) {
     console.error("Error fetching order:", error);

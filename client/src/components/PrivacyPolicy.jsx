@@ -1,43 +1,41 @@
 import { Container, Row, Col } from "react-bootstrap";
+import { useLanguage } from "../context/useLanguage";
 
 function PrivacyPolicy() {
+  const { language, translations } = useLanguage();
+
   return (
     <Container className="my-4 bg-light p-4 rounded">
       <Row>
         <Col>
-          <h1 className="text-center mb-4">Политика за конфиденциалност</h1>
+          <h1 className="text-center mb-4">
+            {translations[language].privacyPolicy.titlePolicy}
+          </h1>
+          <p>{translations[language].privacyPolicy.descriptionPolicy}</p>
+          <h2 className="mt-4">
+            {translations[language].privacyPolicy.dataCollectionTitle}
+          </h2>
           <p>
-            Ние ценим вашата конфиденциалност и сме ангажирани да защитим вашите
-            лични данни. В тази политика обясняваме какви данни събираме, как ги
-            използваме и как ги защитаваме.
+            {translations[language].privacyPolicy.dataCollectionDescription}
           </p>
-          <h2 className="mt-4">Събиране на данни</h2>
+          <h2 className="mt-4">
+            {translations[language].privacyPolicy.dataUsageTitle}
+          </h2>
+          <p>{translations[language].privacyPolicy.dataUsageDescription}</p>
+          <h2 className="mt-4">
+            {translations[language].privacyPolicy.dataSharingTitle}
+          </h2>
+          <p>{translations[language].privacyPolicy.dataSharingDescription}</p>
+          <h2 className="mt-4">
+            {translations[language].privacyPolicy.dataProtectionTitle}
+          </h2>
           <p>
-            Събираме лични данни, когато влизате в контакт с нашия сайт, като
-            например вашето име и имейл адрес.
+            {translations[language].privacyPolicy.dataProtectionDescription}
           </p>
-          <h2 className="mt-4">Използване на данни</h2>
-          <p>
-            Използваме вашите данни, за да ви информираме за новини и
-            актуализации на нашите услуги.
-          </p>
-          <h2 className="mt-4">Споделяне на данни</h2>
-          <p>
-            Няма да споделяме вашите лични данни с трети страни без ваше
-            съгласие, освен ако това не е необходимо за предоставяне на услугите
-            ни.
-          </p>
-          <h2 className="mt-4">Защита на данни</h2>
-          <p>
-            Ние прилагаме подходящи мерки за сигурност, за да защитим вашите
-            лични данни.
-          </p>
-          <h2 className="mt-4">Права на потребителите</h2>
-          <p>
-            Вие имате право да поискате достъп до вашите лични данни и да
-            поискате корекции или изтриване на информацията, ако това е
-            необходимо.
-          </p>
+          <h2 className="mt-4">
+            {translations[language].privacyPolicy.userRightsTitle}
+          </h2>
+          <p>{translations[language].privacyPolicy.userRightsDescription}</p>
         </Col>
       </Row>
     </Container>
