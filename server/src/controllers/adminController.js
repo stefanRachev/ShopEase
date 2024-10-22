@@ -1,7 +1,7 @@
 // controllers/adminController.js
 const Order = require("../models/Order");
 
-// Функция за получаване на поръчките
+
 exports.getOrders = async (req, res) => {
   try {
     const orders = await Order.find().populate("user", "email");
@@ -18,7 +18,6 @@ exports.getOrders = async (req, res) => {
   }
 };
 
-// Добави и други функции за управление на поръчки (например, изтриване)
 exports.deleteOrder = async (req, res) => {
   try {
     const { id } = req.params;
@@ -29,3 +28,15 @@ exports.deleteOrder = async (req, res) => {
     res.status(500).json({ status: "error", message: "Error deleting order" });
   }
 };
+
+
+router.delete('/orders/:id', isAdmin, async (req, res) => {
+    try {
+      const { id } = req.params;
+      await Order.findByIdAndDelete(id);
+      res.status(200).json({ status: 'success', message: 'Order deleted' });
+    } catch (error) {
+      res.status(500).json({ status: 'error', message: 'Error deleting order' });
+    }
+  });
+  

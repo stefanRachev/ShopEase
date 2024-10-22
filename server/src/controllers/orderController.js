@@ -64,8 +64,8 @@ exports.getOrderById = async (req, res) => {
     res.status(200).json({
       status: "success",
       order: {
-        ...order.toObject(), // Преобразува поръчката в обикновен обект
-        userEmail: order.user.email, // Добавя имейла в отговора
+        ...order.toObject(), 
+        userEmail: order.user.email,
       },
     });
   } catch (error) {
