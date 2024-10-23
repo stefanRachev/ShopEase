@@ -213,6 +213,17 @@ function Header() {
                     ? `Welcome, ${user.email}`
                     : `Добре дошъл, ${user.email}`}
                 </Nav.Link>
+                {user.isAdmin && ( 
+                  <Nav.Link
+                    as={NavLink}
+                    to="/admin"
+                    onClick={() =>
+                      document.querySelector(".navbar-toggler").click()
+                    }
+                  >
+                    Admin Panel
+                  </Nav.Link>
+                )}
               </>
             ) : (
               <>

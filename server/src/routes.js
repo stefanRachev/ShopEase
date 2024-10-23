@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const userController = require("./controllers/userController");
 const orderController = require("./controllers/orderController");
+const adminController = require("./controllers/adminController");
 const authenticateToken = require("./middlewares/authMiddleware");
 const { isAdmin } = require("./middlewares/adminMiddleware");
 
@@ -13,7 +14,10 @@ router.post("/orders", authenticateToken, orderController.createOrder);
 router.get("/orders", authenticateToken, orderController.getUserOrders);
 router.get("/orders/:id", orderController.getOrderById);
 
-router.delete("/orders/:id", authenticateToken, isAdmin, orderController.deleteOrder);
-router.put("/orders/:id/status", authenticateToken, isAdmin, orderController.updateOrderStatus);
+// Нови маршрути за администратор
+router.get("/admin/orders", authenticateToken, isAdmin, adminController.getOrders); // Получаване на всички поръчки
+router.delete("/admin/orders/:id", authenticateToken, isAdmin, adminController.deleteOrder); // Изтриване на поръчка по ID
+router.put("/admin/orders/:id/status", authenticateToken, isAdmin, adminController.updateOrderStatus); // Актуализиране на статуса на поръчка
+
 
 module.exports = router;

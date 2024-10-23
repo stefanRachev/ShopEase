@@ -52,11 +52,9 @@ exports.updateOrderStatus = async (req, res) => {
   }
 };
 
-
-
 exports.getUsers = async (req, res) => {
   try {
-    const users = await User.find().select("-password"); // Изключваме паролата от резултатите
+    const users = await User.find().select("-password"); 
     res.status(200).json({ status: "success", users });
   } catch (error) {
     console.error("Error fetching users:", error);
@@ -74,5 +72,6 @@ exports.deleteUser = async (req, res) => {
     res.status(500).json({ status: "error", message: "Error deleting user" });
   }
 };
+
 
 

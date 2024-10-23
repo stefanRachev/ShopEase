@@ -24,6 +24,8 @@ import Checkout from "../pages/Checkout";
 import OrderSummary from "../pages/OrderSummary";
 import TermsOfService from "../components/TermsOfService ";
 import PrivacyPolicy from "../components/PrivacyPolicy";
+import Admin from "../components/Admin";
+
 
 function Content() {
   return (
@@ -59,6 +61,7 @@ function Content() {
       <Route path="/order-summary/:orderId" element={<OrderSummary />} />
       <Route path="/terms-of-service" element={<TermsOfService />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/admin" element={<Admin />} />
       {/* Добави още маршрути тук */}
     </Routes>
   );
