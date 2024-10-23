@@ -5,15 +5,19 @@ const jwt = require("jsonwebtoken");
 const RefreshToken = require("../models/RefreshToken");
 
 exports.signToken = (userId, isAdmin) => {
-  return jwt.sign({ id: userId, isAdmin }, process.env.JWT_SECRET, {
+  return jwt.sign({ id: userId, isAdmin: isAdmin }, process.env.JWT_SECRET, {
     expiresIn: "1h",
   });
 };
 
-exports.signRefreshToken = (userId) => {
-  return jwt.sign({ id: userId, isAdmin }, process.env.REFRESH_TOKEN_SECRET, {
-    expiresIn: "7d",
-  });
+exports.signRefreshToken = (userId, isAdmin) => {
+  return jwt.sign(
+    { id: userId, isAdmin: isAdmin },
+    process.env.REFRESH_TOKEN_SECRET,
+    {
+      expiresIn: "7d",
+    }
+  );
 };
 
 exports.registerUser = async (email, password, isAdmin = false) => {
