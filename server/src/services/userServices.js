@@ -4,26 +4,28 @@ const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const RefreshToken = require("../models/RefreshToken");
 
-exports.signToken = (userId) => {
-  return jwt.sign({ id: userId }, process.env.JWT_SECRET, { expiresIn: "1h" });
+exports.signToken = (userId, isAdmin) => {
+  return jwt.sign({ id: userId, isAdmin }, process.env.JWT_SECRET, {
+    expiresIn: "1h",
+  });
 };
 
 exports.signRefreshToken = (userId) => {
-  return jwt.sign({ id: userId }, process.env.REFRESH_TOKEN_SECRET, {
+  return jwt.sign({ id: userId, isAdmin }, process.env.REFRESH_TOKEN_SECRET, {
     expiresIn: "7d",
   });
 };
 
-exports.registerUser = async (email, password,) => {
+exports.registerUser = async (email, password, isAdmin = false) => {
   const existingUser = await User.findOne({ email });
   if (existingUser) {
     throw new Error("User already exists with this email");
   }
 
-  const newUser = await User.create({ email, password });
+  const newUser = await User.create({ email, password, isAdmin });
 
-  const accessToken = exports.signToken(newUser._id);
-  const refreshToken = exports.signRefreshToken(newUser._id);
+  const accessToken = exports.signToken(newUser._id, newUser.isAdmin);
+  const refreshToken = exports.signRefreshToken(newUser._id, newUser.isAdmin);
 
   await RefreshToken.create({
     userId: newUser._id,
@@ -47,8 +49,8 @@ exports.loginUser = async (email, password) => {
 
   user.password = undefined;
 
-  const accessToken = exports.signToken(user._id);
-  const refreshToken = exports.signRefreshToken(user._id);
+  const accessToken = exports.signToken(user._id, user.isAdmin);
+  const refreshToken = exports.signRefreshToken(user._id, user.isAdmin);
 
   await RefreshToken.findOneAndDelete({ userId: user._id });
 

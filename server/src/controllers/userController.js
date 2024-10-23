@@ -107,6 +107,11 @@ exports.refreshToken = async (req, res) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const userId = decoded.id;
 
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
     const storedRefreshToken = await RefreshToken.findOne({ userId });
 
     if (!storedRefreshToken) {
@@ -117,7 +122,7 @@ exports.refreshToken = async (req, res) => {
       return res.status(403).json({ message: "Expired refresh token" });
     }
 
-    const newAccessToken = userService.signToken(userId);
+    const newAccessToken = userService.signToken(userId,user.isAdmin);
 
     res.status(200).json({ accessToken: newAccessToken });
   } catch (err) {
