@@ -1,32 +1,71 @@
 import { useState, useEffect } from "react";
-import { fetchAdminOrders, deleteOrder } from "../utils/api";
-import { Card, Button, Row, Col, Spinner, Alert } from "react-bootstrap";
-import AdminUsers from "./AdminUsers";
+import {
+  fetchAdminOrders,
+  deleteOrder,
+  fetchAdminUsers,
+  deleteUser,
+} from "../utils/api";
+import {
+  Card,
+  Button,
+  Row,
+  Col,
+  Spinner,
+  Alert,
+  Container,
+} from "react-bootstrap";
 
 const Admin = () => {
+  // State за поръчките
   const [orders, setOrders] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [loadingOrders, setLoadingOrders] = useState(true);
+  const [errorOrders, setErrorOrders] = useState(null);
 
+  // State за потребителите
+  const [users, setUsers] = useState([]);
+  const [loadingUsers, setLoadingUsers] = useState(true);
+  const [errorUsers, setErrorUsers] = useState(null);
+
+  // Fetch поръчки
   useEffect(() => {
     const fetchOrders = async () => {
-      setLoading(true);
-      setError(null);
+      setLoadingOrders(true);
+      setErrorOrders(null);
       try {
         const response = await fetchAdminOrders();
         const data = await response.json();
         setOrders(data.orders);
       } catch (error) {
-        setError("Failed to fetch orders");
+        setErrorOrders("Failed to fetch orders");
       } finally {
-        setLoading(false);
+        setLoadingOrders(false);
       }
     };
 
     fetchOrders();
   }, []);
 
-  const handleDelete = async (orderId) => {
+  // Fetch потребители
+  useEffect(() => {
+    const fetchUsers = async () => {
+      setLoadingUsers(true);
+      setErrorUsers(null);
+      try {
+        const response = await fetchAdminUsers();
+        const data = await response.json();
+        setUsers(data.users);
+      } catch (error) {
+        setErrorUsers("Failed to fetch users");
+      } finally {
+        setLoadingUsers(false);
+      }
+    };
+
+    fetchUsers();
+  }, []);
+
+  // Функция за изтриване на поръчка
+  const handleDeleteOrder = async (orderId) => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this order?"
     );
@@ -40,9 +79,24 @@ const Admin = () => {
     }
   };
 
+  // Функция за изтриване на потребител
+  const handleDeleteUser = async (userId) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this user?"
+    );
+    if (!confirmDelete) return;
+
+    try {
+      await deleteUser(userId);
+      setUsers(users.filter((user) => user._id !== userId));
+    } catch (error) {
+      console.error("Error deleting user:", error);
+    }
+  };
+
+  // Рендериране на поръчките
   const renderOrders = () => (
     <Row xs={1} sm={2} md={3} lg={4} className="g-4">
-      {" "}
       {orders.map((order, index) => (
         <Col key={order._id}>
           <Card className="h-100">
@@ -56,7 +110,7 @@ const Admin = () => {
               <Button
                 variant="danger"
                 size="sm"
-                onClick={() => handleDelete(order._id)}
+                onClick={() => handleDeleteOrder(order._id)}
               >
                 Delete
               </Button>
@@ -67,21 +121,52 @@ const Admin = () => {
     </Row>
   );
 
+  // Рендериране на потребителите
+  const renderUsers = () => (
+    <Container>
+      <h2>Manage Users</h2>
+      {users.map((user) => (
+        <Card key={user._id} className="mb-3">
+          <Card.Body>
+            <Card.Title>{user.email}</Card.Title>
+            <Card.Text>User ID: {user._id}</Card.Text>
+            <Button variant="danger" onClick={() => handleDeleteUser(user._id)}>
+              Delete User
+            </Button>
+          </Card.Body>
+        </Card>
+      ))}
+      {users.length === 0 && <p>No users found</p>}
+    </Container>
+  );
+
   return (
     <div className="container mt-4">
       <h1 className="text-center">Admin Dashboard</h1>
       <h2 className="text-center mb-4">Orders</h2>
 
-      {loading && (
+      {loadingOrders && (
         <div className="d-flex justify-content-center">
           <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
           </Spinner>
         </div>
       )}
-      {error && <Alert variant="danger">{error}</Alert>}
-      {orders.length ? renderOrders() : !loading && <p>No orders found</p>}
-      <AdminUsers /> 
+      {errorOrders && <Alert variant="danger">{errorOrders}</Alert>}
+      {orders.length
+        ? renderOrders()
+        : !loadingOrders && <p>No orders found</p>}
+
+      <h2 className="text-center mb-4">Users</h2>
+      {loadingUsers && (
+        <div className="d-flex justify-content-center">
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
+      )}
+      {errorUsers && <Alert variant="danger">{errorUsers}</Alert>}
+      {renderUsers()}
     </div>
   );
 };

@@ -1,6 +1,7 @@
 // controllers/adminController.js
 const Order = require("../models/Order");
 const User = require("../models/User");
+const RefreshToken = require("../models/RefreshToken");
 
 exports.getOrders = async (req, res) => {
   try {
@@ -54,7 +55,7 @@ exports.updateOrderStatus = async (req, res) => {
 
 exports.getUsers = async (req, res) => {
   try {
-    const users = await User.find().select("-password"); 
+    const users = await User.find().select("-password");
     res.status(200).json({ status: "success", users });
   } catch (error) {
     console.error("Error fetching users:", error);
@@ -65,13 +66,31 @@ exports.getUsers = async (req, res) => {
 exports.deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
-    await User.findByIdAndDelete(id);
-    res.status(200).json({ status: "success", message: "User deleted" });
+    const user = await User.findByIdAndDelete(id);
+
+    if (!user) {
+      return res
+        .status(404)
+        .json({ status: "error", message: "User not found" });
+    }
+
+    await Order.deleteMany({ user: id });
+
+    await RefreshToken.deleteMany({ userId: id });
+
+    res
+      .status(200)
+      .json({
+        status: "success",
+        message: "User, orders, and refresh tokens deleted",
+      });
   } catch (error) {
-    console.error("Error deleting user:", error);
-    res.status(500).json({ status: "error", message: "Error deleting user" });
+    console.error("Error deleting user and related data:", error);
+    res
+      .status(500)
+      .json({
+        status: "error",
+        message: "Error deleting user and related data",
+      });
   }
 };
-
-
-
