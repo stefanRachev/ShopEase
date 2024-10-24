@@ -14,10 +14,11 @@ router.post("/orders", authenticateToken, orderController.createOrder);
 router.get("/orders", authenticateToken, orderController.getUserOrders);
 router.get("/orders/:id", orderController.getOrderById);
 
-// Нови маршрути за администратор
-router.get("/admin/orders", authenticateToken, isAdmin, adminController.getOrders); // Получаване на всички поръчки
-router.delete("/admin/orders/:id", authenticateToken, isAdmin, adminController.deleteOrder); // Изтриване на поръчка по ID
-router.put("/admin/orders/:id/status", authenticateToken, isAdmin, adminController.updateOrderStatus); // Актуализиране на статуса на поръчка
+
+router.get("/admin/orders", authenticateToken, isAdmin, adminController.getOrders);
+router.delete("/admin/orders/:id", authenticateToken, isAdmin, adminController.deleteOrder); 
+router.put("/admin/orders/:id/status", authenticateToken, isAdmin, adminController.updateOrderStatus); 
+router.delete("admin/users/:id",authenticateToken, isAdmin, deleteUser);
 
 
 module.exports = router;

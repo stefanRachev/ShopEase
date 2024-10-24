@@ -25,3 +25,12 @@ export const deleteOrder = async (orderId) => {
     },
   });
 };
+
+export const deleteUser = async (userId) => {
+  return await fetch(apiUrl + `/admin/users/${userId}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+};
