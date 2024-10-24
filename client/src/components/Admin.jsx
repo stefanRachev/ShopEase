@@ -45,7 +45,6 @@ const Admin = () => {
     fetchOrders();
   }, []);
 
-  // Fetch потребители
   const fetchUsers = async () => {
     setLoadingUsers(true);
     setErrorUsers(null);
@@ -64,7 +63,6 @@ const Admin = () => {
     fetchUsers();
   }, []);
 
-  // Функция за изтриване на поръчка
   const handleDeleteOrder = async (orderId) => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this order?"
@@ -73,14 +71,13 @@ const Admin = () => {
 
     try {
       await deleteOrder(orderId);
-      
+
       setOrders(orders.filter((order) => order._id !== orderId));
     } catch (error) {
       console.error("Error deleting order:", error);
     }
   };
 
-  // Функция за изтриване на потребител
   const handleDeleteUser = async (userId) => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this user?"
@@ -91,13 +88,11 @@ const Admin = () => {
       await deleteUser(userId);
       await fetchOrders();
       setUsers(users.filter((user) => user._id !== userId));
-     
     } catch (error) {
       console.error("Error deleting user:", error);
     }
   };
 
-  // Рендериране на поръчките
   const renderOrders = () => (
     <Row xs={1} sm={2} md={3} lg={4} className="g-4">
       {orders.map((order, index) => (
@@ -124,7 +119,6 @@ const Admin = () => {
     </Row>
   );
 
- 
   const renderUsers = () => (
     <Container>
       <h2>Manage Users</h2>
