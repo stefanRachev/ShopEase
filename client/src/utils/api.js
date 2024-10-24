@@ -2,7 +2,7 @@
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
-// Fetch all orders for admin
+
 export const fetchAdminOrders = async () => {
   const token = localStorage.getItem("accessToken");
   return fetch(apiUrl + "/admin/orders", {
@@ -14,7 +14,7 @@ export const fetchAdminOrders = async () => {
   });
 };
 
-// Delete an order by id
+
 export const deleteOrder = async (orderId) => {
   const token = localStorage.getItem("accessToken");
   return fetch(apiUrl + `/admin/orders/${orderId}`, {
@@ -30,7 +30,16 @@ export const deleteUser = async (userId) => {
   return await fetch(apiUrl + `/admin/users/${userId}`, {
     method: "DELETE",
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+    },
+  });
+};
+
+export const fetchAdminUsers = async () => {
+  return await fetch(apiUrl + "/admin/users", {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
     },
   });
 };

@@ -1,8 +1,7 @@
-
-
 import { useState, useEffect } from "react";
 import { fetchAdminOrders, deleteOrder } from "../utils/api";
 import { Card, Button, Row, Col, Spinner, Alert } from "react-bootstrap";
+import AdminUsers from "./AdminUsers";
 
 const Admin = () => {
   const [orders, setOrders] = useState([]);
@@ -44,7 +43,6 @@ const Admin = () => {
   const renderOrders = () => (
     <Row xs={1} sm={2} md={3} lg={4} className="g-4">
       {" "}
-    
       {orders.map((order, index) => (
         <Col key={order._id}>
           <Card className="h-100">
@@ -83,6 +81,7 @@ const Admin = () => {
       )}
       {error && <Alert variant="danger">{error}</Alert>}
       {orders.length ? renderOrders() : !loading && <p>No orders found</p>}
+      <AdminUsers /> 
     </div>
   );
 };

@@ -18,7 +18,8 @@ router.get("/orders/:id", orderController.getOrderById);
 router.get("/admin/orders", authenticateToken, isAdmin, adminController.getOrders);
 router.delete("/admin/orders/:id", authenticateToken, isAdmin, adminController.deleteOrder); 
 router.put("/admin/orders/:id/status", authenticateToken, isAdmin, adminController.updateOrderStatus); 
-router.delete("admin/users/:id",authenticateToken, isAdmin, deleteUser);
+router.get("/admin/users", authenticateToken, isAdmin, adminController.getUsers);
+router.delete("/admin/users/:id",authenticateToken, isAdmin, adminController.deleteUser);
 
 
 module.exports = router;
