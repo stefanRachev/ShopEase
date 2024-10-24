@@ -27,40 +27,40 @@ const Admin = () => {
   const [errorUsers, setErrorUsers] = useState(null);
 
   // Fetch поръчки
-  useEffect(() => {
-    const fetchOrders = async () => {
-      setLoadingOrders(true);
-      setErrorOrders(null);
-      try {
-        const response = await fetchAdminOrders();
-        const data = await response.json();
-        setOrders(data.orders);
-      } catch (error) {
-        setErrorOrders("Failed to fetch orders");
-      } finally {
-        setLoadingOrders(false);
-      }
-    };
+  const fetchOrders = async () => {
+    setLoadingOrders(true);
+    setErrorOrders(null);
+    try {
+      const response = await fetchAdminOrders();
+      const data = await response.json();
+      setOrders(data.orders);
+    } catch (error) {
+      setErrorOrders("Failed to fetch orders");
+    } finally {
+      setLoadingOrders(false);
+    }
+  };
 
+  useEffect(() => {
     fetchOrders();
   }, []);
 
   // Fetch потребители
-  useEffect(() => {
-    const fetchUsers = async () => {
-      setLoadingUsers(true);
-      setErrorUsers(null);
-      try {
-        const response = await fetchAdminUsers();
-        const data = await response.json();
-        setUsers(data.users);
-      } catch (error) {
-        setErrorUsers("Failed to fetch users");
-      } finally {
-        setLoadingUsers(false);
-      }
-    };
+  const fetchUsers = async () => {
+    setLoadingUsers(true);
+    setErrorUsers(null);
+    try {
+      const response = await fetchAdminUsers();
+      const data = await response.json();
+      setUsers(data.users);
+    } catch (error) {
+      setErrorUsers("Failed to fetch users");
+    } finally {
+      setLoadingUsers(false);
+    }
+  };
 
+  useEffect(() => {
     fetchUsers();
   }, []);
 
@@ -73,6 +73,7 @@ const Admin = () => {
 
     try {
       await deleteOrder(orderId);
+      
       setOrders(orders.filter((order) => order._id !== orderId));
     } catch (error) {
       console.error("Error deleting order:", error);
@@ -88,7 +89,9 @@ const Admin = () => {
 
     try {
       await deleteUser(userId);
+      await fetchOrders();
       setUsers(users.filter((user) => user._id !== userId));
+     
     } catch (error) {
       console.error("Error deleting user:", error);
     }
@@ -121,7 +124,7 @@ const Admin = () => {
     </Row>
   );
 
-  // Рендериране на потребителите
+ 
   const renderUsers = () => (
     <Container>
       <h2>Manage Users</h2>
@@ -142,8 +145,8 @@ const Admin = () => {
 
   return (
     <div className="container mt-4">
-      <h1 className="text-center">Admin Dashboard</h1>
-      <h2 className="text-center mb-4">Orders</h2>
+      <h1 className="text-center text-primary">Admin Dashboard</h1>
+      <h2 className="text-center mb-4 text-secondary">Orders</h2>
 
       {loadingOrders && (
         <div className="d-flex justify-content-center">
@@ -157,7 +160,7 @@ const Admin = () => {
         ? renderOrders()
         : !loadingOrders && <p>No orders found</p>}
 
-      <h2 className="text-center mb-4">Users</h2>
+      <h2 className="text-center mb-4 mt-4 text-secondary">Users</h2>
       {loadingUsers && (
         <div className="d-flex justify-content-center">
           <Spinner animation="border" role="status">
